@@ -98,7 +98,7 @@ const Investors = () => {
                   <Download className="mr-2 h-5 w-5" />
                   Download Pitch Deck
                 </Button>
-                <Button size="lg" variant="corporate">
+                <Button size="lg" variant="outline">
                   <Calendar className="mr-2 h-5 w-5" />
                   Schedule Meeting
                 </Button>
@@ -334,7 +334,7 @@ const Investors = () => {
                 <Download className="mr-2 h-5 w-5" />
                 Download Materials
               </Button>
-              <Button size="lg" variant="corporate">
+              <Button size="lg" variant="outline">
                 <Calendar className="mr-2 h-5 w-5" />
                 Schedule Call
               </Button>

@@ -270,7 +270,7 @@ const Services = () => {
               <Button size="lg" variant="secondary">
                 Get Started Today
               </Button>
-              <Button size="lg" variant="corporate">
+              <Button size="lg" variant="outline">
                 Schedule Consultation
               </Button>
             </div>

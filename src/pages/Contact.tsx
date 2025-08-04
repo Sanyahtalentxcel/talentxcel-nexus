@@ -312,7 +312,7 @@ const Contact = () => {
               <Button size="lg" variant="secondary">
                 Explore Our Platform
               </Button>
-              <Button size="lg" variant="corporate">
+              <Button size="lg" variant="outline">
                 Schedule Consultation
               </Button>
             </div>

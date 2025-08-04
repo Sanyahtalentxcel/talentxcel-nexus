@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ExternalLink } from "lucide-react";
-import talentxcelLogo from "@/assets/talentxcel-logo.png";
+// Use uploaded logo instead
+const talentxcelLogo = "/lovable-uploads/5b681ba5-58bf-4aae-8bef-3ba691eef586.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,18 +23,18 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-soft sticky top-0 z-50 border-b border-border">
+    <nav className="bg-background/80 backdrop-blur-xl shadow-soft sticky top-0 z-50 border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-4">
               <img
-                className="h-8 w-auto"
+                className="h-10 w-auto"
                 src={talentxcelLogo}
                 alt="TalentXcel"
               />
-              <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-2xl font-bold text-foreground">
                 TalentXcel
               </span>
             </Link>
@@ -56,20 +57,28 @@ const Navbar = () => {
             ))}
             
             {/* External Links */}
-            <div className="flex items-center space-x-3 ml-6 pl-6 border-l border-border">
-              <Button variant="outline" size="sm" asChild>
+            <div className="flex items-center space-x-4 ml-8 pl-8 border-l border-border">
+              <Button variant="platform" size="sm" asChild>
                 <a
                   href="https://talentxcel.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-1"
+                  className="flex items-center space-x-2"
                 >
                   <span>Platform</span>
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </Button>
-              <Button variant="hero" size="sm">
-                Get Started
+              <Button variant="services" size="sm" asChild>
+                <a
+                  href="https://talentxcel.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2"
+                >
+                  <span>Services</span>
+                  <ExternalLink className="h-3 w-3" />
+                </a>
               </Button>
             </div>
           </div>
@@ -88,8 +97,8 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-border shadow-medium">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border shadow-medium">
+          <div className="px-4 pt-4 pb-6 space-y-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -104,20 +113,28 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <div className="pt-4 pb-2 border-t border-border mt-4 space-y-2">
-              <Button variant="outline" size="sm" className="w-full" asChild>
+            <div className="pt-6 pb-2 border-t border-border mt-4 space-y-3">
+              <Button variant="platform" size="sm" className="w-full" asChild>
                 <a
                   href="https://talentxcel.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-1"
+                  className="flex items-center justify-center space-x-2"
                 >
-                  <span>Platform</span>
+                  <span>TalentXcel Platform</span>
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </Button>
-              <Button variant="hero" size="sm" className="w-full">
-                Get Started
+              <Button variant="services" size="sm" className="w-full" asChild>
+                <a
+                  href="https://talentxcel.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2"
+                >
+                  <span>Services Portal</span>
+                  <ExternalLink className="h-3 w-3" />
+                </a>
               </Button>
             </div>
           </div>

@@ -183,7 +183,7 @@ const About = () => {
               <Button size="lg" variant="secondary">
                 Explore Careers
               </Button>
-              <Button size="lg" variant="corporate">
+              <Button size="lg" variant="outline">
                 Contact Us
               </Button>
             </div>

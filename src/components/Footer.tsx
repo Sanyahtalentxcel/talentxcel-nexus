@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, ExternalLink } from "lucide-react";
-import talentxcelLogo from "@/assets/talentxcel-logo.png";
+// Use uploaded logo instead
+const talentxcelLogo = "/lovable-uploads/5b681ba5-58bf-4aae-8bef-3ba691eef586.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -34,11 +35,11 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3">
               <img
-                className="h-8 w-auto"
+                className="h-10 w-auto"
                 src={talentxcelLogo}
                 alt="TalentXcel"
               />
-              <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-foreground">
                 TalentXcel
               </span>
             </Link>

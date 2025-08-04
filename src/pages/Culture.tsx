@@ -283,7 +283,7 @@ const Culture = () => {
               <Button size="lg" variant="secondary">
                 View Open Positions
               </Button>
-              <Button size="lg" variant="corporate">
+              <Button size="lg" variant="outline">
                 Learn More About Us
               </Button>
             </div>

@@ -101,7 +101,7 @@ const Careers = () => {
                 <Button size="lg" variant="hero">
                   View All Positions
                 </Button>
-                <Button size="lg" variant="corporate">
+                <Button size="lg" variant="outline">
                   Learn About Our Culture
                 </Button>
               </div>
@@ -300,7 +300,7 @@ const Careers = () => {
               <Button size="lg" variant="secondary">
                 Browse All Jobs
               </Button>
-              <Button size="lg" variant="corporate">
+              <Button size="lg" variant="outline">
                 Learn About Our Culture
               </Button>
             </div>
