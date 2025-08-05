@@ -25,7 +25,7 @@ const HeroSection = () => {
               </div>
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  TalentXcel Home Plus
+                  TalentXcel
                 </span>
                 <br />
                 <span className="text-foreground">Invest in the Future of Talent</span>
@@ -109,7 +109,7 @@ const HeroSection = () => {
         {/* Quick Links Section */}
         <div className="mt-24 pt-12 border-t border-border">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold mb-2">Explore TalentXcel Home Plus Ecosystem</h2>
+            <h2 className="text-2xl font-bold mb-2">Explore TalentXcel Ecosystem</h2>
             <p className="text-muted-foreground">Discover our comprehensive AI-first career platform and enterprise solutions</p>
           </div>
           

@@ -20,14 +20,14 @@ const Contact = () => {
       icon: Phone,
       title: "Call Us",
       description: "Speak with our team",
-      info: "+91 12345 67890",
-      action: "tel:+911234567890"
+      info: "+91 9717181609",
+      action: "tel:+919717181609"
     },
     {
       icon: MapPin,
       title: "Visit Us",
       description: "Our office location",
-      info: "Bangalore, Karnataka, India",
+      info: "Noida, Uttar Pradesh, India",
       action: "#"
     },
     {
@@ -190,7 +190,7 @@ const Contact = () => {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Visit Our Office</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Come visit us at our headquarters in Bangalore, the heart of India's tech ecosystem.
+                Come visit us at our headquarters in Noida, in the heart of India's tech corridor.
               </p>
             </div>
             
@@ -203,9 +203,9 @@ const Contact = () => {
                     <div>
                       <p className="font-medium">Address</p>
                       <p className="text-muted-foreground">
-                        123 Innovation Drive<br />
-                        Electronic City, Phase 1<br />
-                        Bangalore, Karnataka 560100<br />
+                        Plot C, ESquare Building, 2<br />
+                        Sector-45<br />
+                        Noida, Uttar Pradesh 201301<br />
                         India
                       </p>
                     </div>
@@ -227,7 +227,7 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-primary mt-1" />
                     <div>
                       <p className="font-medium">Reception</p>
-                      <p className="text-muted-foreground">+91 80 1234 5678</p>
+                      <p className="text-muted-foreground">+91 9717181609</p>
                     </div>
                   </div>
                 </div>

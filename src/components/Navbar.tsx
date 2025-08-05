@@ -33,7 +33,7 @@ const Navbar = () => {
                 alt="TalentXcel"
               />
               <span className="text-2xl font-bold text-foreground">
-                TalentXcel Home Plus
+                TalentXcel
               </span>
             </Link>
           </div>
