@@ -10,9 +10,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const navigation = [
-    { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Team", href: "/team" },
     { name: "Services", href: "/services" },
     { name: "Culture", href: "/culture" },
     { name: "Careers", href: "/careers" },
@@ -35,7 +33,7 @@ const Navbar = () => {
                 alt="TalentXcel"
               />
               <span className="text-2xl font-bold text-foreground">
-                TalentXcel
+                TalentXcel Home Plus
               </span>
             </Link>
           </div>

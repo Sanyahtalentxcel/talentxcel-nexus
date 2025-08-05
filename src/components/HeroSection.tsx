@@ -3,10 +3,10 @@ import { ArrowRight, Users, Zap, Target, ExternalLink } from "lucide-react";
 
 const HeroSection = () => {
   const stats = [
-    { number: "10K+", label: "Professionals Empowered" },
-    { number: "500+", label: "Companies Served" },
-    { number: "95%", label: "Success Rate" },
-    { number: "24/7", label: "Support Available" },
+    { number: "5K+", label: "Active Users" },
+    { number: "100+", label: "Enterprise Clients" },
+    { number: "95%", label: "Customer Retention" },
+    { number: "$2.1B", label: "India TAM" },
   ];
 
   return (
@@ -21,18 +21,18 @@ const HeroSection = () => {
             <div className="space-y-4">
               <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
                 <Zap className="h-4 w-4" />
-                <span>Empowering Talent Since 2020</span>
+                <span>Founded July 2024</span>
               </div>
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Empowering Talent.
+                  TalentXcel Home Plus
                 </span>
                 <br />
-                <span className="text-foreground">Accelerating Growth.</span>
+                <span className="text-foreground">Invest in the Future of Talent</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                TalentXcel is the comprehensive career ecosystem that connects talent with opportunities, 
-                providing innovative solutions for professionals, corporations, and institutions.
+                Building the world's most comprehensive career ecosystem. AI-first platform reimagining 
+                discovery, engagement, and hiring in India's fast-evolving talent economy.
               </p>
             </div>
 
@@ -109,8 +109,8 @@ const HeroSection = () => {
         {/* Quick Links Section */}
         <div className="mt-24 pt-12 border-t border-border">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold mb-2">Explore TalentXcel Ecosystem</h2>
-            <p className="text-muted-foreground">Discover our comprehensive suite of platforms and services</p>
+            <h2 className="text-2xl font-bold mb-2">Explore TalentXcel Home Plus Ecosystem</h2>
+            <p className="text-muted-foreground">Discover our comprehensive AI-first career platform and enterprise solutions</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
