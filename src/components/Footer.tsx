@@ -40,11 +40,11 @@ const Footer = () => {
                 alt="TalentXcel"
               />
               <span className="text-xl font-bold text-foreground">
-                TalentXcel
+                Talentxcel
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Empowering Talent. Accelerating Growth. Building the future of career development through innovative solutions.
+              Blending workforce solutions and IT services for businesses and job seekers alike. AI-first solutions across India, Europe, and Middle East.
             </p>
             <div className="flex space-x-4">
               <a
@@ -147,15 +147,15 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>+91 12345 67890</span>
+                <span>+91 9717181609</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span>Bangalore, India</span>
+                <span>Noida, Uttar Pradesh</span>
               </div>
             </div>
             <div className="text-sm text-muted-foreground">
-              © {currentYear} TalentXcel. All rights reserved.
+              © {currentYear} Talentxcel. All rights reserved.
             </div>
           </div>
         </div>

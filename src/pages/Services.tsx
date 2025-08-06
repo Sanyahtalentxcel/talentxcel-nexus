@@ -3,67 +3,114 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileText, Brain, GraduationCap, Code, Users, Zap, ArrowRight, Check, ExternalLink } from "lucide-react";
+import { 
+  Users, 
+  GraduationCap, 
+  Server, 
+  Brain, 
+  FileText, 
+  Search, 
+  Target, 
+  CheckCircle, 
+  ArrowRight, 
+  ExternalLink,
+  Building2,
+  UserCheck,
+  Settings
+} from "lucide-react";
+import aiTechnology from "@/assets/ai-technology.jpg";
 
 const Services = () => {
-  const services = [
+  const organizationServices = [
     {
-      icon: FileText,
-      title: "Resume Building & Optimization",
-      description: "AI-powered resume creation and optimization tools that help professionals craft compelling resumes that stand out to employers.",
-      features: ["ATS-Optimized Templates", "Industry-Specific Formats", "Real-time Feedback", "Professional Review"],
-      category: "Individual",
-      price: "Starting at ₹999",
-      popular: false
-    },
-    {
-      icon: Brain,
-      title: "AI Career Tools",
-      description: "Intelligent career guidance platform using machine learning to provide personalized career recommendations and job matching.",
-      features: ["Career Path Analysis", "Skill Gap Assessment", "Job Matching Algorithm", "Salary Benchmarking"],
-      category: "Individual",
-      price: "₹1,999/month",
+      icon: Users,
+      title: "Staffing & Recruitment",
+      description: "Comprehensive workforce solutions including contingent staffing, contract-to-hire, permanent placements, and recruitment process outsourcing (RPO).",
+      features: [
+        "Contingent Staffing",
+        "Contract-to-Hire Solutions", 
+        "Permanent Placements",
+        "Recruitment Process Outsourcing",
+        "Cultural & Skill-based Matching"
+      ],
+      industries: ["Energy", "BFSI", "Technology", "Healthcare"],
       popular: true
     },
     {
       icon: GraduationCap,
-      title: "Corporate Training Programs",
-      description: "Comprehensive training solutions for organizations looking to upskill their workforce and improve talent retention.",
-      features: ["Custom Curriculum", "Skills Assessment", "Progress Tracking", "Certification Programs"],
-      category: "Enterprise",
-      price: "Custom Pricing",
+      title: "Training & Education",
+      description: "Tailored training programs ranging from technical upskilling to leadership development, designed to keep teams competitive and future-ready.",
+      features: [
+        "Technical Upskilling Programs",
+        "Leadership Development",
+        "Custom Training Modules",
+        "Performance Assessment",
+        "Certification Programs"
+      ],
+      industries: ["All Industries"],
       popular: false
     },
     {
-      icon: Code,
-      title: "SaaS API for Institutions",
-      description: "Scalable API solutions that allow educational institutions and corporations to integrate our talent management tools.",
-      features: ["RESTful APIs", "Custom Integration", "Real-time Analytics", "24/7 Support"],
-      category: "Enterprise",
-      price: "Contact Sales",
+      icon: Server,
+      title: "IT Consulting & Managed Services",
+      description: "Expert guidance on infrastructure, cloud migration, cybersecurity, and end-to-end managed IT operations with proactive approach.",
+      features: [
+        "Infrastructure Consulting",
+        "Cloud Migration Services",
+        "Cybersecurity Solutions",
+        "Managed IT Operations",
+        "24/7 Proactive Support"
+      ],
+      industries: ["Technology", "BFSI", "Healthcare"],
       popular: false
-    },
-    {
-      icon: Users,
-      title: "Mentorship & Coaching",
-      description: "One-on-one career coaching and mentorship programs connecting professionals with industry experts.",
-      features: ["Expert Mentors", "Personalized Sessions", "Goal Setting", "Progress Monitoring"],
-      category: "Individual",
-      price: "₹2,999/session",
-      popular: false
-    },
-    {
-      icon: Zap,
-      title: "Enterprise Solutions",
-      description: "End-to-end talent management solutions for large organizations, including recruitment, onboarding, and development.",
-      features: ["Talent Pipeline", "Performance Analytics", "Employee Development", "Retention Strategies"],
-      category: "Enterprise",
-      price: "Custom Pricing",
-      popular: true
     }
   ];
 
-  const categories = ["All", "Individual", "Enterprise"];
+  const individualServices = [
+    {
+      icon: FileText,
+      title: "AI-Powered Resume Builder",
+      description: "Advanced resume creation tool with AI-powered templates that generate ATS-compatible bullet points and tailored resumes rapidly.",
+      features: [
+        "ATS-Compatible Templates",
+        "AI-Generated Bullet Points",
+        "Industry-Specific Formats",
+        "Real-time Optimization",
+        "Professional Formatting"
+      ]
+    },
+    {
+      icon: Search,
+      title: "Job Matching & Tracking",
+      description: "Built-in dashboard to search, apply, and manage responses for a wide range of job opportunities with intelligent matching algorithms.",
+      features: [
+        "Intelligent Job Matching",
+        "Application Tracking",
+        "Response Management",
+        "Career Analytics",
+        "Interview Scheduling"
+      ]
+    },
+    {
+      icon: Target,
+      title: "One-click Applications & Expert Feedback",
+      description: "Streamlined application submissions plus professional resume feedback to help candidates stand out in the competitive job market.",
+      features: [
+        "One-Click Apply",
+        "Expert Resume Review",
+        "Professional Feedback",
+        "Interview Preparation",
+        "Career Coaching"
+      ]
+    }
+  ];
+
+  const industries = [
+    { name: "Energy", description: "Oil, Gas, Renewable Energy" },
+    { name: "BFSI", description: "Banking, Financial Services, Insurance" },
+    { name: "Technology", description: "IT, Software, Digital Services" },
+    { name: "Healthcare", description: "Medical, Pharmaceutical, Biotech" }
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -71,91 +118,109 @@ const Services = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/5 py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Comprehensive solutions designed to empower individuals and organizations 
-                in their talent development and career growth journey.
-              </p>
+        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
+                    <Building2 className="h-4 w-4" />
+                    <span>Comprehensive Solutions</span>
+                  </div>
+                  <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+                    Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
+                  </h1>
+                  <p className="text-xl text-muted-foreground leading-relaxed">
+                    Blending workforce solutions and IT services for businesses and job seekers alike. 
+                    Comprehensive AI-first solutions for the modern talent economy.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <img 
+                  src={aiTechnology} 
+                  alt="AI Technology Services"
+                  className="w-full h-96 object-cover rounded-3xl shadow-large"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-3xl" />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Services Overview */}
+        {/* Services for Organizations */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">What We Offer</h2>
+              <div className="flex items-center justify-center space-x-2 mb-4">
+                <Building2 className="h-8 w-8 text-primary" />
+                <h2 className="text-3xl font-bold">Services for Organizations</h2>
+              </div>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                From individual career guidance to enterprise-wide talent solutions, 
-                we provide tools and services that drive real results.
+                Comprehensive workforce and IT solutions designed to help businesses thrive 
+                in today's competitive landscape.
               </p>
             </div>
-
-            {/* Category Filter */}
-            <div className="flex justify-center gap-2 mb-12">
-              {categories.map((category) => (
-                <Badge
-                  key={category}
-                  variant={category === "All" ? "default" : "secondary"}
-                  className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors px-4 py-2"
-                >
-                  {category}
-                </Badge>
-              ))}
-            </div>
             
-            <div className="grid lg:grid-cols-2 gap-8">
-              {services.map((service, index) => (
-                <Card key={index} className={`p-8 hover:shadow-medium transition-all duration-300 group relative ${service.popular ? 'border-primary shadow-soft' : ''}`}>
+            <div className="space-y-8">
+              {organizationServices.map((service, index) => (
+                <Card key={index} className={`p-8 hover:shadow-medium transition-all duration-300 ${service.popular ? 'border-primary shadow-soft' : ''}`}>
                   {service.popular && (
-                    <Badge className="absolute -top-3 left-6 bg-primary">
+                    <Badge className="absolute -top-3 left-8 bg-primary">
                       Most Popular
                     </Badge>
                   )}
                   
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <service.icon className="h-8 w-8 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold text-xl">{service.title}</h3>
-                        <Badge variant="outline">{service.category}</Badge>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div className="mb-6">
-                    <h4 className="font-medium mb-3">Key Features:</h4>
-                    <div className="grid grid-cols-2 gap-2">
-                      {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center space-x-2">
-                          <Check className="h-4 w-4 text-secondary" />
-                          <span className="text-sm text-muted-foreground">{feature}</span>
+                  <div className="grid lg:grid-cols-3 gap-8">
+                    <div className="lg:col-span-2">
+                      <div className="flex items-start space-x-4 mb-6">
+                        <div className="p-3 bg-primary/10 rounded-lg">
+                          <service.icon className="h-8 w-8 text-primary" />
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-2xl mb-3">{service.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed mb-4">
+                            {service.description}
+                          </p>
+                        </div>
+                      </div>
 
-                  {/* Pricing & CTA */}
-                  <div className="flex items-center justify-between pt-6 border-t border-border">
-                    <div>
-                      <p className="text-sm text-muted-foreground">Starting from</p>
-                      <p className="text-lg font-semibold text-primary">{service.price}</p>
+                      <div className="grid md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                          <h4 className="font-medium mb-3">Key Features:</h4>
+                          <div className="space-y-2">
+                            {service.features.map((feature, idx) => (
+                              <div key={idx} className="flex items-center space-x-2">
+                                <CheckCircle className="h-4 w-4 text-accent" />
+                                <span className="text-sm text-muted-foreground">{feature}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-medium mb-3">Industries Served:</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {service.industries.map((industry, idx) => (
+                              <Badge key={idx} variant="secondary">{industry}</Badge>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <Button variant={service.popular ? "hero" : "outline"} className="group">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    
+                    <div className="flex flex-col justify-center space-y-4">
+                      <Button variant={service.popular ? "default" : "outline"} size="lg" className="w-full">
+                        Get Started
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                      <Button variant="outline" size="sm" className="w-full">
+                        Learn More
+                      </Button>
+                    </div>
                   </div>
                 </Card>
               ))}
@@ -163,62 +228,81 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Process Section */}
+        {/* Services for Job Seekers */}
         <section className="py-20 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">How It Works</h2>
+              <div className="flex items-center justify-center space-x-2 mb-4">
+                <UserCheck className="h-8 w-8 text-accent" />
+                <h2 className="text-3xl font-bold">Services for Job Seekers</h2>
+              </div>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Our streamlined process ensures you get the most value from our services, 
-                whether you're an individual or an organization.
+                AI-powered tools and expert assistance to enhance your job market presence 
+                and accelerate your career growth.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                {
-                  step: "01",
-                  title: "Assessment",
-                  description: "We analyze your current situation, goals, and requirements to create a personalized plan."
-                },
-                {
-                  step: "02",
-                  title: "Strategy",
-                  description: "Our experts develop a customized strategy tailored to your specific needs and objectives."
-                },
-                {
-                  step: "03",
-                  title: "Implementation",
-                  description: "We execute the plan using our proven tools, technologies, and methodologies."
-                },
-                {
-                  step: "04",
-                  title: "Success",
-                  description: "Track progress, measure results, and achieve your career or organizational goals."
-                }
-              ].map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                    {item.step}
+            <div className="grid lg:grid-cols-3 gap-8">
+              {individualServices.map((service, index) => (
+                <Card key={index} className="p-8 hover:shadow-medium transition-all duration-300 group">
+                  <div className="text-center mb-6">
+                    <div className="inline-flex p-4 bg-accent/10 rounded-2xl mb-4">
+                      <service.icon className="h-10 w-10 text-accent" />
+                    </div>
+                    <h3 className="font-semibold text-xl mb-3">{service.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+
+                  <div className="space-y-3 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    Get Started
+                  </Button>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Industry Focus */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold mb-4">Industry Expertise</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                We specialize in key industries where talent demand is highest and 
+                digital transformation is most critical.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {industries.map((industry, index) => (
+                <Card key={index} className="p-6 text-center hover:shadow-medium transition-all duration-300 group">
+                  <div className="text-2xl font-bold text-primary mb-2">{industry.name}</div>
+                  <div className="text-sm text-muted-foreground">{industry.description}</div>
+                </Card>
               ))}
             </div>
           </div>
         </section>
 
         {/* Platform Integration */}
-        <section className="py-20">
+        <section className="py-20 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Integrated Platform Experience</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                All our services are seamlessly integrated across the TalentXcel ecosystem 
-                for a unified experience.
+                Access all our services through our comprehensive platform ecosystem 
+                designed for seamless user experience.
               </p>
             </div>
             
@@ -229,10 +313,24 @@ const Services = () => {
                   <ExternalLink className="h-5 w-5 text-muted-foreground" />
                 </div>
                 <p className="text-muted-foreground mb-6">
-                  Access all individual services through our main platform at TalentXcel.in. 
-                  Get personalized career guidance, AI tools, and professional development resources.
+                  Access individual services, AI-powered career tools, job matching, 
+                  and professional development resources through our main platform.
                 </p>
-                <Button variant="outline" className="w-full" asChild>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center space-x-2">
+                    <Settings className="h-4 w-4 text-primary" />
+                    <span className="text-sm">AI Career Tools</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <FileText className="h-4 w-4 text-primary" />
+                    <span className="text-sm">Resume Builder</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Target className="h-4 w-4 text-primary" />
+                    <span className="text-sm">Job Matching</span>
+                  </div>
+                </div>
+                <Button variant="platform" className="w-full" asChild>
                   <a href="https://talentxcel.in" target="_blank" rel="noopener noreferrer">
                     Visit TalentXcel.in
                   </a>
@@ -245,10 +343,24 @@ const Services = () => {
                   <ExternalLink className="h-5 w-5 text-muted-foreground" />
                 </div>
                 <p className="text-muted-foreground mb-6">
-                  Enterprise clients can access specialized tools and services through 
-                  our dedicated portal with advanced analytics and management features.
+                  Enterprise clients access specialized workforce solutions, IT services, 
+                  and advanced analytics through our dedicated business portal.
                 </p>
-                <Button variant="outline" className="w-full" asChild>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center space-x-2">
+                    <Users className="h-4 w-4 text-accent" />
+                    <span className="text-sm">Staffing Solutions</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Server className="h-4 w-4 text-accent" />
+                    <span className="text-sm">IT Services</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <GraduationCap className="h-4 w-4 text-accent" />
+                    <span className="text-sm">Training Programs</span>
+                  </div>
+                </div>
+                <Button variant="services" className="w-full" asChild>
                   <a href="https://talentxcel.net" target="_blank" rel="noopener noreferrer">
                     Visit TalentXcel.net
                   </a>
@@ -261,17 +373,17 @@ const Services = () => {
         {/* CTA Section */}
         <section className="py-20 bg-gradient-hero text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Career Journey?</h2>
+            <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Workforce Strategy?</h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Whether you're an individual looking to advance your career or an organization 
-              seeking to empower your team, we have the right solution for you.
+              Whether you need comprehensive workforce solutions or individual career services, 
+              we have the expertise and technology to drive your success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary">
-                Get Started Today
-              </Button>
-              <Button size="lg" variant="outline">
                 Schedule Consultation
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a href="/contact">Get In Touch</a>
               </Button>
             </div>
           </div>

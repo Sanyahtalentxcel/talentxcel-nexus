@@ -1,31 +1,118 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, Users, Target, Zap, Download, Calendar, ExternalLink } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { 
+  TrendingUp, 
+  Users, 
+  Building2, 
+  Globe, 
+  Target, 
+  Award, 
+  ArrowUpRight,
+  Download,
+  Calendar,
+  Zap,
+  Brain,
+  Shield,
+  ExternalLink
+} from "lucide-react";
 
 const Investors = () => {
+  const keyMetrics = [
+    { metric: "5,000+", label: "Active Users", growth: "+150% YoY", icon: Users },
+    { metric: "100+", label: "Enterprise Clients", growth: "+200% YoY", icon: Building2 },
+    { metric: "95%", label: "Customer Retention", growth: "+5% YoY", icon: Target },
+    { metric: "$2.1B", label: "India TAM", growth: "15% CAGR", icon: Globe }
+  ];
+
+  const competitiveAdvantages = [
+    {
+      icon: Brain,
+      title: "AI-First Platform",
+      description: "Advanced ML models for precise talent-opportunity matching with proprietary algorithms"
+    },
+    {
+      icon: Globe,
+      title: "Multi-Platform Ecosystem",
+      description: "End-to-end value chain from individual discovery to enterprise hiring solutions"
+    },
+    {
+      icon: TrendingUp,
+      title: "Strong Network Effects",
+      description: "Platform value scales exponentially with each new user and enterprise client"
+    },
+    {
+      icon: Shield,
+      title: "Execution-Focused",
+      description: "Proven ability to deliver, grow, and scale in competitive talent markets"
+    }
+  ];
+
+  const timeline = [
+    {
+      period: "July 2024",
+      title: "Company Founded",
+      description: "Launched with mission to empower India's talent using AI-first technology"
+    },
+    {
+      period: "Late 2024",
+      title: "Beta Platform Launch",
+      description: "Early traction across metros with AI-powered talent matching platform"
+    },
+    {
+      period: "2025 YTD",
+      title: "Rapid Growth Phase",
+      description: "Achieved 5,000+ users, 100+ enterprise clients, substantial revenue growth"
+    },
+    {
+      period: "Present",
+      title: "Series A Ready",
+      description: "Positioned for institutional funding to accelerate growth and expansion"
+    }
+  ];
+
+  const mediaOutlets = [
+    "Economic Times (ET)",
+    "Business Standard (BS)",
+    "Mint",
+    "Inc42",
+    "YourStory",
+    "TechCrunch"
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30 py-24">
+        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Invest in the <span className="bg-gradient-primary bg-clip-text text-transparent">Future of Talent</span>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <TrendingUp className="h-4 w-4" />
+                <span>Investment Opportunity</span>
+              </div>
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-8">
+                Invest in the Future of <span className="bg-gradient-primary bg-clip-text text-transparent">Talent</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Join us in building the world's most comprehensive career ecosystem. TalentXcel Home Plus is transforming how talent connects with opportunity.
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                Building the world's most comprehensive career ecosystem. 
+                AI-first platform reimagining discovery, engagement, and hiring in India's fast-evolving talent economy.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" variant="default" className="group">
+                  <Download className="mr-2 h-5 w-5" />
                   Download Pitch Deck
+                  <ArrowUpRight className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </Button>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="group">
+                  <Calendar className="mr-2 h-5 w-5" />
                   Schedule Meeting
                 </Button>
               </div>
@@ -34,244 +121,260 @@ const Investors = () => {
         </section>
 
         {/* Company Snapshot */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12">Company Snapshot</h2>
-            <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-3xl p-12 max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                <div>
-                  <h3 className="text-xl font-semibold mb-6 text-primary">Founded</h3>
-                  <p className="text-3xl font-bold mb-8">July 2024</p>
-                  
-                  <h3 className="text-xl font-semibold mb-6 text-primary">Headquarters</h3>
-                  <p className="text-3xl font-bold">India</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-6 text-primary">Business Model</h3>
-                  <p className="text-lg mb-8">AI-first career ecosystem for individuals & enterprises</p>
-                  
-                  <h3 className="text-xl font-semibold mb-6 text-primary">Core Product</h3>
-                  <p className="text-lg">TalentXcel Home Plus</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Key Metrics 2025 YTD */}
         <section className="py-20 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12">Key Metrics (2025 YTD)</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 text-center">
-                <div className="text-4xl font-bold text-primary mb-2">5,000+</div>
-                <div className="text-muted-foreground">Active Users</div>
-                <div className="text-sm text-green-500 mt-2">+150% YoY</div>
-              </div>
-              <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 text-center">
-                <div className="text-4xl font-bold text-primary mb-2">100+</div>
-                <div className="text-muted-foreground">Enterprise Clients</div>
-                <div className="text-sm text-green-500 mt-2">+200% YoY</div>
-              </div>
-              <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 text-center">
-                <div className="text-4xl font-bold text-primary mb-2">95%</div>
-                <div className="text-muted-foreground">Customer Retention</div>
-                <div className="text-sm text-green-500 mt-2">+5% YoY</div>
-              </div>
-              <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 text-center">
-                <div className="text-4xl font-bold text-primary mb-2">180%</div>
-                <div className="text-muted-foreground">Revenue Growth</div>
-                <div className="text-sm text-green-500 mt-2">YoY</div>
-              </div>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold mb-4">Company Snapshot</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Key fundamentals and metrics demonstrating our market position and growth trajectory.
+              </p>
             </div>
-          </div>
-        </section>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+              <div className="space-y-6">
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <div className="text-sm text-muted-foreground mb-1">Founded</div>
+                    <div className="text-xl font-semibold">July 2024</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground mb-1">Headquarters</div>
+                    <div className="text-xl font-semibold">Noida, India</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground mb-1">Business Model</div>
+                    <div className="text-xl font-semibold">AI-first Career Ecosystem</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground mb-1">Core Product</div>
+                    <div className="text-xl font-semibold">Talentxcel Platform</div>
+                  </div>
+                </div>
+              </div>
+              
+              <Card className="p-8 hover:shadow-medium transition-shadow duration-300">
+                <h3 className="text-xl font-semibold mb-4">Market Opportunity</h3>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Global Talent Management Market</span>
+                    <span className="font-semibold">$12.3B by 2026</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">India TAM</span>
+                    <span className="font-semibold">$2.1B, 15% CAGR</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Underserved Workforce</span>
+                    <span className="font-semibold">500M+ professionals</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Target Companies</span>
+                    <span className="font-semibold">2M+ Indian companies</span>
+                  </div>
+                </div>
+              </Card>
+            </div>
 
-        {/* Market Opportunity */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12">Market Opportunity</h2>
+            {/* Key Metrics */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">$12.3B</div>
-                <div className="text-muted-foreground">Global Talent Management Market</div>
-                <div className="text-sm text-muted-foreground mt-2">by 2026</div>
-              </div>
-              <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">$2.1B</div>
-                <div className="text-muted-foreground">India TAM</div>
-                <div className="text-sm text-muted-foreground mt-2">15% CAGR</div>
-              </div>
-              <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">500M+</div>
-                <div className="text-muted-foreground">Workforce Underserved</div>
-                <div className="text-sm text-muted-foreground mt-2">by existing solutions</div>
-              </div>
-              <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">2M+</div>
-                <div className="text-muted-foreground">Indian Companies</div>
-                <div className="text-sm text-muted-foreground mt-2">seeking digital talent solutions</div>
-              </div>
+              {keyMetrics.map((item, index) => (
+                <Card key={index} className="p-6 text-center hover:shadow-medium transition-all duration-300 group">
+                  <item.icon className="h-10 w-10 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <div className="text-2xl font-bold text-primary mb-2">{item.metric}</div>
+                  <div className="text-foreground font-medium mb-2">{item.label}</div>
+                  <Badge variant="secondary" className="text-xs">{item.growth}</Badge>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Competitive Edge */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12">Competitive Edge</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-primary/10 rounded-2xl">
-                    <Zap className="h-8 w-8 text-primary" />
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold mb-4">Competitive Edge</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our unique advantages that position us for sustained growth and market leadership.
+              </p>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-8">
+              {competitiveAdvantages.map((advantage, index) => (
+                <Card key={index} className="p-8 hover:shadow-medium transition-all duration-300 group">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <advantage.icon className="h-8 w-8 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-xl mb-3">{advantage.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{advantage.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">AI-First Platform</h3>
-                    <p className="text-muted-foreground">
-                      Advanced ML models for precise talent-opportunity matching with superior accuracy.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-primary/10 rounded-2xl">
-                    <Target className="h-8 w-8 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Multi-Platform Ecosystem</h3>
-                    <p className="text-muted-foreground">
-                      End-to-end value chain from individual discovery to enterprise hiring solutions.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-primary/10 rounded-2xl">
-                    <Users className="h-8 w-8 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Strong Network Effects</h3>
-                    <p className="text-muted-foreground">
-                      Value scales with each user, creating sustainable competitive advantages.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-primary/10 rounded-2xl">
-                    <TrendingUp className="h-8 w-8 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Execution-Focused</h3>
-                    <p className="text-muted-foreground">
-                      Proven ability to deliver, grow, and scale with demonstrated market traction.
-                    </p>
-                  </div>
-                </div>
-              </div>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Our Journey */}
-        <section className="py-20">
+        <section className="py-20 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-8">
-                <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-4 h-4 bg-primary rounded-full"></div>
-                    <h3 className="text-xl font-semibold">July 2024</h3>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold mb-4">Our Journey</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                From founding to rapid growth - key milestones in our path to becoming a market leader.
+              </p>
+            </div>
+            
+            <div className="relative">
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/20 h-full hidden lg:block"></div>
+              
+              <div className="space-y-12">
+                {timeline.map((item, index) => (
+                  <div key={index} className={`flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                    <div className="lg:w-1/2 lg:px-8">
+                      <Card className="p-8 hover:shadow-medium transition-shadow duration-300">
+                        <div className="flex items-center mb-4">
+                          <Badge className="bg-primary text-primary-foreground">
+                            {item.period}
+                          </Badge>
+                        </div>
+                        <h3 className="font-semibold text-xl mb-3">{item.title}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                      </Card>
+                    </div>
+                    
+                    <div className="hidden lg:flex items-center justify-center w-12 h-12 bg-primary rounded-full border-4 border-background shadow-medium z-10">
+                      <Award className="h-5 w-5 text-primary-foreground" />
+                    </div>
+                    
+                    <div className="lg:w-1/2"></div>
                   </div>
-                  <p className="text-muted-foreground">Founded with a mission to empower India's talent using AI</p>
-                </div>
-                <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-4 h-4 bg-primary rounded-full"></div>
-                    <h3 className="text-xl font-semibold">Late 2024</h3>
-                  </div>
-                  <p className="text-muted-foreground">Beta platform launched; early traction across metros</p>
-                </div>
-                <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-4 h-4 bg-primary rounded-full"></div>
-                    <h3 className="text-xl font-semibold">2025</h3>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-muted-foreground">• Rapid growth among individuals & SMBs</p>
-                    <p className="text-muted-foreground">• Signed 100+ enterprise clients</p>
-                    <p className="text-muted-foreground">• Reached 5,000+ active users</p>
-                    <p className="text-muted-foreground">• Positioned for Series A</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Media Coverage */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12">Media Coverage</h2>
-            <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-12 text-center">
-              <p className="text-xl mb-8">TalentXcel Home Plus has been featured in:</p>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-                <div className="text-lg font-semibold text-primary">ET</div>
-                <div className="text-lg font-semibold text-primary">Business Standard</div>
-                <div className="text-lg font-semibold text-primary">Mint</div>
-                <div className="text-lg font-semibold text-primary">Inc42</div>
-                <div className="text-lg font-semibold text-primary">YourStory</div>
-                <div className="text-lg font-semibold text-primary">TechCrunch</div>
-              </div>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold mb-4">Media Coverage</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Talentxcel has been featured across leading business and technology publications.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {mediaOutlets.map((outlet, index) => (
+                <Card key={index} className="p-6 text-center hover:shadow-medium transition-all duration-300 group">
+                  <div className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {outlet}
+                  </div>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Why Partner with Us */}
-        <section className="py-20">
+        <section className="py-20 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12">Why Partner with Us?</h2>
-            <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-12 text-center max-w-4xl mx-auto mb-20">
-              <p className="text-xl mb-8">We're looking for visionary investors to join us on our mission to redefine India's career ecosystem.</p>
-              <div className="grid md:grid-cols-3 gap-8">
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-primary">Capital + Strategic Support</h3>
-                  <p className="text-muted-foreground">Growth capital with strategic guidance</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-primary">Access to Hiring Networks</h3>
-                  <p className="text-muted-foreground">Leverage existing talent networks</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-primary">Product & Growth Mentorship</h3>
-                  <p className="text-muted-foreground">Expertise in scaling platforms</p>
-                </div>
-              </div>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold mb-4">Why Partner with Us?</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                We're looking for visionary investors to join us on our mission to redefine India's career ecosystem.
+              </p>
             </div>
-
-            {/* Contact */}
-            <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-3xl p-12 text-center">
-              <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
-              <div className="space-y-4 mb-8">
-                <div>
-                  <p className="text-lg font-semibold text-primary">Investor Relations</p>
-                  <p className="text-muted-foreground">investors@talentxcel.co.in</p>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-semibold">Capital + Strategic Support</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Beyond funding, we seek partners who can provide access to hiring networks, 
+                    product development guidance, and growth mentorship to accelerate our mission.
+                  </p>
                 </div>
-                <div>
-                  <p className="text-lg font-semibold text-primary">Direct Line</p>
-                  <p className="text-muted-foreground">+91 9717161809</p>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-muted-foreground">Access to hiring networks and enterprise clients</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-muted-foreground">Product development and technology mentorship</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-muted-foreground">Strategic guidance for market expansion</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-muted-foreground">Industry expertise and domain knowledge</span>
+                  </div>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button size="lg" asChild>
-                  <a href="mailto:investors@talentxcel.co.in">
-                    Contact Investment Team
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline">
-                  Schedule a Meeting
-                </Button>
+              
+              <Card className="p-8 hover:shadow-medium transition-shadow duration-300">
+                <h3 className="text-xl font-semibold mb-6">Investment Highlights</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between py-2 border-b border-border">
+                    <span className="text-muted-foreground">Market Size</span>
+                    <span className="font-semibold">$2.1B India TAM</span>
+                  </div>
+                  <div className="flex items-center justify-between py-2 border-b border-border">
+                    <span className="text-muted-foreground">Growth Rate</span>
+                    <span className="font-semibold">180% Revenue Growth</span>
+                  </div>
+                  <div className="flex items-center justify-between py-2 border-b border-border">
+                    <span className="text-muted-foreground">User Growth</span>
+                    <span className="font-semibold">150% YoY</span>
+                  </div>
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-muted-foreground">Retention</span>
+                    <span className="font-semibold">95% Customer Retention</span>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-20 bg-gradient-hero text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to Invest in the Future?</h2>
+            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+              Join us in building the world's most comprehensive career ecosystem. 
+              Get in touch to learn more about our investment opportunity.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <Button size="lg" variant="secondary" className="group">
+                <Download className="mr-2 h-5 w-5" />
+                Download Pitch Deck
+              </Button>
+              <Button size="lg" variant="outline" className="group">
+                <Calendar className="mr-2 h-5 w-5" />
+                Schedule Meeting
+              </Button>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+              <div className="grid md:grid-cols-2 gap-6 text-left">
+                <div>
+                  <div className="text-sm opacity-80 mb-1">Investor Relations</div>
+                  <div className="font-medium">investors@talentxcel.co.in</div>
+                </div>
+                <div>
+                  <div className="text-sm opacity-80 mb-1">Direct Line</div>
+                  <div className="font-medium">+91 9717181609</div>
+                </div>
               </div>
             </div>
           </div>

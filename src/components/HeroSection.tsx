@@ -25,7 +25,7 @@ const HeroSection = () => {
               </div>
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  TalentXcel
+                  Talentxcel
                 </span>
                 <br />
                 <span className="text-foreground">Invest in the Future of Talent</span>
