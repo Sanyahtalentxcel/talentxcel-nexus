@@ -19,6 +19,11 @@ import {
   Settings
 } from "lucide-react";
 import aiTechnology from "@/assets/ai-technology.jpg";
+import modernWorkspace from "@/assets/modern-workspace.jpg";
+import conferenceRoom from "@/assets/conference-room.jpg";
+import remoteWork from "@/assets/remote-work.jpg";
+import trainingSession from "@/assets/training-session.jpg";
+import dataCenter from "@/assets/data-center.jpg";
 
 const Services = () => {
   const organizationServices = [
@@ -151,6 +156,55 @@ const Services = () => {
           </div>
         </section>
 
+        {/* Apple-inspired visual section */}
+        <section className="py-20 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-3 gap-8 mb-20">
+              <div className="relative group">
+                <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src={modernWorkspace} 
+                    alt="Modern Workspace"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="font-semibold">Modern Workspace</h3>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative group">
+                <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src={conferenceRoom} 
+                    alt="Enterprise Solutions"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="font-semibold">Enterprise Solutions</h3>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative group">
+                <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src={dataCenter} 
+                    alt="IT Infrastructure"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="font-semibold">IT Infrastructure</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Services for Organizations */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -224,6 +278,42 @@ const Services = () => {
                   </div>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Individual Services Visual */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold">Empowering Individual Growth</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our AI-powered platform provides personalized tools and insights to accelerate your career journey, 
+                  from resume optimization to job matching and professional development.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-card/60 p-4 rounded-2xl">
+                    <div className="text-2xl font-bold text-primary">98%</div>
+                    <div className="text-sm text-muted-foreground">Resume Success Rate</div>
+                  </div>
+                  <div className="bg-card/60 p-4 rounded-2xl">
+                    <div className="text-2xl font-bold text-accent">24h</div>
+                    <div className="text-sm text-muted-foreground">Average Response Time</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden shadow-large">
+                  <img 
+                    src={remoteWork} 
+                    alt="Remote Work Professional"
+                    className="w-full h-80 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                </div>
+              </div>
             </div>
           </div>
         </section>

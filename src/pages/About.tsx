@@ -6,6 +6,8 @@ import { Building2, Globe, Target, Users, Award, TrendingUp, Heart, Shield, Ligh
 import corporateOffice from "@/assets/corporate-office.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import globalNetwork from "@/assets/global-network.jpg";
+import modernWorkspace from "@/assets/modern-workspace.jpg";
+import conferenceRoom from "@/assets/conference-room.jpg";
 
 const About = () => {
   const values = [
@@ -171,6 +173,54 @@ const About = () => {
                   className="w-full h-96 object-cover rounded-3xl shadow-large"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-3xl" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Apple-inspired image gallery */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="lg:col-span-2">
+                <div className="relative group rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src={modernWorkspace} 
+                    alt="Modern Workspace Culture"
+                    className="w-full h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-xl font-semibold mb-2">Innovation Culture</h3>
+                    <p className="text-sm opacity-90">Where creativity meets technology</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="relative group rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src={conferenceRoom} 
+                    alt="Collaboration Spaces"
+                    className="w-full h-36 lg:h-44 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h4 className="font-semibold text-sm">Strategic Meetings</h4>
+                  </div>
+                </div>
+                
+                <div className="relative group rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src={teamCollaboration} 
+                    alt="Team Collaboration"
+                    className="w-full h-36 lg:h-44 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h4 className="font-semibold text-sm">Team Synergy</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

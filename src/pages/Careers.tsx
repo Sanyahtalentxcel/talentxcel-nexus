@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Users, Briefcase, ArrowRight, Search, Filter } from "lucide-react";
+import teamSuccess from "@/assets/team-success.jpg";
+import modernWorkspace from "@/assets/modern-workspace.jpg";
+import trainingSession from "@/assets/training-session.jpg";
 
 const Careers = () => {
   const jobOpenings = [
@@ -87,23 +90,46 @@ const Careers = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/5 py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Join <span className="bg-gradient-primary bg-clip-text text-transparent">TalentXcel</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                Be part of a team that's transforming careers and empowering talent worldwide. 
-                Find your next opportunity to make a meaningful impact.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="hero">
-                  View All Positions
-                </Button>
-                <Button size="lg" variant="outline">
-                  Learn About Our Culture
-                </Button>
+        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+                  Join <span className="bg-gradient-primary bg-clip-text text-transparent">Talentxcel</span>
+                </h1>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Be part of a team that's transforming careers and empowering talent worldwide. 
+                  Find your next opportunity to make a meaningful impact.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" variant="platform">
+                    View All Positions
+                  </Button>
+                  <Button size="lg" variant="outline">
+                    Learn About Our Culture
+                  </Button>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden shadow-large">
+                  <img 
+                    src={teamSuccess} 
+                    alt="Team Success at Talentxcel"
+                    className="w-full h-96 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-xl font-semibold mb-2">Join Our Success Story</h3>
+                    <p className="text-sm opacity-90">Building the future of talent together</p>
+                  </div>
+                </div>
+                
+                {/* Floating elements */}
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/10 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl"></div>
               </div>
             </div>
           </div>
@@ -247,8 +273,45 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* Benefits */}
+        {/* Work Environment Visual */}
         <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-8 mb-20">
+              <div className="relative group">
+                <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src={modernWorkspace} 
+                    alt="Modern Office Environment"
+                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-xl font-semibold mb-2">Modern Workspace</h3>
+                    <p className="text-sm opacity-90">State-of-the-art facilities designed for collaboration and innovation</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative group">
+                <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src={trainingSession} 
+                    alt="Professional Development"
+                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-xl font-semibold mb-2">Continuous Learning</h3>
+                    <p className="text-sm opacity-90">Professional development opportunities and skill enhancement programs</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits */}
+        <section className="py-20 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
