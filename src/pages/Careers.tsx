@@ -11,68 +11,320 @@ import trainingSession from "@/assets/training-session.jpg";
 const Careers = () => {
   const jobOpenings = [
     {
-      title: "Senior Frontend Developer",
-      department: "Engineering",
-      location: "Bangalore, India",
-      type: "Full-time",
-      experience: "3-5 years",
-      skills: ["React", "TypeScript", "Node.js"],
-      description: "Join our engineering team to build cutting-edge career development tools that impact millions of professionals.",
-      posted: "2 days ago"
-    },
-    {
-      title: "AI/ML Engineer",
-      department: "Engineering",
-      location: "Remote",
+      title: "HR Manager",
+      department: "Human Resources",
+      location: "Noida, India",
       type: "Full-time",
       experience: "4-6 years",
-      skills: ["Python", "TensorFlow", "ML Ops"],
-      description: "Help us build intelligent algorithms that power our career matching and recommendation systems.",
-      posted: "1 week ago"
+      skills: ["Talent Acquisition", "Employee Relations", "HRIS"],
+      description: "Lead our human resources initiatives including talent acquisition, employee engagement, performance management, and organizational development. Drive HR strategy to support business growth.",
+      posted: "2 days ago",
+      responsibilities: [
+        "Develop and implement HR strategies and initiatives aligned with overall business strategy",
+        "Manage the recruitment and selection process",
+        "Support current and future business needs through development, engagement, motivation and preservation of human capital",
+        "Develop and monitor overall HR strategies, systems, tactics and procedures across the organization",
+        "Nurture a positive working environment",
+        "Oversee and manage a performance appraisal system that drives high performance"
+      ],
+      requirements: [
+        "Proven working experience as HR Manager or other HR Executive",
+        "People-oriented and results-driven",
+        "Demonstrable experience with Human Resources metrics",
+        "Knowledge of HR systems and databases",
+        "In-depth knowledge of labor law and HR best practices",
+        "Degree in Human Resources or related field"
+      ]
     },
     {
-      title: "Product Manager",
-      department: "Product",
+      title: "Campus Manager",
+      department: "Operations",
       location: "Bangalore, India",
       type: "Full-time",
-      experience: "5-7 years",
-      skills: ["Product Strategy", "Analytics", "User Research"],
-      description: "Lead product initiatives that shape the future of career development and talent management.",
-      posted: "3 days ago"
-    },
-    {
-      title: "UX/UI Designer",
-      department: "Design",
-      location: "Hybrid",
-      type: "Full-time",
       experience: "3-5 years",
-      skills: ["Figma", "Design Systems", "User Research"],
-      description: "Create intuitive and beautiful experiences for our career platform used by thousands daily.",
-      posted: "1 day ago"
+      skills: ["Campus Relations", "Student Engagement", "Event Management"],
+      description: "Build and maintain relationships with top universities and educational institutions. Drive campus recruitment initiatives and manage internship programs to attract fresh talent.",
+      posted: "1 day ago",
+      responsibilities: [
+        "Develop and maintain relationships with universities, colleges, and educational institutions",
+        "Organize campus recruitment drives and job fairs",
+        "Manage internship programs and student engagement initiatives",
+        "Coordinate with academic institutions for collaboration opportunities",
+        "Represent Talentxcel at various campus events and career fairs",
+        "Build talent pipeline through campus partnerships"
+      ],
+      requirements: [
+        "Experience in campus recruitment or educational partnerships",
+        "Strong communication and relationship-building skills",
+        "Event management and coordination experience",
+        "Understanding of academic calendar and campus dynamics",
+        "Bachelor's degree in relevant field",
+        "Willingness to travel for campus visits"
+      ]
     },
     {
-      title: "Enterprise Sales Manager",
+      title: "Corporate Sales Executive",
       department: "Sales",
       location: "Mumbai, India",
       type: "Full-time",
-      experience: "5-8 years",
-      skills: ["B2B Sales", "SaaS", "Relationship Management"],
-      description: "Drive enterprise adoption of our talent management solutions across various industries.",
-      posted: "5 days ago"
+      experience: "2-4 years",
+      skills: ["B2B Sales", "Client Relationship", "Sales Strategy"],
+      description: "Drive revenue growth by acquiring new enterprise clients and expanding relationships with existing accounts. Focus on selling our comprehensive talent management solutions to corporations.",
+      posted: "3 days ago",
+      responsibilities: [
+        "Identify and pursue new business opportunities with corporate clients",
+        "Develop and execute sales strategies to meet revenue targets",
+        "Build and maintain strong relationships with key decision makers",
+        "Present Talentxcel solutions to prospective clients",
+        "Negotiate contracts and close deals",
+        "Collaborate with internal teams to ensure client success"
+      ],
+      requirements: [
+        "Proven track record in B2B sales, preferably in HR/talent management solutions",
+        "Strong communication and presentation skills",
+        "Experience with CRM systems and sales processes",
+        "Understanding of corporate hiring needs",
+        "Bachelor's degree in Business or related field",
+        "Target-driven mindset with ability to work independently"
+      ]
     },
     {
-      title: "Marketing Specialist",
+      title: "Admin Executive",
+      department: "Administration",
+      location: "Noida, India",
+      type: "Full-time",
+      experience: "2-3 years",
+      skills: ["Office Management", "Coordination", "Documentation"],
+      description: "Manage day-to-day administrative operations ensuring smooth functioning of office activities. Handle office management, vendor coordination, and administrative support to various departments.",
+      posted: "1 week ago",
+      responsibilities: [
+        "Manage daily office operations and administrative tasks",
+        "Coordinate with vendors and service providers",
+        "Maintain office supplies and equipment",
+        "Handle documentation and filing systems",
+        "Support various departments with administrative needs",
+        "Manage office facilities and ensure proper maintenance"
+      ],
+      requirements: [
+        "Experience in office administration or similar role",
+        "Strong organizational and multitasking skills",
+        "Proficiency in MS Office suite",
+        "Good communication skills",
+        "Attention to detail and problem-solving abilities",
+        "Graduate in any discipline"
+      ]
+    },
+    {
+      title: "Finance Manager",
+      department: "Finance",
+      location: "Noida, India",
+      type: "Full-time",
+      experience: "5-7 years",
+      skills: ["Financial Planning", "Budget Management", "Financial Analysis"],
+      description: "Lead financial planning, analysis, and reporting functions. Manage budgets, financial forecasting, and ensure compliance with financial regulations while supporting business growth initiatives.",
+      posted: "4 days ago",
+      responsibilities: [
+        "Prepare and analyze financial statements and reports",
+        "Manage budgeting and forecasting processes",
+        "Ensure compliance with financial regulations and standards",
+        "Oversee cash flow management and financial planning",
+        "Support strategic decision-making with financial insights",
+        "Manage relationships with banks, auditors, and financial institutions"
+      ],
+      requirements: [
+        "CA/CMA qualification or MBA in Finance",
+        "Strong experience in financial management and analysis",
+        "Knowledge of accounting software and ERP systems",
+        "Understanding of taxation and regulatory compliance",
+        "Strong analytical and problem-solving skills",
+        "Experience in startup or growing company environment preferred"
+      ]
+    },
+    {
+      title: "Sales Representative",
+      department: "Sales",
+      location: "Delhi NCR",
+      type: "Full-time",
+      experience: "1-3 years",
+      skills: ["Sales", "Customer Relations", "Lead Generation"],
+      description: "Generate leads and convert prospects into clients for our talent management services. Focus on building relationships with small to medium enterprises and growing our customer base.",
+      posted: "5 days ago",
+      responsibilities: [
+        "Generate leads through various channels including cold calling, networking, and referrals",
+        "Conduct product demonstrations and presentations to potential clients",
+        "Manage sales pipeline and follow up with prospects",
+        "Achieve monthly and quarterly sales targets",
+        "Build and maintain customer relationships",
+        "Provide feedback to product and marketing teams"
+      ],
+      requirements: [
+        "Experience in sales or business development",
+        "Strong communication and interpersonal skills",
+        "Self-motivated with a results-driven approach",
+        "Ability to work independently and as part of a team",
+        "Knowledge of sales processes and CRM systems",
+        "Bachelor's degree preferred"
+      ]
+    },
+    {
+      title: "Marketing Executive",
       department: "Marketing",
       location: "Remote",
       type: "Full-time",
       experience: "2-4 years",
-      skills: ["Digital Marketing", "Content Strategy", "SEO"],
-      description: "Help us grow our brand and reach professionals looking to advance their careers.",
-      posted: "1 week ago"
+      skills: ["Digital Marketing", "Content Marketing", "Brand Management"],
+      description: "Execute marketing campaigns across digital channels to increase brand awareness and generate leads. Manage content creation, social media, and marketing analytics to drive growth.",
+      posted: "6 days ago",
+      responsibilities: [
+        "Plan and execute digital marketing campaigns across various channels",
+        "Create engaging content for website, social media, and marketing materials",
+        "Manage social media accounts and online community engagement",
+        "Analyze marketing performance and optimize campaigns",
+        "Coordinate with design and content teams",
+        "Support brand building and awareness initiatives"
+      ],
+      requirements: [
+        "Experience in digital marketing and campaign management",
+        "Knowledge of marketing tools and analytics platforms",
+        "Strong content creation and copywriting skills",
+        "Understanding of SEO, SEM, and social media marketing",
+        "Creative thinking and problem-solving abilities",
+        "Bachelor's degree in Marketing or related field"
+      ]
+    },
+    {
+      title: "Social Media Manager",
+      department: "Marketing",
+      location: "Remote",
+      type: "Full-time",
+      experience: "2-4 years",
+      skills: ["Social Media Marketing", "Content Strategy", "Community Management"],
+      description: "Develop and execute social media strategy to build brand presence and engage with our community. Create compelling content and manage our social media platforms to drive engagement and growth.",
+      posted: "1 week ago",
+      responsibilities: [
+        "Develop and implement comprehensive social media strategies",
+        "Create and curate engaging content for all social media platforms",
+        "Manage day-to-day social media activities and community engagement",
+        "Monitor social media trends and competitor activities",
+        "Analyze social media metrics and prepare performance reports",
+        "Collaborate with marketing team on integrated campaigns"
+      ],
+      requirements: [
+        "Proven experience in social media management and marketing",
+        "Strong understanding of all major social media platforms",
+        "Excellent content creation and storytelling skills",
+        "Knowledge of social media analytics tools",
+        "Creative mindset with attention to detail",
+        "Bachelor's degree in Marketing, Communications, or related field"
+      ]
+    },
+    {
+      title: "Customer Service Representative",
+      department: "Customer Support",
+      location: "Noida, India",
+      type: "Full-time",
+      experience: "1-2 years",
+      skills: ["Customer Support", "Communication", "Problem Solving"],
+      description: "Provide exceptional customer support to our users through various channels. Handle inquiries, resolve issues, and ensure customer satisfaction while maintaining high service standards.",
+      posted: "3 days ago",
+      responsibilities: [
+        "Respond to customer inquiries via phone, email, and chat",
+        "Resolve customer issues and complaints in a timely manner",
+        "Provide information about products and services",
+        "Maintain accurate records of customer interactions",
+        "Escalate complex issues to appropriate teams",
+        "Contribute to customer satisfaction and retention efforts"
+      ],
+      requirements: [
+        "Excellent communication skills in English and Hindi",
+        "Customer service experience preferred",
+        "Strong problem-solving and multitasking abilities",
+        "Patience and empathy in dealing with customers",
+        "Basic computer skills and familiarity with support tools",
+        "High school diploma or equivalent"
+      ]
+    },
+    {
+      title: "Career Coach",
+      department: "Services",
+      location: "Remote",
+      type: "Full-time",
+      experience: "3-5 years",
+      skills: ["Career Counseling", "Coaching", "Psychology"],
+      description: "Provide career guidance and coaching to job seekers and professionals. Help individuals identify career paths, develop skills, and achieve their professional goals through personalized coaching sessions.",
+      posted: "2 days ago",
+      responsibilities: [
+        "Conduct one-on-one career coaching sessions with clients",
+        "Assess client strengths, interests, and career goals",
+        "Develop personalized career development plans",
+        "Provide guidance on job search strategies and interview preparation",
+        "Help clients build professional networks and personal branding",
+        "Track client progress and success metrics"
+      ],
+      requirements: [
+        "Certification in career coaching or counseling",
+        "Experience in career guidance or human resources",
+        "Strong interpersonal and communication skills",
+        "Understanding of job market trends and career development",
+        "Empathy and ability to motivate others",
+        "Bachelor's degree in Psychology, HR, or related field"
+      ]
+    },
+    {
+      title: "Resume Writing Specialist",
+      department: "Services",
+      location: "Remote",
+      type: "Full-time",
+      experience: "2-3 years",
+      skills: ["Resume Writing", "Content Writing", "Career Services"],
+      description: "Create compelling resumes and professional documents for job seekers. Provide resume writing, LinkedIn optimization, and career document services to help clients present their best professional image.",
+      posted: "1 day ago",
+      responsibilities: [
+        "Write and edit professional resumes, cover letters, and LinkedIn profiles",
+        "Conduct client consultations to understand career goals and background",
+        "Optimize resumes for ATS systems and industry standards",
+        "Provide guidance on personal branding and professional presentation",
+        "Stay updated with resume trends and best practices",
+        "Maintain high quality standards and quick turnaround times"
+      ],
+      requirements: [
+        "Proven experience in professional writing and resume creation",
+        "Strong understanding of various industries and job markets",
+        "Excellent writing and editing skills",
+        "Knowledge of ATS systems and keyword optimization",
+        "Attention to detail and ability to work with deadlines",
+        "Bachelor's degree in English, Communications, or related field"
+      ]
+    },
+    {
+      title: "Marketing Intern",
+      department: "Marketing",
+      location: "Noida, India",
+      type: "Internship",
+      experience: "0-1 years",
+      skills: ["Social Media", "Content Creation", "Market Research"],
+      description: "Join our marketing team as an intern to gain hands-on experience in digital marketing, content creation, and brand building. Perfect opportunity for students and recent graduates to kickstart their marketing career.",
+      posted: "1 week ago",
+      responsibilities: [
+        "Assist with social media content creation and scheduling",
+        "Support marketing campaigns and promotional activities",
+        "Conduct market research and competitor analysis",
+        "Help with event planning and coordination",
+        "Create marketing materials and presentations",
+        "Learn and apply digital marketing best practices"
+      ],
+      requirements: [
+        "Currently pursuing or recently completed degree in Marketing, Communications, or related field",
+        "Basic understanding of social media platforms",
+        "Strong written communication skills",
+        "Creative thinking and eagerness to learn",
+        "Proficiency in MS Office suite",
+        "Enthusiastic and proactive attitude"
+      ]
     }
   ];
 
-  const departments = ["All", "Engineering", "Product", "Design", "Sales", "Marketing"];
+  const departments = ["All", "Human Resources", "Operations", "Sales", "Administration", "Finance", "Marketing", "Customer Support", "Services"];
   const locations = ["All", "Bangalore", "Mumbai", "Remote", "Hybrid"];
 
   const benefits = [
@@ -252,7 +504,11 @@ const Careers = () => {
                     </div>
                     
                     <div className="lg:ml-6">
-                      <Button variant="outline" className="group w-full lg:w-auto">
+                      <Button 
+                        variant="outline" 
+                        className="group w-full lg:w-auto"
+                        onClick={() => window.open('https://talentxcel.in/job', '_blank')}
+                      >
                         Apply Now
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Button>

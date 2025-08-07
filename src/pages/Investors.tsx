@@ -257,24 +257,93 @@ const Investors = () => {
           </div>
         </section>
 
-        {/* Media Coverage */}
+        {/* Business Operations Visual */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Media Coverage</h2>
+              <h2 className="text-3xl font-bold mb-4">Our Business Operations</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Talentxcel has been featured across leading business and technology publications.
+                See how Talentxcel operates across different business functions to deliver exceptional results.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {mediaOutlets.map((outlet, index) => (
-                <Card key={index} className="p-6 text-center hover:shadow-medium transition-all duration-300 group">
-                  <div className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {outlet}
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              <div className="relative group">
+                <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src="/src/assets/business-strategy.jpg" 
+                    alt="Strategic Business Operations"
+                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-xl font-semibold mb-2">Strategic Planning</h3>
+                    <p className="text-sm opacity-90">Data-driven business strategies and market analysis</p>
                   </div>
-                </Card>
-              ))}
+                </div>
+              </div>
+              
+              <div className="relative group">
+                <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src="/src/assets/financial-growth.jpg" 
+                    alt="Financial Analytics"
+                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-xl font-semibold mb-2">Financial Growth</h3>
+                    <p className="text-sm opacity-90">Strong financial performance and growth metrics</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-6">
+              <div className="relative group">
+                <div className="rounded-2xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src="/src/assets/recruitment-process.jpg" 
+                    alt="Talent Acquisition"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h4 className="font-semibold mb-1">Talent Acquisition</h4>
+                    <p className="text-xs opacity-90">Expert recruitment services</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative group">
+                <div className="rounded-2xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src="/src/assets/digital-marketing.jpg" 
+                    alt="Digital Marketing"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h4 className="font-semibold mb-1">Digital Marketing</h4>
+                    <p className="text-xs opacity-90">Strategic brand building</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative group">
+                <div className="rounded-2xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                  <img 
+                    src="/src/assets/customer-service.jpg" 
+                    alt="Customer Support"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h4 className="font-semibold mb-1">Customer Excellence</h4>
+                    <p className="text-xs opacity-90">24/7 support services</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

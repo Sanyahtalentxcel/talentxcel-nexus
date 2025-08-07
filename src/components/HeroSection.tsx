@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Zap, Target, ExternalLink } from "lucide-react";
+import businessStrategy from "@/assets/business-strategy.jpg";
+import corporateOperations from "@/assets/corporate-operations.jpg";
+import recruitmentProcess from "@/assets/recruitment-process.jpg";
 
 const HeroSection = () => {
   const stats = [
@@ -106,13 +109,63 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Quick Links Section */}
+        {/* Business Showcase Section */}
         <div className="mt-24 pt-12 border-t border-border">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold mb-2">Explore TalentXcel Ecosystem</h2>
-            <p className="text-muted-foreground">Discover our comprehensive AI-first career platform and enterprise solutions</p>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">Our Business Excellence</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              See how Talentxcel operates across different business functions to deliver exceptional results and drive growth.
+            </p>
           </div>
           
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            <div className="relative group">
+              <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                <img 
+                  src={businessStrategy} 
+                  alt="Strategic Business Planning"
+                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-xl font-semibold mb-2">Strategic Planning</h3>
+                  <p className="text-sm opacity-90">Data-driven business strategies and market analysis</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                <img 
+                  src={corporateOperations} 
+                  alt="Corporate Operations"
+                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-xl font-semibold mb-2">Operations Excellence</h3>
+                  <p className="text-sm opacity-90">Streamlined business operations and efficiency</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                <img 
+                  src={recruitmentProcess} 
+                  alt="Talent Acquisition Process"
+                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-xl font-semibold mb-2">Talent Acquisition</h3>
+                  <p className="text-sm opacity-90">Expert recruitment and talent matching services</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Platform Links */}
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-glass hover:-translate-y-1 transition-all duration-300 group">
               <div className="flex items-start justify-between mb-6">
