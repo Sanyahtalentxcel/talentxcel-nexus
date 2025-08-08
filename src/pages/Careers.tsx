@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Users, Briefcase, ArrowRight, Search, Filter } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import teamSuccess from "@/assets/team-success.jpg";
 import modernWorkspace from "@/assets/modern-workspace.jpg";
 import trainingSession from "@/assets/training-session.jpg";
@@ -341,6 +342,11 @@ const Careers = () => {
       <Navbar />
       
       <main>
+        <Helmet>
+          <title>Careers | Join Talentxcel</title>
+          <meta name="description" content="Explore real jobs across HR, Sales, Marketing, IT and more at Talentxcel. Apply now on Talentxcel Jobs." />
+          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+        </Helmet>
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
@@ -356,8 +362,8 @@ const Careers = () => {
                   Find your next opportunity to make a meaningful impact.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" variant="platform">
-                    View All Positions
+                  <Button size="lg" variant="platform" asChild>
+                    <a href="https://talentxcel.in/jobs" target="_blank" rel="noopener noreferrer">View All Positions</a>
                   </Button>
                   <Button size="lg" variant="outline">
                     Learn About Our Culture
@@ -507,7 +513,7 @@ const Careers = () => {
                       <Button 
                         variant="outline" 
                         className="group w-full lg:w-auto"
-                        onClick={() => window.open('https://talentxcel.in/job', '_blank')}
+                        onClick={() => window.open('https://talentxcel.in/jobs', '_blank')}
                       >
                         Apply Now
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -616,8 +622,8 @@ const Careers = () => {
               Join our mission to transform careers and be part of building the future of work.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
-                Browse All Jobs
+              <Button size="lg" variant="secondary" asChild>
+                <a href="https://talentxcel.in/jobs" target="_blank" rel="noopener noreferrer">Browse All Jobs</a>
               </Button>
               <Button size="lg" variant="outline">
                 Learn About Our Culture

@@ -3,33 +3,35 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Users, 
-  GraduationCap, 
-  Server, 
-  Brain, 
-  FileText, 
-  Search, 
-  Target, 
-  CheckCircle, 
-  ArrowRight, 
+import {
+  Users,
+  GraduationCap,
+  Server,
+  Brain,
+  FileText,
+  Search,
+  Target,
+  CheckCircle,
+  ArrowRight,
   ExternalLink,
   Building2,
   UserCheck,
-  Settings
+  Settings,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import aiTechnology from "@/assets/ai-technology.jpg";
 import modernWorkspace from "@/assets/modern-workspace.jpg";
 import conferenceRoom from "@/assets/conference-room.jpg";
 import remoteWork from "@/assets/remote-work.jpg";
 import trainingSession from "@/assets/training-session.jpg";
 import dataCenter from "@/assets/data-center.jpg";
-
 const Services = () => {
   const organizationServices = [
     {
       icon: Users,
       title: "Staffing & Recruitment",
+      slug: "staffing-recruitment",
       description: "Comprehensive workforce solutions including contingent staffing, contract-to-hire, permanent placements, and recruitment process outsourcing (RPO).",
       features: [
         "Contingent Staffing",
@@ -44,6 +46,7 @@ const Services = () => {
     {
       icon: GraduationCap,
       title: "Training & Education",
+      slug: "training-education",
       description: "Tailored training programs ranging from technical upskilling to leadership development, designed to keep teams competitive and future-ready.",
       features: [
         "Technical Upskilling Programs",
@@ -58,6 +61,7 @@ const Services = () => {
     {
       icon: Server,
       title: "IT Consulting & Managed Services",
+      slug: "it-consulting-managed-services",
       description: "Expert guidance on infrastructure, cloud migration, cybersecurity, and end-to-end managed IT operations with proactive approach.",
       features: [
         "Infrastructure Consulting",
@@ -122,6 +126,11 @@ const Services = () => {
       <Navbar />
       
       <main>
+        <Helmet>
+          <title>Services | Talentxcel Workforce & IT Solutions</title>
+          <meta name="description" content="Staffing & recruitment, training & education, and IT consulting & managed services by Talentxcel." />
+          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+        </Helmet>
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
@@ -267,12 +276,16 @@ const Services = () => {
                     </div>
                     
                     <div className="flex flex-col justify-center space-y-4">
-                      <Button variant={service.popular ? "default" : "outline"} size="lg" className="w-full">
-                        Get Started
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                      <Button variant={service.popular ? "default" : "outline"} size="lg" className="w-full" asChild>
+                        <Link to="/contact" className="group">
+                          Get Started
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
                       </Button>
-                      <Button variant="outline" size="sm" className="w-full">
-                        Learn More
+                      <Button variant="outline" size="sm" className="w-full" asChild>
+                        <Link to={`/services/${service.slug}`}>
+                          Learn More
+                        </Link>
                       </Button>
                     </div>
                   </div>

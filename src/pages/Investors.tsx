@@ -18,6 +18,12 @@ import {
   Shield,
   ExternalLink
 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import businessStrategy from "@/assets/business-strategy.jpg";
+import financialGrowth from "@/assets/financial-growth.jpg";
+import recruitmentProcess from "@/assets/recruitment-process.jpg";
+import digitalMarketing from "@/assets/digital-marketing.jpg";
+import customerService from "@/assets/customer-service.jpg";
 
 const Investors = () => {
   const keyMetrics = [
@@ -87,6 +93,11 @@ const Investors = () => {
       <Navbar />
       
       <main>
+        <Helmet>
+          <title>Investors | Talentxcel Investment Opportunity</title>
+          <meta name="description" content="Invest in Talentxcel: AI-first career ecosystem with strong growth, enterprise traction, and scalable business model." />
+          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+        </Helmet>
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
@@ -271,9 +282,10 @@ const Investors = () => {
               <div className="relative group">
                 <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
                   <img 
-                    src="/src/assets/business-strategy.jpg" 
+                    src={businessStrategy} 
                     alt="Strategic Business Operations"
                     className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-6 left-6 text-white">
@@ -286,9 +298,10 @@ const Investors = () => {
               <div className="relative group">
                 <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
                   <img 
-                    src="/src/assets/financial-growth.jpg" 
+                    src={financialGrowth} 
                     alt="Financial Analytics"
                     className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-6 left-6 text-white">
@@ -303,9 +316,10 @@ const Investors = () => {
               <div className="relative group">
                 <div className="rounded-2xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
                   <img 
-                    src="/src/assets/recruitment-process.jpg" 
+                    src={recruitmentProcess} 
                     alt="Talent Acquisition"
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
@@ -318,9 +332,10 @@ const Investors = () => {
               <div className="relative group">
                 <div className="rounded-2xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
                   <img 
-                    src="/src/assets/digital-marketing.jpg" 
+                    src={digitalMarketing} 
                     alt="Digital Marketing"
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
@@ -333,9 +348,10 @@ const Investors = () => {
               <div className="relative group">
                 <div className="rounded-2xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
                   <img 
-                    src="/src/assets/customer-service.jpg" 
+                    src={customerService} 
                     alt="Customer Support"
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
