@@ -14,6 +14,7 @@ const Index = () => {
           <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
         </Helmet>
         <HeroSection />
+      </main>
       <Footer />
     </div>
   );
