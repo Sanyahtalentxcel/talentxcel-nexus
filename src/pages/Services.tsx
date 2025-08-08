@@ -486,7 +486,7 @@ const Services = () => {
                 Schedule Consultation
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="/contact">Get In Touch</a>
+                <Link to="/contact">Get In Touch</Link>
               </Button>
             </div>
           </div>

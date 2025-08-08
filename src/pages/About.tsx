@@ -3,12 +3,12 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Building2, Globe, Target, Users, Award, TrendingUp, Heart, Shield, Lightbulb, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 import corporateOffice from "@/assets/corporate-office.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import globalNetwork from "@/assets/global-network.jpg";
 import modernWorkspace from "@/assets/modern-workspace.jpg";
 import conferenceRoom from "@/assets/conference-room.jpg";
-
 const About = () => {
   const values = [
     {
@@ -336,14 +336,14 @@ const About = () => {
               Whether you're a professional looking to grow your career or an organization 
               seeking comprehensive workforce solutions, we're here to help you succeed.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild>
-                <a href="/careers">Explore Careers</a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href="/contact">Contact Us</a>
-              </Button>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" variant="secondary" asChild>
+                  <Link to="/careers">Explore Careers</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/contact">Contact Us</Link>
+                </Button>
+              </div>
           </div>
         </section>
       </main>
