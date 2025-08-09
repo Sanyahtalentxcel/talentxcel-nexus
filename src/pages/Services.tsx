@@ -87,13 +87,23 @@ const Services = () => {
       <main>
         <Helmet>
           <title>Services | Talentxcel Workforce & IT Solutions</title>
-          <meta name="description" content="Staffing & recruitment, training & education, and IT consulting & managed services by Talentxcel." />
+          <meta name="description" content="Global staffing, training, and IT managed services by Talentxcel. Explore enterprise and individual solutions." />
           <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": (typeof window!== 'undefined' ? window.location.origin : '') + "/"},
+                {"@type": "ListItem", "position": 2, "name": "Services", "item": (typeof window!== 'undefined' ? window.location.href : '')}
+              ]
+            })}
+          </script>
         </Helmet>
 
         {/* Hero Section - Compact */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
             <div className="text-center mb-12">
               <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
                 <Building2 className="h-3 w-3" />
@@ -126,7 +136,7 @@ const Services = () => {
         </section>
 
         {/* Services for Organizations - Compact Grid */}
-        <section id="organizations" className="py-16 lg:py-20">
+        <section id="organizations" className="py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Services for Organizations</h2>
@@ -210,7 +220,7 @@ const Services = () => {
         </section>
 
         {/* Services for Job Seekers - Compact */}
-        <section id="individuals" className="py-16 lg:py-20 bg-muted/30">
+        <section id="individuals" className="py-12 lg:py-16 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="flex items-center justify-center space-x-2 mb-4">

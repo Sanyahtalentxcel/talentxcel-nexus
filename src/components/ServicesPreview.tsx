@@ -28,9 +28,9 @@ const ServicesPreview = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-20">
+    <section className="py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 items-center mb-10">
           <div>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Enterprise-Grade Solutions
@@ -57,6 +57,8 @@ const ServicesPreview = () => {
               src={modernWorkspace} 
               alt="Modern Workspace"
               className="w-full h-80 object-cover rounded-2xl shadow-large"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-2xl" />
           </div>

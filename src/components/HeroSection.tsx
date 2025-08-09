@@ -16,7 +16,7 @@ const HeroSection = () => {
     <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.08),transparent_50%)]" />
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Content */}
           <div className="space-y-6">
@@ -79,6 +79,8 @@ const HeroSection = () => {
                 src={aiTechnology} 
                 alt="AI Technology Platform"
                 className="w-full h-80 lg:h-96 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
               
@@ -112,7 +114,7 @@ const HeroSection = () => {
         </div>
 
         {/* Stats Row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-16 lg:pt-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-10 lg:pt-12">
           {stats.map((stat, index) => (
             <div key={index} className="text-center lg:text-left">
               <div className="text-2xl lg:text-3xl font-bold text-primary mb-1">

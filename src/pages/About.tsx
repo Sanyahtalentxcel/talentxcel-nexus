@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Building2, Globe, Target, Users, Award, TrendingUp, Heart, Shield, Lightbulb, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import corporateOffice from "@/assets/corporate-office.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import globalNetwork from "@/assets/global-network.jpg";
@@ -78,11 +79,16 @@ const About = () => {
       <Navbar />
       
       <main>
+        <Helmet>
+          <title>About | Talentxcel Global Workforce & IT</title>
+          <meta name="description" content="Learn about Talentxcel's global workforce solutions and AI-first IT services. Discover our mission, values, and growth." />
+          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+        </Helmet>
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="space-y-4">
@@ -119,7 +125,7 @@ const About = () => {
         </section>
 
         {/* Company Stats */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Company Snapshot</h2>
@@ -141,7 +147,7 @@ const About = () => {
         </section>
 
         {/* Vision & Mission */}
-        <section className="py-20">
+        <section className="py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
@@ -179,7 +185,7 @@ const About = () => {
         </section>
 
         {/* Apple-inspired image gallery */}
-        <section className="py-20">
+        <section className="py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2">
@@ -227,7 +233,7 @@ const About = () => {
         </section>
 
         {/* Core Values */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
@@ -252,7 +258,7 @@ const About = () => {
         </section>
 
         {/* Global Reach */}
-        <section className="py-20">
+        <section className="py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
@@ -288,7 +294,7 @@ const About = () => {
         </section>
 
         {/* Our Journey */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Journey</h2>
@@ -329,7 +335,7 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-hero text-white">
+        <section className="py-14 bg-gradient-hero text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Join Our Mission?</h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">

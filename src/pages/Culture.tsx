@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Users, Lightbulb, Award, Coffee, Globe, Star, Quote } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const Culture = () => {
   const values = [
@@ -110,8 +111,13 @@ const Culture = () => {
       <Navbar />
       
       <main>
+        <Helmet>
+          <title>Culture | Talentxcel Global Team</title>
+          <meta name="description" content="Explore Talentxcel's culture: innovation, diversity, and growth. See how we build global teams." />
+          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+        </Helmet>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/5 py-24">
+        <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/5 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -126,7 +132,7 @@ const Culture = () => {
         </section>
 
         {/* Core Values */}
-        <section className="py-20">
+        <section className="py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">What Drives Us</h2>
@@ -150,7 +156,7 @@ const Culture = () => {
         </section>
 
         {/* Team Testimonials */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">What Our Team Says</h2>
@@ -185,7 +191,7 @@ const Culture = () => {
         </section>
 
         {/* Benefits & Perks */}
-        <section className="py-20">
+        <section className="py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Benefits & Perks</h2>
@@ -241,7 +247,7 @@ const Culture = () => {
         </section>
 
         {/* Initiatives */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Initiatives</h2>
@@ -272,7 +278,7 @@ const Culture = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-hero text-white">
+        <section className="py-14 bg-gradient-hero text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Be Part of Our Story?</h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">

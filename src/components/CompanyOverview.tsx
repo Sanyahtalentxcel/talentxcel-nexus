@@ -34,16 +34,16 @@ const CompanyOverview = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-20 bg-muted/30">
+    <section className="py-12 lg:py-16 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">Discover Talentxcel</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Learn more about our company, culture, opportunities, and vision for the future of talent.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid lg:grid-cols-2 gap-6 mb-8">
           {/* Company Story */}
           <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-glass transition-all duration-300">
             <div className="flex items-start space-x-6">
@@ -51,6 +51,8 @@ const CompanyOverview = () => {
                 src={teamCollaboration} 
                 alt="Team Collaboration"
                 className="w-24 h-24 object-cover rounded-xl flex-shrink-0"
+                loading="lazy"
+                decoding="async"
               />
               <div className="flex-1">
                 <h3 className="text-xl font-bold mb-2">Our Story</h3>
@@ -75,6 +77,8 @@ const CompanyOverview = () => {
                 src={corporateOffice} 
                 alt="Corporate Culture"
                 className="w-24 h-24 object-cover rounded-xl flex-shrink-0"
+                loading="lazy"
+                decoding="async"
               />
               <div className="flex-1">
                 <h3 className="text-xl font-bold mb-2">Our Culture</h3>
@@ -116,7 +120,7 @@ const CompanyOverview = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-12 pt-8 border-t border-border">
+        <div className="text-center mt-8 pt-6 border-t border-border">
           <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
             Whether you're looking to advance your career or find the perfect talent for your organization, 

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Clock, MessageCircle, Building, Users, Briefcase } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const contactMethods = [
@@ -71,8 +72,13 @@ const Contact = () => {
       <Navbar />
       
       <main>
+        <Helmet>
+          <title>Contact | Talentxcel Global Workforce & IT</title>
+          <meta name="description" content="Contact Talentxcel for global staffing, training, and IT consulting solutions. We're here to help worldwide." />
+          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+        </Helmet>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/5 py-24">
+        <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/5 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -87,7 +93,7 @@ const Contact = () => {
         </section>
 
         {/* Contact Methods */}
-        <section className="py-20">
+        <section className="py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {contactMethods.map((method, index) => (
@@ -103,7 +109,7 @@ const Contact = () => {
         </section>
 
         {/* Contact Form & Departments */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Form */}
@@ -185,7 +191,7 @@ const Contact = () => {
         </section>
 
         {/* Office Location */}
-        <section className="py-20">
+        <section className="py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Visit Our Office</h2>
@@ -255,7 +261,7 @@ const Contact = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
@@ -301,7 +307,7 @@ const Contact = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-hero text-white">
+        <section className="py-14 bg-gradient-hero text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">

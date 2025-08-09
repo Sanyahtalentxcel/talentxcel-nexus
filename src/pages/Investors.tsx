@@ -102,7 +102,7 @@ const Investors = () => {
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <TrendingUp className="h-4 w-4" />
@@ -132,7 +132,7 @@ const Investors = () => {
         </section>
 
         {/* Company Snapshot */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Company Snapshot</h2>
@@ -201,7 +201,7 @@ const Investors = () => {
         </section>
 
         {/* Competitive Edge */}
-        <section className="py-20">
+        <section className="py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Competitive Edge</h2>
@@ -229,7 +229,7 @@ const Investors = () => {
         </section>
 
         {/* Our Journey */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Journey</h2>
@@ -269,7 +269,7 @@ const Investors = () => {
         </section>
 
         {/* Business Operations Visual */}
-        <section className="py-20">
+        <section className="py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Our Business Operations</h2>
@@ -365,7 +365,7 @@ const Investors = () => {
         </section>
 
         {/* Why Partner with Us */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Why Partner with Us?</h2>
