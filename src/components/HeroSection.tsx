@@ -1,46 +1,44 @@
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Zap, Target, ExternalLink } from "lucide-react";
-import businessStrategy from "@/assets/business-strategy.jpg";
-import corporateOperations from "@/assets/corporate-operations.jpg";
-import recruitmentProcess from "@/assets/recruitment-process.jpg";
+import { ArrowRight, Users, Zap, Target, ExternalLink, Play } from "lucide-react";
+import { Link } from "react-router-dom";
+import aiTechnology from "@/assets/ai-technology.jpg";
 
 const HeroSection = () => {
   const stats = [
-    { number: "5K+", label: "Active Users" },
-    { number: "100+", label: "Enterprise Clients" },
-    { number: "95%", label: "Customer Retention" },
-    { number: "$2.1B", label: "India TAM" },
+    { number: "5K+", label: "Active Users", change: "+12%" },
+    { number: "100+", label: "Enterprise Clients", change: "+25%" },
+    { number: "95%", label: "Customer Retention", change: "+3%" },
+    { number: "$2.1B", label: "India TAM", change: "+18%" },
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
-      {/* Apple-style Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.08),transparent_50%)]" />
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                <Zap className="h-4 w-4" />
-                <span>Founded July 2024</span>
-              </div>
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Talentxcel
-                </span>
-                <br />
-                <span className="text-foreground">Invest in the Future of Talent</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Building the world's most comprehensive career ecosystem. AI-first platform reimagining 
-                discovery, engagement, and hiring in India's fast-evolving talent economy.
-              </p>
+          <div className="space-y-6">
+            <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-sm font-medium">
+              <Zap className="h-3 w-3" />
+              <span>Founded July 2024</span>
             </div>
+            
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight">
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                Talentxcel
+              </span>
+              <br />
+              <span className="text-foreground">Future of Talent</span>
+            </h1>
+            
+            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg">
+              AI-first platform reimagining discovery, engagement, and hiring in India's evolving talent economy.
+            </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Button size="lg" variant="platform" className="group" asChild>
                 <a
                   href="https://talentxcel.in"
@@ -49,169 +47,85 @@ const HeroSection = () => {
                   className="flex items-center space-x-2"
                 >
                   <span>Launch Platform</span>
-                  <ExternalLink className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button size="lg" variant="services" asChild>
-                <a
-                  href="https://talentxcel.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2"
-                >
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/services" className="flex items-center space-x-2">
                   <span>Explore Services</span>
-                  <ExternalLink className="h-4 w-4" />
-                </a>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center lg:text-left">
-                  <div className="text-2xl lg:text-3xl font-bold text-primary">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {stat.label}
+            {/* Quick Links */}
+            <div className="flex flex-wrap gap-4 pt-2 text-sm">
+              <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                About Us →
+              </Link>
+              <Link to="/careers" className="text-muted-foreground hover:text-primary transition-colors">
+                Careers →
+              </Link>
+              <Link to="/investors" className="text-muted-foreground hover:text-primary transition-colors">
+                Investors →
+              </Link>
+            </div>
+          </div>
+
+          {/* Visual */}
+          <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-large">
+              <img 
+                src={aiTechnology} 
+                alt="AI Technology Platform"
+                className="w-full h-80 lg:h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
+              
+              {/* Floating Play Button */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Button 
+                  size="icon" 
+                  variant="glass" 
+                  className="w-16 h-16 rounded-full backdrop-blur-md"
+                >
+                  <Play className="h-6 w-6 ml-1" />
+                </Button>
+              </div>
+            </div>
+            
+            {/* Floating Stats */}
+            <div className="absolute -bottom-6 -left-4 right-4 grid grid-cols-2 gap-3">
+              {stats.slice(0, 2).map((stat, index) => (
+                <div key={index} className="bg-card/90 backdrop-blur-md border border-border/50 rounded-xl p-4 shadow-glass">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-lg font-bold text-primary">{stat.number}</div>
+                      <div className="text-xs text-muted-foreground">{stat.label}</div>
+                    </div>
+                    <div className="text-xs text-accent font-medium">{stat.change}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
-          {/* Visual Element */}
-          <div className="relative">
-            <div className="relative rounded-3xl bg-card/60 backdrop-blur-xl border border-border/50 p-10 shadow-glass">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Feature Cards */}
-                <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-8 border border-border/30 hover:shadow-medium transition-all duration-300">
-                  <Users className="h-10 w-10 mb-4 text-primary" />
-                  <h3 className="font-semibold mb-3 text-foreground">Talent Matching</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">AI-powered matching between talent and opportunities</p>
-                </div>
-                <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-8 border border-border/30 hover:shadow-medium transition-all duration-300">
-                  <Target className="h-10 w-10 mb-4 text-accent" />
-                  <h3 className="font-semibold mb-3 text-foreground">Career Growth</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Comprehensive tools for professional development</p>
-                </div>
-                <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-8 border border-border/30 hover:shadow-medium transition-all duration-300 md:col-span-2">
-                  <Zap className="h-10 w-10 mb-4 text-primary" />
-                  <h3 className="font-semibold mb-3 text-foreground">Enterprise Solutions</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Scalable solutions for corporations and institutions to manage and develop talent effectively</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Apple-style floating elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/10 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl"></div>
-          </div>
         </div>
 
-        {/* Business Showcase Section */}
-        <div className="mt-24 pt-12 border-t border-border">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Our Business Excellence</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              See how Talentxcel operates across different business functions to deliver exceptional results and drive growth.
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            <div className="relative group">
-              <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
-                <img 
-                  src={businessStrategy} 
-                  alt="Strategic Business Planning"
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-xl font-semibold mb-2">Strategic Planning</h3>
-                  <p className="text-sm opacity-90">Data-driven business strategies and market analysis</p>
-                </div>
+        {/* Stats Row */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-16 lg:pt-20">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center lg:text-left">
+              <div className="text-2xl lg:text-3xl font-bold text-primary mb-1">
+                {stat.number}
+              </div>
+              <div className="text-sm text-muted-foreground mb-1">
+                {stat.label}
+              </div>
+              <div className="text-xs text-accent font-medium">
+                {stat.change}
               </div>
             </div>
-            
-            <div className="relative group">
-              <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
-                <img 
-                  src={corporateOperations} 
-                  alt="Corporate Operations"
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-xl font-semibold mb-2">Operations Excellence</h3>
-                  <p className="text-sm opacity-90">Streamlined business operations and efficiency</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative group">
-              <div className="rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
-                <img 
-                  src={recruitmentProcess} 
-                  alt="Talent Acquisition Process"
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-xl font-semibold mb-2">Talent Acquisition</h3>
-                  <p className="text-sm opacity-90">Expert recruitment and talent matching services</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Platform Links */}
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-glass hover:-translate-y-1 transition-all duration-300 group">
-              <div className="flex items-start justify-between mb-6">
-                <div className="p-3 bg-primary/10 rounded-2xl">
-                  <Target className="h-8 w-8 text-primary" />
-                </div>
-                <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              </div>
-              <h3 className="font-bold mb-3 text-lg">TalentXcel.in</h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">Main career platform with AI-powered tools, job matching, and professional development resources.</p>
-              <Button variant="platform" size="sm" className="w-full" asChild>
-                <a href="https://talentxcel.in" target="_blank" rel="noopener noreferrer">
-                  Launch Platform
-                </a>
-              </Button>
-            </div>
-
-            <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-glass hover:-translate-y-1 transition-all duration-300 group">
-              <div className="flex items-start justify-between mb-6">
-                <div className="p-3 bg-accent/10 rounded-2xl">
-                  <Users className="h-8 w-8 text-accent" />
-                </div>
-                <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-colors" />
-              </div>
-              <h3 className="font-bold mb-3 text-lg">TalentXcel.net</h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">Enterprise services, API integrations, and corporate solutions for talent management.</p>
-              <Button variant="services" size="sm" className="w-full" asChild>
-                <a href="https://talentxcel.net" target="_blank" rel="noopener noreferrer">
-                  Explore Services
-                </a>
-              </Button>
-            </div>
-
-            <div className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-glass hover:-translate-y-1 transition-all duration-300 group">
-              <div className="flex items-start justify-between mb-6">
-                <div className="p-3 bg-muted/50 rounded-2xl">
-                  <Zap className="h-8 w-8 text-foreground" />
-                </div>
-              </div>
-              <h3 className="font-bold mb-3 text-lg">Corporate Hub</h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">Learn about our company, team, culture, and opportunities to join our mission.</p>
-              <Button variant="outline" size="sm" className="w-full">
-                Explore Company
-              </Button>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
