@@ -17,6 +17,7 @@ import {
   ExternalLink,
   Building2,
   UserCheck,
+  TrendingUp,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
