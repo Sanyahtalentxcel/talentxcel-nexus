@@ -115,18 +115,6 @@ const Investors = () => {
                 Building the world's most comprehensive career ecosystem. 
                 AI-first platform reimagining discovery, engagement, and hiring in India's fast-evolving talent economy.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="default" className="group">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Pitch Deck
-                  <ArrowUpRight className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline" className="group">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Schedule Meeting
-                </Button>
-              </div>
             </div>
           </div>
         </section>
@@ -504,17 +492,6 @@ const Investors = () => {
               Join us in building the world's most comprehensive career ecosystem. 
               Get in touch to learn more about our investment opportunity.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button size="lg" variant="secondary" className="group">
-                <Download className="mr-2 h-5 w-5" />
-                Download Pitch Deck
-              </Button>
-              <Button size="lg" variant="outline" className="group">
-                <Calendar className="mr-2 h-5 w-5" />
-                Schedule Meeting
-              </Button>
-            </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
               <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
