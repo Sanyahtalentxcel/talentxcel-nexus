@@ -30,52 +30,52 @@ const Investors = () => {
     { metric: "5,000+", label: "Active Users", growth: "+150% YoY", icon: Users },
     { metric: "100+", label: "Enterprise Clients", growth: "+200% YoY", icon: Building2 },
     { metric: "95%", label: "Customer Retention", growth: "+5% YoY", icon: Target },
-    { metric: "$2.1B", label: "India TAM", growth: "15% CAGR", icon: Globe }
+    { metric: "$2.3B", label: "India TAM 2033", growth: "7.9% CAGR", icon: Globe }
   ];
 
   const competitiveAdvantages = [
     {
       icon: Brain,
-      title: "AI-First Platform",
-      description: "Advanced ML models for precise talent-opportunity matching with proprietary algorithms"
+      title: "AI-First Matching",
+      description: "Proprietary ML models for higher-quality fits, not just keyword/recency matching"
     },
     {
       icon: Globe,
-      title: "Multi-Platform Ecosystem",
-      description: "End-to-end value chain from individual discovery to enterprise hiring solutions"
+      title: "End-to-End Platform",
+      description: "Candidate discovery → resume/cover letter tools → assessments → employer hiring workflows"
     },
     {
       icon: TrendingUp,
-      title: "Strong Network Effects",
-      description: "Platform value scales exponentially with each new user and enterprise client"
+      title: "Network Effects",
+      description: "More users → stronger data flywheel → better matches → lower CAC"
     },
     {
       icon: Shield,
-      title: "Execution-Focused",
-      description: "Proven ability to deliver, grow, and scale in competitive talent markets"
+      title: "Execution Discipline",
+      description: "Fast GTM in India proven scaling in highly competitive markets"
     }
   ];
 
   const timeline = [
     {
-      period: "July 2024",
+      period: "Jul 2024",
       title: "Company Founded",
-      description: "Launched with mission to empower India's talent using AI-first technology"
+      description: "Founded with AI-first talent mission to empower India's talent ecosystem"
     },
     {
       period: "Late 2024",
-      title: "Beta Platform Launch",
-      description: "Early traction across metros with AI-powered talent matching platform"
+      title: "Beta Launch",
+      description: "Strong metro traction with AI-powered talent matching platform"
     },
     {
       period: "2025 YTD",
-      title: "Rapid Growth Phase",
-      description: "Achieved 5,000+ users, 100+ enterprise clients, substantial revenue growth"
+      title: "Rapid Growth",
+      description: "5,000+ users, 100+ clients, rapid revenue growth trajectory"
     },
     {
       period: "Present",
       title: "Series A Ready",
-      description: "Positioned for institutional funding to accelerate growth and expansion"
+      description: "Ready to accelerate growth distribution, product depth, and employer integrations"
     }
   ];
 
@@ -164,23 +164,27 @@ const Investors = () => {
               </div>
               
               <Card className="p-8 hover:shadow-medium transition-shadow duration-300">
-                <h3 className="text-xl font-semibold mb-4">Market Opportunity</h3>
+                <h3 className="text-xl font-semibold mb-4">Market Opportunity (2025)</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Global Talent Management Market</span>
-                    <span className="font-semibold">$12.3B by 2026</span>
+                    <span className="text-muted-foreground">Global TMS Market</span>
+                    <span className="font-semibold">$10B → $22.7-25B by 2030</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">India TAM</span>
-                    <span className="font-semibold">$2.1B, 15% CAGR</span>
+                    <span className="text-muted-foreground">India HR Tech TAM</span>
+                    <span className="font-semibold">$1.12B → $2.3B by 2033</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Underserved Workforce</span>
-                    <span className="font-semibold">500M+ professionals</span>
+                    <span className="text-muted-foreground">Labor Force</span>
+                    <span className="font-semibold">608M+ people</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Target Companies</span>
-                    <span className="font-semibold">2M+ Indian companies</span>
+                    <span className="text-muted-foreground">Addressable Enterprises</span>
+                    <span className="font-semibold">2.81M companies</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Formalized MSMEs</span>
+                    <span className="font-semibold">6.4-6.7 crore</span>
                   </div>
                 </div>
               </Card>
@@ -224,6 +228,69 @@ const Investors = () => {
                   </div>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Macro Tailwinds & Why Now */}
+        <section className="py-14 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold mb-4">Macro Tailwinds & Why Now</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Perfect timing with India's structural transformation driving unprecedented demand for HR tech solutions.
+              </p>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <Card className="p-8 hover:shadow-medium transition-shadow duration-300">
+                  <h3 className="text-xl font-semibold mb-6">Global Capability Centers (GCCs)</h3>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">GCCs in India</span>
+                      <span className="font-semibold">1,700-1,950+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Employment</span>
+                      <span className="font-semibold">1.9M+ employees</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Tech Adoption</span>
+                      <span className="font-semibold">Modern HR stacks</span>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4">Why Now?</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Formalization Wave</h4>
+                        <p className="text-muted-foreground text-sm">MSMEs adopting digital HR faster than ever, creating massive demand</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                      <div>
+                        <h4 className="font-semibold mb-1">GCC Growth</h4>
+                        <p className="text-muted-foreground text-sm">MNCs localizing with India-first HR tech needs</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Labor Force Depth</h4>
+                        <p className="text-muted-foreground text-sm">600M+ talent pool underserved in discovery & opportunity access</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -404,24 +471,24 @@ const Investors = () => {
                 </div>
               </div>
               
-              <Card className="p-8 hover:shadow-medium transition-shadow duration-300">
-                <h3 className="text-xl font-semibold mb-6">Investment Highlights</h3>
+                <Card className="p-8 hover:shadow-medium transition-shadow duration-300">
+                <h3 className="text-xl font-semibold mb-6">Investment Highlights (2025)</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between py-2 border-b border-border">
-                    <span className="text-muted-foreground">Market Size</span>
-                    <span className="font-semibold">$2.1B India TAM</span>
+                    <span className="text-muted-foreground">India TAM</span>
+                    <span className="font-semibold">$2.3B by 2033</span>
                   </div>
                   <div className="flex items-center justify-between py-2 border-b border-border">
-                    <span className="text-muted-foreground">Growth Rate</span>
-                    <span className="font-semibold">180% Revenue Growth</span>
+                    <span className="text-muted-foreground">Active Users</span>
+                    <span className="font-semibold">5,000+ (+150% YoY)</span>
                   </div>
                   <div className="flex items-center justify-between py-2 border-b border-border">
-                    <span className="text-muted-foreground">User Growth</span>
-                    <span className="font-semibold">150% YoY</span>
+                    <span className="text-muted-foreground">Enterprise Clients</span>
+                    <span className="font-semibold">100+ (+200% YoY)</span>
                   </div>
                   <div className="flex items-center justify-between py-2">
-                    <span className="text-muted-foreground">Retention</span>
-                    <span className="font-semibold">95% Customer Retention</span>
+                    <span className="text-muted-foreground">Retention Rate</span>
+                    <span className="font-semibold">95% (+5% YoY)</span>
                   </div>
                 </div>
               </Card>
