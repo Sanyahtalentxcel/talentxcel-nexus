@@ -365,94 +365,108 @@ const Investors = () => {
             
             <div className="grid lg:grid-cols-2 gap-8 mb-20">
               {/* Talentxcel Platform */}
-              <Card className="p-8 hover:shadow-large transition-all duration-300 group">
-                <div className="flex items-center justify-between mb-6">
-                  <Badge className="bg-primary text-primary-foreground">Flagship Product</Badge>
-                  <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-4">Talentxcel Platform</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  AI-first career ecosystem empowering India's talent with intelligent job matching, 
-                  resume building, skill assessments, and comprehensive hiring workflows. Serving 5,000+ 
-                  active users and 100+ enterprise clients with 95% retention.
-                </p>
-                
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    <span className="text-sm">AI-powered talent matching</span>
+              <a 
+                href="https://talentxcel.in" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Card className="p-8 hover:shadow-large transition-all duration-300 group cursor-pointer h-full">
+                  <div className="flex items-center justify-between mb-6">
+                    <Badge className="bg-primary text-primary-foreground">Flagship Product</Badge>
+                    <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    <span className="text-sm">End-to-end hiring workflows</span>
+                  
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Talentxcel Platform</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    AI-first career ecosystem empowering India's talent with intelligent job matching, 
+                    resume building, skill assessments, and comprehensive hiring workflows. Serving 5,000+ 
+                    active users and 100+ enterprise clients with 95% retention.
+                  </p>
+                  
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <span className="text-sm">AI-powered talent matching</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <span className="text-sm">End-to-end hiring workflows</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <span className="text-sm">Skills assessment & development</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <span className="text-sm">Enterprise ATS integration</span>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    <span className="text-sm">Skills assessment & development</span>
+                  
+                  <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
+                    <div>
+                      <div className="text-2xl font-bold text-primary">5K+</div>
+                      <div className="text-xs text-muted-foreground">Active Users</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-primary">100+</div>
+                      <div className="text-xs text-muted-foreground">Enterprises</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-primary">95%</div>
+                      <div className="text-xs text-muted-foreground">Retention</div>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    <span className="text-sm">Enterprise ATS integration</span>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
-                  <div>
-                    <div className="text-2xl font-bold text-primary">5K+</div>
-                    <div className="text-xs text-muted-foreground">Active Users</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary">100+</div>
-                    <div className="text-xs text-muted-foreground">Enterprises</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary">95%</div>
-                    <div className="text-xs text-muted-foreground">Retention</div>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </a>
 
               {/* Chatr.chat Platform */}
-              <Card className="p-8 hover:shadow-large transition-all duration-300 group">
-                <div className="flex items-center justify-between mb-6">
-                  <Badge variant="secondary">AI Communication</Badge>
-                  <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-4">Chatr.chat</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Next-generation AI-powered communication platform revolutionizing how professionals 
-                  collaborate, share knowledge, and build connections. Smart conversations enhanced 
-                  with contextual AI assistance and intelligent workflow automation.
-                </p>
-                
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    <span className="text-sm">AI-enhanced conversations</span>
+              <a 
+                href="https://chatr.chat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Card className="p-8 hover:shadow-large transition-all duration-300 group cursor-pointer h-full">
+                  <div className="flex items-center justify-between mb-6">
+                    <Badge variant="secondary">AI Communication</Badge>
+                    <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    <span className="text-sm">Smart knowledge management</span>
+                  
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Chatr.chat</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Next-generation AI-powered communication platform revolutionizing how professionals 
+                    collaborate, share knowledge, and build connections. Smart conversations enhanced 
+                    with contextual AI assistance and intelligent workflow automation.
+                  </p>
+                  
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <span className="text-sm">AI-enhanced conversations</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <span className="text-sm">Smart knowledge management</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <span className="text-sm">Professional networking</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <span className="text-sm">Workflow automation</span>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    <span className="text-sm">Professional networking</span>
+                  
+                  <div className="pt-6 border-t border-border">
+                    <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
+                      <Zap className="h-4 w-4" />
+                      <span>Launching Q2 2025</span>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    <span className="text-sm">Workflow automation</span>
-                  </div>
-                </div>
-                
-                <div className="pt-6 border-t border-border">
-                  <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                    <Zap className="h-4 w-4" />
-                    <span>Launching Q2 2025</span>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </a>
             </div>
           </div>
         </section>
