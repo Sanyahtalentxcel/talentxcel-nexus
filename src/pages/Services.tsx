@@ -86,16 +86,74 @@ const Services = () => {
       
       <main>
         <Helmet>
-          <title>Services | Talentxcel Workforce & IT Solutions</title>
-          <meta name="description" content="Global staffing, training, and IT managed services by Talentxcel. Explore enterprise and individual solutions." />
-          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+          <title>Services - Staffing, Training, IT Consulting | Talentxcel Enterprise & Career Solutions</title>
+          <meta name="description" content="Talentxcel services: Enterprise staffing & recruitment, IT consulting & managed services, training & education programs. Individual services: AI resume builder, job matching, career coaching. Serving India, Europe, Middle East." />
+          <meta name="keywords" content="Talentxcel services, staffing solutions, recruitment services, IT consulting, managed IT services, training programs, AI resume builder, job matching, career coaching, RPO services, corporate training, talent management" />
+          <link rel="canonical" href="https://talentxcel.co.in/services" />
+          
+          {/* Open Graph */}
+          <meta property="og:title" content="Services - Enterprise & Career Solutions | Talentxcel" />
+          <meta property="og:description" content="Comprehensive workforce solutions: Staffing, IT consulting, training. AI-powered career services: Resume builder, job matching, coaching." />
+          <meta property="og:url" content="https://talentxcel.co.in/services" />
+          <meta property="og:type" content="website" />
+          
+          {/* Twitter */}
+          <meta name="twitter:title" content="Services - Enterprise & Career Solutions | Talentxcel" />
+          <meta name="twitter:description" content="Staffing, IT consulting, training & AI-powered career services." />
+          
+          {/* Structured Data - Service */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "serviceType": "Talent Management and Workforce Solutions",
+              "provider": {
+                "@type": "Organization",
+                "name": "Talentxcel",
+                "url": "https://talentxcel.co.in"
+              },
+              "areaServed": ["India", "Europe", "Middle East"],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Talentxcel Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Staffing & Recruitment",
+                      "description": "Complete workforce solutions including contingent staffing, permanent placements, and RPO services"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "IT Consulting & Managed Services",
+                      "description": "Expert IT infrastructure, cloud migration, cybersecurity, and 24/7 managed operations"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Training & Education",
+                      "description": "Comprehensive training programs from technical upskilling to leadership development"
+                    }
+                  }
+                ]
+              }
+            })}
+          </script>
+          
+          {/* Breadcrumb */}
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "Home", "item": (typeof window!== 'undefined' ? window.location.origin : '') + "/"},
-                {"@type": "ListItem", "position": 2, "name": "Services", "item": (typeof window!== 'undefined' ? window.location.href : '')}
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://talentxcel.co.in/"},
+                {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://talentxcel.co.in/services"}
               ]
             })}
           </script>

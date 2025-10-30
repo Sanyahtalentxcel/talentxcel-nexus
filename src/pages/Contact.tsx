@@ -73,9 +73,61 @@ const Contact = () => {
       
       <main>
         <Helmet>
-          <title>Contact | Talentxcel Global Workforce & IT</title>
-          <meta name="description" content="Contact Talentxcel for global staffing, training, and IT consulting solutions. We're here to help worldwide." />
-          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+          <title>Contact Talentxcel - Get in Touch | Enterprise Sales, Support, Career Services</title>
+          <meta name="description" content="Contact Talentxcel: Enterprise sales, customer support, career services. Email: contact@talentxcel.co.in | Phone: +91 9717181609 | Office: Noida, India. Serving India, Europe, Middle East. Mon-Fri 9AM-6PM IST." />
+          <meta name="keywords" content="contact Talentxcel, Talentxcel email, Talentxcel phone, Noida office, enterprise sales, customer support, career services, business inquiries, partnership opportunities, get in touch" />
+          <link rel="canonical" href="https://talentxcel.co.in/contact" />
+          
+          {/* Open Graph */}
+          <meta property="og:title" content="Contact Talentxcel - Enterprise & Career Services" />
+          <meta property="og:description" content="Get in touch: contact@talentxcel.co.in | +91 9717181609 | Noida, India" />
+          <meta property="og:url" content="https://talentxcel.co.in/contact" />
+          <meta property="og:type" content="website" />
+          
+          {/* Twitter */}
+          <meta name="twitter:title" content="Contact Talentxcel" />
+          <meta name="twitter:description" content="Enterprise sales, support & career services. Email or call us today." />
+          
+          {/* Structured Data - Contact Page */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Talentxcel",
+                "url": "https://talentxcel.co.in",
+                "contactPoint": [
+                  {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9717181609",
+                    "contactType": "customer service",
+                    "email": "contact@talentxcel.co.in",
+                    "availableLanguage": ["English", "Hindi"],
+                    "areaServed": ["IN", "EU", "ME"]
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    "contactType": "sales",
+                    "email": "enterprise@talentxcel.co.in"
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    "contactType": "technical support",
+                    "email": "support@talentxcel.co.in"
+                  }
+                ],
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Plot C, ESquare Building, 2, Sector-45",
+                  "addressLocality": "Noida",
+                  "addressRegion": "Uttar Pradesh",
+                  "postalCode": "201301",
+                  "addressCountry": "India"
+                }
+              }
+            })}
+          </script>
         </Helmet>
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/5 py-16">

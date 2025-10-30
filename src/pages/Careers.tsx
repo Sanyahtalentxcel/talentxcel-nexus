@@ -343,9 +343,74 @@ const Careers = () => {
       
       <main>
         <Helmet>
-          <title>Careers | Join Talentxcel</title>
-          <meta name="description" content="Explore real jobs across HR, Sales, Marketing, IT and more at Talentxcel. Apply now on Talentxcel Jobs." />
-          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+          <title>Careers at Talentxcel - Join India's AI-First Talent Platform | HR, Sales, Tech Jobs | Noida</title>
+          <meta name="description" content="Explore careers at Talentxcel: HR Manager, Campus Manager, Sales Executive, Finance Manager, Marketing, Customer Service, Career Coach positions. Founded 2024 | Noida, Bangalore, Mumbai, Remote. Join 5K+ users revolution. Apply today on TalentXcel.in/job" />
+          <meta name="keywords" content="Talentxcel careers, HR manager jobs, campus manager, corporate sales, admin executive, finance manager, marketing jobs, social media manager, customer service, career coach, resume specialist, internships, Noida jobs, Bangalore jobs, Mumbai jobs, remote jobs, startup careers" />
+          <link rel="canonical" href="https://talentxcel.co.in/careers" />
+          
+          {/* Open Graph */}
+          <meta property="og:title" content="Careers at Talentxcel - Join India's AI Talent Platform" />
+          <meta property="og:description" content="Hiring across HR, Sales, Tech, Marketing. Noida, Bangalore, Mumbai, Remote. Join our growth story." />
+          <meta property="og:url" content="https://talentxcel.co.in/careers" />
+          <meta property="og:type" content="website" />
+          
+          {/* Twitter */}
+          <meta name="twitter:title" content="Careers at Talentxcel" />
+          <meta name="twitter:description" content="Join India's AI-first talent platform. Multiple openings across departments." />
+          
+          {/* Structured Data - JobPosting */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "JobPosting",
+              "title": "Multiple Positions Available at Talentxcel",
+              "description": "Join Talentxcel's mission to transform careers. Multiple openings including HR Manager, Campus Manager, Sales Executive, and more",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Talentxcel",
+                "sameAs": "https://talentxcel.co.in",
+                "logo": "https://talentxcel.co.in/lovable-uploads/5b681ba5-58bf-4aae-8bef-3ba691eef586.png"
+              },
+              "jobLocation": [
+                {
+                  "@type": "Place",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Noida",
+                    "addressRegion": "Uttar Pradesh",
+                    "addressCountry": "India"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Bangalore",
+                    "addressRegion": "Karnataka",
+                    "addressCountry": "India"
+                  }
+                },
+                {
+                  "@type": "Place",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Mumbai",
+                    "addressRegion": "Maharashtra",
+                    "addressCountry": "India"
+                  }
+                }
+              ],
+              "employmentType": ["FULL_TIME", "INTERN"],
+              "datePosted": "2025-01-15",
+              "validThrough": "2025-12-31",
+              "applicationContact": {
+                "@type": "ContactPoint",
+                "url": "https://talentxcel.in/job",
+                "email": "careers@talentxcel.co.in"
+              },
+              "industry": "Human Resources and Talent Management"
+            })}
+          </script>
         </Helmet>
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">

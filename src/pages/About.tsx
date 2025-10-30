@@ -80,9 +80,45 @@ const About = () => {
       
       <main>
         <Helmet>
-          <title>About | Talentxcel Global Workforce & IT</title>
-          <meta name="description" content="Learn about Talentxcel's global workforce solutions and AI-first IT services. Discover our mission, values, and growth." />
-          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+          <title>About Talentxcel - AI-Powered Career Ecosystem | Founded 2024 | 5K+ Users</title>
+          <meta name="description" content="Talentxcel: Founded July 2024 in Noida. AI-first talent management platform serving 5,000+ users, 100+ enterprises across India, Europe & Middle East. 95% retention, $2.3B TAM. Innovation-driven workforce solutions." />
+          <meta name="keywords" content="Talentxcel company, about Talentxcel, AI talent management, workforce solutions India, HR tech startup, Talentxcel history, founded 2024, Noida headquarters, talent ecosystem, career platform" />
+          <link rel="canonical" href="https://talentxcel.co.in/about" />
+          
+          {/* Open Graph */}
+          <meta property="og:title" content="About Talentxcel - AI Career Ecosystem | 5K+ Users, 100+ Enterprises" />
+          <meta property="og:description" content="Founded July 2024. AI-first platform serving 5,000+ users with 95% retention. Innovation-driven talent solutions." />
+          <meta property="og:url" content="https://talentxcel.co.in/about" />
+          <meta property="og:type" content="website" />
+          
+          {/* Twitter */}
+          <meta name="twitter:title" content="About Talentxcel - AI Career Ecosystem" />
+          <meta name="twitter:description" content="Founded July 2024. 5K+ users, 100+ enterprises, 95% retention. AI-first talent management." />
+          
+          {/* Structured Data */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Talentxcel",
+                "foundingDate": "2024-07",
+                "description": "AI-powered career ecosystem providing comprehensive workforce solutions",
+                "numberOfEmployees": "50-100",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Plot C, ESquare Building, 2, Sector-45",
+                  "addressLocality": "Noida",
+                  "addressRegion": "Uttar Pradesh",
+                  "postalCode": "201301",
+                  "addressCountry": "India"
+                },
+                "knowsAbout": ["Artificial Intelligence", "Talent Management", "HR Technology", "Career Development"],
+                "award": ["5000+ Active Users", "95% Customer Retention", "100+ Enterprise Clients"]
+              }
+            })}
+          </script>
         </Helmet>
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">

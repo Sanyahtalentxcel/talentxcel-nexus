@@ -112,9 +112,54 @@ const Culture = () => {
       
       <main>
         <Helmet>
-          <title>Culture | Talentxcel Global Team</title>
-          <meta name="description" content="Explore Talentxcel's culture: innovation, diversity, and growth. See how we build global teams." />
-          <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+          <title>Culture & Values - Talentxcel Team | Work-Life Balance, Diversity, Innovation</title>
+          <meta name="description" content="Talentxcel culture: Innovation, diversity, work-life balance. 40% female leadership, flexible work, unlimited PTO, comprehensive health benefits. Join our global team building India's AI-first talent platform. Noida headquarters, remote opportunities." />
+          <meta name="keywords" content="Talentxcel culture, company values, work life balance, diversity inclusion, team benefits, startup culture, flexible work, remote opportunities, professional development, employee testimonials, office culture Noida" />
+          <link rel="canonical" href="https://talentxcel.co.in/culture" />
+          
+          {/* Open Graph */}
+          <meta property="og:title" content="Culture & Values - Talentxcel Team" />
+          <meta property="og:description" content="Innovation, diversity, growth. 40% female leadership, flexible work, unlimited PTO. Join our mission." />
+          <meta property="og:url" content="https://talentxcel.co.in/culture" />
+          <meta property="og:type" content="website" />
+          
+          {/* Twitter */}
+          <meta name="twitter:title" content="Culture & Values - Talentxcel" />
+          <meta name="twitter:description" content="Work-life balance, diversity, continuous learning. Join our team." />
+          
+          {/* Structured Data */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "Talentxcel Culture",
+              "description": "Learn about Talentxcel's culture, values, and work environment",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Talentxcel",
+                "url": "https://talentxcel.co.in",
+                "knowsAbout": ["Work-Life Balance", "Diversity & Inclusion", "Continuous Learning", "Innovation"],
+                "award": ["40% Female Leadership", "Carbon Neutral Since 2023", "95% Skills Development Completion"],
+                "employee": [
+                  {
+                    "@type": "Person",
+                    "name": "Sarah Johnson",
+                    "jobTitle": "Head of Product"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "David Chen",
+                    "jobTitle": "Senior AI Engineer"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Lisa Wang",
+                    "jobTitle": "Head of Marketing"
+                  }
+                ]
+              }
+            })}
+          </script>
         </Helmet>
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/5 py-16">
