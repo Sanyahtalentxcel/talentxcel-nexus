@@ -13,6 +13,7 @@ import Investors from "./pages/Investors";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ServiceDetail from "./pages/ServiceDetail";
+import Chatr from "./pages/Chatr";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/chatr" element={<Chatr />} />
             <Route path="/culture" element={<Culture />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/investors" element={<Investors />} />
