@@ -1,10 +1,10 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import ServicesPreview from "@/components/ServicesPreview";
 import CompanyOverview from "@/components/CompanyOverview";
+import ChatrSection from "@/components/ChatrSection";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
@@ -119,6 +119,7 @@ const Index = () => {
         </Helmet>
         <HeroSection />
         <FeaturesGrid />
+        <ChatrSection />
         <ServicesPreview />
         <CompanyOverview />
       </main>
