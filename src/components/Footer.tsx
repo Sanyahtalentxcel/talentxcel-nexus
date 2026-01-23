@@ -115,6 +115,12 @@ const Footer = () => {
             {/* External Platform Links */}
             <div className="space-y-2">
               <h4 className="text-foreground font-medium text-sm">Our Platforms</h4>
+              <Link
+                to="/chatr"
+                className="flex items-center space-x-1 text-green-600 hover:text-green-500 transition-colors text-sm font-medium"
+              >
+                <span>Chatr</span>
+              </Link>
               <a
                 href="https://talentxcel.in"
                 target="_blank"
