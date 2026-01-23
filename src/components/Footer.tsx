@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, ExternalLink, MessageCircle } from "lucide-react";
 // Use uploaded logo instead
 const talentxcelLogo = "/lovable-uploads/5b681ba5-58bf-4aae-8bef-3ba691eef586.png";
 
@@ -117,8 +117,9 @@ const Footer = () => {
               <h4 className="text-foreground font-medium text-sm">Our Platforms</h4>
               <Link
                 to="/chatr"
-                className="flex items-center space-x-1 text-green-600 hover:text-green-500 transition-colors text-sm font-medium"
+                className="flex items-center space-x-2 text-green-600 hover:text-green-500 transition-colors text-sm font-medium"
               >
+                <MessageCircle className="h-4 w-4" />
                 <span>Chatr</span>
               </Link>
               <a
