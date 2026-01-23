@@ -55,7 +55,12 @@ const Navbar = () => {
             ))}
             
             {/* External Links */}
-            <div className="flex items-center space-x-4 ml-8 pl-8 border-l border-border">
+            <div className="flex items-center space-x-3 ml-8 pl-8 border-l border-border">
+              <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white" asChild>
+                <Link to="/chatr">
+                  Chatr
+                </Link>
+              </Button>
               <Button variant="platform" size="sm" asChild>
                 <a
                   href="https://talentxcel.in"
@@ -112,6 +117,11 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="pt-6 pb-2 border-t border-border mt-4 space-y-3">
+              <Button size="sm" className="w-full bg-green-600 hover:bg-green-700 text-white" asChild>
+                <Link to="/chatr" onClick={() => setIsOpen(false)}>
+                  Chatr
+                </Link>
+              </Button>
               <Button variant="platform" size="sm" className="w-full" asChild>
                 <a
                   href="https://talentxcel.in"
