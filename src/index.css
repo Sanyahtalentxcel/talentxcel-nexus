@@ -31,6 +31,11 @@
     --accent: 25 85% 55%;
     --accent-foreground: 0 0% 100%;
 
+    /* Chatr - Brand Green */
+    --chatr: 142 71% 45%;
+    --chatr-foreground: 0 0% 100%;
+    --chatr-hover: 142 71% 40%;
+
     /* Apple-style neutral tones */
     --muted: 210 6% 97%;
     --muted-foreground: 214 12% 45%;

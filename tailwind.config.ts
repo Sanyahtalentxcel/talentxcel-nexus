@@ -41,9 +41,14 @@ export default {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
 				},
-				accent: {
+			accent: {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
+				},
+				chatr: {
+					DEFAULT: 'hsl(var(--chatr))',
+					foreground: 'hsl(var(--chatr-foreground))',
+					hover: 'hsl(var(--chatr-hover))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
