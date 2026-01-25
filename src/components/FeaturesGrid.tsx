@@ -106,7 +106,7 @@ const FeaturesGrid = () => {
                       TalentXcel.net
                     </a>
                   </Button>
-                  <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white" asChild>
+                  <Button variant="chatr" size="sm" asChild>
                     <a href="https://chatr.chat" target="_blank" rel="noopener noreferrer">
                       Chatr.chat
                     </a>

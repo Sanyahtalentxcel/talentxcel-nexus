@@ -22,6 +22,7 @@ const buttonVariants = cva(
         glass: "bg-white/10 backdrop-blur-md text-foreground border border-white/20 hover:bg-white/20 shadow-glass",
         platform: "bg-primary text-primary-foreground hover:bg-primary-hover shadow-medium hover:shadow-large active:scale-95",
         services: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-medium hover:shadow-large active:scale-95",
+        chatr: "bg-chatr text-chatr-foreground hover:bg-chatr-hover shadow-medium hover:shadow-large active:scale-95",
       },
       size: {
         default: "h-11 px-6 py-3",
