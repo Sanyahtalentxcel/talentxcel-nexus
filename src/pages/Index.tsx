@@ -5,6 +5,7 @@ import FeaturesGrid from "@/components/FeaturesGrid";
 import ServicesPreview from "@/components/ServicesPreview";
 import CompanyOverview from "@/components/CompanyOverview";
 import ChatrSection from "@/components/ChatrSection";
+import ChatrAssistant from "@/components/ChatrAssistant";
 import {
   CoreCapabilities,
   ProductsEcosystem,
@@ -140,6 +141,7 @@ const Index = () => {
         <StrongCTA />
       </main>
       <Footer />
+      <ChatrAssistant />
     </div>
   );
 };
