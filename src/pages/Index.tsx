@@ -5,6 +5,15 @@ import FeaturesGrid from "@/components/FeaturesGrid";
 import ServicesPreview from "@/components/ServicesPreview";
 import CompanyOverview from "@/components/CompanyOverview";
 import ChatrSection from "@/components/ChatrSection";
+import {
+  CoreCapabilities,
+  ProductsEcosystem,
+  LiveProjects,
+  EnterpriseUseCases,
+  WhyTalentXcel,
+  BuildWithUs,
+  StrongCTA,
+} from "@/components/EnterpriseSections";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
@@ -119,9 +128,16 @@ const Index = () => {
         </Helmet>
         <HeroSection />
         <FeaturesGrid />
+        <CoreCapabilities />
+        <ProductsEcosystem />
         <ChatrSection />
+        <LiveProjects />
+        <EnterpriseUseCases />
+        <WhyTalentXcel />
+        <BuildWithUs />
         <ServicesPreview />
         <CompanyOverview />
+        <StrongCTA />
       </main>
       <Footer />
     </div>
