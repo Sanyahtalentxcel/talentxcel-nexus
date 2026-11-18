@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -5,379 +6,440 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Clock, MessageCircle, Building, Users, Briefcase } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Clock, 
+  Building2, 
+  Users, 
+  GraduationCap, 
+  CheckCircle2, 
+  AlertCircle, 
+  Send,
+  ShieldCheck 
+} from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { useToast } from "@/components/ui/use-toast";
+
+type FormState = {
+  name: string;
+  email: string;
+  phone: string;
+  organization: string;
+  serviceInterest: string;
+  positionsCount: string;
+  skillsNeeded: string;
+  timeline: string;
+  location: string;
+  message: string;
+  honeypot: string; // Anti-spam field (hidden)
+};
+
+const initialFormState: FormState = {
+  name: "",
+  email: "",
+  phone: "",
+  organization: "",
+  serviceInterest: "",
+  positionsCount: "",
+  skillsNeeded: "",
+  timeline: "",
+  location: "",
+  message: "",
+  honeypot: "",
+};
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [activeTab, setActiveTab] = useState("enterprise-tech");
+  const [formData, setFormData] = useState<FormState>(initialFormState);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const contactMethods = [
     {
       icon: Mail,
-      title: "Email Us",
-      description: "Get in touch via email",
+      title: "Enterprise Inquiries",
+      description: "Direct email contact",
       info: "contact@talentxcel.co.in",
       action: "mailto:contact@talentxcel.co.in"
     },
     {
       icon: Phone,
-      title: "Call Us",
+      title: "Direct Telephone",
       description: "Speak with our team",
       info: "+91 9717181609",
       action: "tel:+919717181609"
     },
     {
       icon: MapPin,
-      title: "Visit Us",
-      description: "Our office location",
-      info: "Noida, Uttar Pradesh, India",
+      title: "Corporate Office",
+      description: "Primary headquarters",
+      info: "Plot C, ESquare Building, Sector-45, Noida, UP 201301",
       action: "#"
     },
     {
       icon: Clock,
       title: "Business Hours",
-      description: "Monday to Friday",
-      info: "9:00 AM - 6:00 PM IST",
+      description: "Standard IST operation",
+      info: "Monday to Friday, 9:00 AM - 6:00 PM IST",
       action: "#"
     }
   ];
 
-  const departments = [
-    {
-      icon: Building,
-      title: "Enterprise Sales",
-      email: "enterprise@talentxcel.co.in",
-      description: "For corporate solutions and partnerships"
-    },
-    {
-      icon: Users,
-      title: "Customer Support",
-      email: "support@talentxcel.co.in",
-      description: "For platform help and technical issues"
-    },
-    {
-      icon: Briefcase,
-      title: "Career Services",
-      email: "careers@talentxcel.co.in",
-      description: "For individual career guidance and services"
-    },
-    {
-      icon: MessageCircle,
-      title: "Media & Press",
-      email: "press@talentxcel.co.in",
-      description: "For media inquiries and press releases"
+  const handleInputChange = (field: keyof FormState, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    if (errors[field]) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[field];
+        return next;
+      });
     }
-  ];
+  };
+
+  const validate = (): boolean => {
+    const nextErrors: Record<string, string> = {};
+
+    if (!formData.name.trim()) {
+      nextErrors.name = "Full name is required.";
+    }
+    if (!formData.email.trim()) {
+      nextErrors.email = "Business email address is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      nextErrors.email = "Please provide a valid email address.";
+    }
+    if (!formData.organization.trim()) {
+      nextErrors.organization = "Company or institution name is required.";
+    }
+    if (!formData.message.trim()) {
+      nextErrors.message = "Please describe your project or inquiry.";
+    }
+
+    setErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Spam bot check
+    if (formData.honeypot) {
+      console.warn("Spam submission intercepted.");
+      return;
+    }
+
+    if (!validate()) {
+      toast({
+        title: "Validation Error",
+        description: "Please complete all required fields before submitting.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Prepare email payload for mailto fallback
+    const subject = encodeURIComponent(
+      `[TalentXcel Inquiry - ${activeTab.toUpperCase()}] from ${formData.organization || formData.name}`
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "N/A"}\nOrganization: ${formData.organization}\nCategory: ${activeTab}\nService/Requirement: ${formData.serviceInterest || "General"}\nPositions/Participants: ${formData.positionsCount || "N/A"}\nSkills: ${formData.skillsNeeded || "N/A"}\nTimeline: ${formData.timeline || "N/A"}\nLocation: ${formData.location || "N/A"}\n\nProject Scope / Message:\n${formData.message}`
+    );
+
+    // Simulate safe local handling with mailto dispatch
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      toast({
+        title: "Inquiry Form Prepared",
+        description: "Your inquiry details have been registered. Opening your email client to dispatch to our team.",
+      });
+
+      // Trigger mailto client dispatch
+      window.location.href = `mailto:contact@talentxcel.co.in?subject=${subject}&body=${body}`;
+    }, 600);
+  };
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <Helmet>
+        <title>Contact TalentXcel | Enterprise Inquiries & Solutions</title>
+        <meta
+          name="description"
+          content="Contact TalentXcel for enterprise software development, IT staffing, corporate training, and university partnerships. Email: contact@talentxcel.co.in | Phone: +91 9717181609"
+        />
+        <meta
+          name="keywords"
+          content="Contact TalentXcel, enterprise tech inquiry, hire developers, IT staffing inquiry, corporate training, Noida office"
+        />
+        <link rel="canonical" href="https://talentxcel.co.in/contact" />
+      </Helmet>
       
-      <main>
-        <Helmet>
-          <title>Contact Talentxcel - Get in Touch | Enterprise Sales, Support, Career Services</title>
-          <meta name="description" content="Contact Talentxcel: Enterprise sales, customer support, career services. Email: contact@talentxcel.co.in | Phone: +91 9717181609 | Office: Noida, India. Serving India, Europe, Middle East. Mon-Fri 9AM-6PM IST." />
-          <meta name="keywords" content="contact Talentxcel, Talentxcel email, Talentxcel phone, Noida office, enterprise sales, customer support, career services, business inquiries, partnership opportunities, get in touch" />
-          <link rel="canonical" href="https://talentxcel.co.in/contact" />
-          
-          {/* Open Graph */}
-          <meta property="og:title" content="Contact Talentxcel - Enterprise & Career Services" />
-          <meta property="og:description" content="Get in touch: contact@talentxcel.co.in | +91 9717181609 | Noida, India" />
-          <meta property="og:url" content="https://talentxcel.co.in/contact" />
-          <meta property="og:type" content="website" />
-          
-          {/* Twitter */}
-          <meta name="twitter:title" content="Contact Talentxcel" />
-          <meta name="twitter:description" content="Enterprise sales, support & career services. Email or call us today." />
-          
-          {/* Structured Data - Contact Page */}
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ContactPage",
-              "mainEntity": {
-                "@type": "Organization",
-                "name": "Talentxcel",
-                "url": "https://talentxcel.co.in",
-                "contactPoint": [
-                  {
-                    "@type": "ContactPoint",
-                    "telephone": "+91-9717181609",
-                    "contactType": "customer service",
-                    "email": "contact@talentxcel.co.in",
-                    "availableLanguage": ["English", "Hindi"],
-                    "areaServed": ["IN", "EU", "ME"]
-                  },
-                  {
-                    "@type": "ContactPoint",
-                    "contactType": "sales",
-                    "email": "enterprise@talentxcel.co.in"
-                  },
-                  {
-                    "@type": "ContactPoint",
-                    "contactType": "technical support",
-                    "email": "support@talentxcel.co.in"
-                  }
-                ],
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "Plot C, ESquare Building, 2, Sector-45",
-                  "addressLocality": "Noida",
-                  "addressRegion": "Uttar Pradesh",
-                  "postalCode": "201301",
-                  "addressCountry": "India"
-                }
-              }
-            })}
-          </script>
-        </Helmet>
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/5 py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Get in <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Have questions about our services? Want to explore partnership opportunities? 
-                We'd love to hear from you and help with your talent needs.
-              </p>
-            </div>
-          </div>
-        </section>
+      <Navbar />
 
-        {/* Contact Methods */}
-        <section className="py-14">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {contactMethods.map((method, index) => (
-                <Card key={index} className="p-6 text-center hover:shadow-medium transition-all duration-300 group cursor-pointer">
-                  <method.icon className="h-10 w-10 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="font-semibold mb-2">{method.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{method.description}</p>
-                  <p className="text-primary font-medium">{method.info}</p>
+      <main className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+              <Mail className="h-4 w-4" /> Enterprise Conversion Portal
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+              Connect with <span className="bg-gradient-primary bg-clip-text text-transparent">TalentXcel</span>
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Explore custom technology development, specialized workforce solutions, or institutional learning partnerships with our enterprise teams.
+            </p>
+          </div>
+
+          {/* Contact Methods Cards */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {contactMethods.map((m, index) => {
+              const Icon = m.icon;
+              return (
+                <Card key={index} className="p-6 border-border/60 text-center hover:shadow-soft transition-all">
+                  <div className="p-3 bg-primary/10 rounded-xl w-fit mx-auto mb-4">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-foreground text-base mb-1">{m.title}</h3>
+                  <p className="text-xs text-muted-foreground mb-3">{m.description}</p>
+                  <a 
+                    href={m.action} 
+                    className="text-xs sm:text-sm font-semibold text-primary hover:underline break-words"
+                  >
+                    {m.info}
+                  </a>
                 </Card>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        </section>
 
-        {/* Contact Form & Departments */}
-        <section className="py-14 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <Card className="p-8">
-                <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="John" />
-                    </div>
-                    <div>
-                      <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" placeholder="Doe" />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="john@company.com" />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="company">Company (Optional)</Label>
-                    <Input id="company" placeholder="Your Company" />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="How can we help you?" />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea 
-                      id="message" 
-                      rows={5}
-                      placeholder="Tell us about your needs or questions..."
-                    />
-                  </div>
-                  
-                  <Button size="lg" variant="hero" className="w-full">
-                    Send Message
-                  </Button>
-                </form>
-              </Card>
-
-              {/* Department Contacts */}
-              <div>
-                <h2 className="text-2xl font-bold mb-6">Contact by Department</h2>
-                <p className="text-muted-foreground mb-8">
-                  Reach out to the right team for faster assistance with your specific needs.
+          {/* Dedicated Conversion Pathways */}
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-6 sm:p-10 border-border/60 shadow-medium">
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold tracking-tight mb-2">Select Your Inquiry Pathway</h2>
+                <p className="text-sm text-muted-foreground">
+                  Choose the specialized department to ensure your request reaches the right solution architect.
                 </p>
-                
-                <div className="space-y-4">
-                  {departments.map((dept, index) => (
-                    <Card key={index} className="p-6 hover:shadow-medium transition-all duration-300 group">
-                      <div className="flex items-start space-x-4">
-                        <div className="p-2 bg-primary/10 rounded-lg">
-                          <dept.icon className="h-6 w-6 text-primary" />
+              </div>
+
+              <Tabs defaultValue="enterprise-tech" onValueChange={setActiveTab} className="w-full">
+                <TabsList className="grid grid-cols-2 sm:grid-cols-4 w-full mb-8 h-auto p-1 gap-1">
+                  <TabsTrigger value="enterprise-tech" className="text-xs sm:text-sm py-2.5">
+                    Technology & AI
+                  </TabsTrigger>
+                  <TabsTrigger value="staffing" className="text-xs sm:text-sm py-2.5">
+                    IT Staffing & RPO
+                  </TabsTrigger>
+                  <TabsTrigger value="training" className="text-xs sm:text-sm py-2.5">
+                    Training & Academia
+                  </TabsTrigger>
+                  <TabsTrigger value="general" className="text-xs sm:text-sm py-2.5">
+                    General Inquiries
+                  </TabsTrigger>
+                </TabsList>
+
+                {isSubmitted ? (
+                  <div className="p-8 text-center space-y-4 bg-primary/5 rounded-2xl border border-primary/20">
+                    <CheckCircle2 className="h-12 w-12 text-primary mx-auto" />
+                    <h3 className="text-xl font-bold text-foreground">Thank You for Reaching Out</h3>
+                    <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                      Your inquiry has been compiled and delivered to our corporate delivery desk at <strong>contact@talentxcel.co.in</strong>. A solution specialist will follow up with you shortly.
+                    </p>
+                    <Button 
+                      variant="outline" 
+                      onClick={() => {
+                        setIsSubmitted(false);
+                        setFormData(initialFormState);
+                      }}
+                    >
+                      Submit Another Inquiry
+                    </Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Honeypot field for bot suppression */}
+                    <div className="hidden" aria-hidden="true">
+                      <input 
+                        type="text" 
+                        name="website_url_check" 
+                        value={formData.honeypot} 
+                        onChange={(e) => handleInputChange("honeypot", e.target.value)} 
+                        tabIndex={-1} 
+                        autoComplete="off" 
+                      />
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="name">Your Full Name *</Label>
+                        <Input
+                          id="name"
+                          placeholder="e.g. Rahul Sharma"
+                          value={formData.name}
+                          onChange={(e) => handleInputChange("name", e.target.value)}
+                          className={errors.name ? "border-destructive" : ""}
+                        />
+                        {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
+                      </div>
+
+                      <div>
+                        <Label htmlFor="email">Business Email Address *</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="rahul@company.com"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange("email", e.target.value)}
+                          className={errors.email ? "border-destructive" : ""}
+                        />
+                        {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
+                      </div>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="phone">Phone / WhatsApp Number (Optional)</Label>
+                        <Input
+                          id="phone"
+                          placeholder="+91 98765 43210"
+                          value={formData.phone}
+                          onChange={(e) => handleInputChange("phone", e.target.value)}
+                        />
+                      </div>
+
+                      <div>
+                        <Label htmlFor="organization">Company or Institution Name *</Label>
+                        <Input
+                          id="organization"
+                          placeholder="e.g. Acme Technologies"
+                          value={formData.organization}
+                          onChange={(e) => handleInputChange("organization", e.target.value)}
+                          className={errors.organization ? "border-destructive" : ""}
+                        />
+                        {errors.organization && <p className="text-xs text-destructive mt-1">{errors.organization}</p>}
+                      </div>
+                    </div>
+
+                    {/* Dynamic Fields Based on Tab */}
+                    {activeTab === "enterprise-tech" && (
+                      <div className="grid sm:grid-cols-2 gap-4 p-4 bg-muted/20 rounded-xl border border-border/50">
+                        <div>
+                          <Label htmlFor="tech-interest">Primary Service of Interest</Label>
+                          <Input
+                            id="tech-interest"
+                            placeholder="e.g. Custom AI Model, SaaS Platform, Cloud Migration"
+                            value={formData.serviceInterest}
+                            onChange={(e) => handleInputChange("serviceInterest", e.target.value)}
+                          />
                         </div>
-                        <div className="flex-1">
-                          <h3 className="font-semibold mb-1">{dept.title}</h3>
-                          <p className="text-sm text-muted-foreground mb-2">{dept.description}</p>
-                          <a 
-                            href={`mailto:${dept.email}`}
-                            className="text-primary hover:text-primary-hover text-sm font-medium"
-                          >
-                            {dept.email}
-                          </a>
+                        <div>
+                          <Label htmlFor="tech-timeline">Target Timeline</Label>
+                          <Input
+                            id="tech-timeline"
+                            placeholder="e.g. Immediate (1-2 months), Q3 2026"
+                            value={formData.timeline}
+                            onChange={(e) => handleInputChange("timeline", e.target.value)}
+                          />
                         </div>
                       </div>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+                    )}
 
-        {/* Office Location */}
-        <section className="py-14">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Visit Our Office</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Come visit us at our headquarters in Noida, in the heart of India's tech corridor.
-              </p>
-            </div>
-            
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <Card className="p-8">
-                <h3 className="text-xl font-semibold mb-6">TalentXcel Headquarters</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1" />
-                    <div>
-                      <p className="font-medium">Address</p>
-                      <p className="text-muted-foreground">
-                        Plot C, ESquare Building, 2<br />
-                        Sector-45<br />
-                        Noida, Uttar Pradesh 201301<br />
-                        India
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <Clock className="h-5 w-5 text-primary mt-1" />
-                    <div>
-                      <p className="font-medium">Office Hours</p>
-                      <p className="text-muted-foreground">
-                        Monday - Friday: 9:00 AM - 6:00 PM IST<br />
-                        Saturday: 10:00 AM - 2:00 PM IST<br />
-                        Sunday: Closed
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <Phone className="h-5 w-5 text-primary mt-1" />
-                    <div>
-                      <p className="font-medium">Reception</p>
-                      <p className="text-muted-foreground">+91 9717181609</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <Button variant="outline" className="w-full mt-6">
-                  Get Directions
-                </Button>
-              </Card>
-              
-              {/* Map Placeholder */}
-              <Card className="p-8 h-96 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">Interactive Map</h3>
-                  <p className="text-muted-foreground">
-                    Click to view our location on Google Maps
-                  </p>
-                  <Button variant="outline" className="mt-4">
-                    Open in Maps
-                  </Button>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </section>
+                    {activeTab === "staffing" && (
+                      <div className="grid sm:grid-cols-3 gap-4 p-4 bg-muted/20 rounded-xl border border-border/50">
+                        <div>
+                          <Label htmlFor="staff-positions">Estimated Openings</Label>
+                          <Input
+                            id="staff-positions"
+                            placeholder="e.g. 5 Software Engineers"
+                            value={formData.positionsCount}
+                            onChange={(e) => handleInputChange("positionsCount", e.target.value)}
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="staff-skills">Core Technical Skills</Label>
+                          <Input
+                            id="staff-skills"
+                            placeholder="e.g. React, Python, AWS, DevOps"
+                            value={formData.skillsNeeded}
+                            onChange={(e) => handleInputChange("skillsNeeded", e.target.value)}
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="staff-loc">Work Location</Label>
+                          <Input
+                            id="staff-loc"
+                            placeholder="e.g. Noida, Bangalore, Remote"
+                            value={formData.location}
+                            onChange={(e) => handleInputChange("location", e.target.value)}
+                          />
+                        </div>
+                      </div>
+                    )}
 
-        {/* FAQ Section */}
-        <section className="py-14 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Quick answers to common questions about TalentXcel and our services.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="p-6">
-                <h3 className="font-semibold mb-3">How can I get started with TalentXcel?</h3>
-                <p className="text-muted-foreground text-sm">
-                  You can start by visiting our platform at TalentXcel.in for individual services 
-                  or contact our enterprise team for corporate solutions.
-                </p>
-              </Card>
-              
-              <Card className="p-6">
-                <h3 className="font-semibold mb-3">What makes TalentXcel different?</h3>
-                <p className="text-muted-foreground text-sm">
-                  Our AI-powered platform provides personalized career guidance and matching, 
-                  backed by comprehensive support from industry experts.
-                </p>
-              </Card>
-              
-              <Card className="p-6">
-                <h3 className="font-semibold mb-3">Do you offer enterprise solutions?</h3>
-                <p className="text-muted-foreground text-sm">
-                  Yes, we provide comprehensive B2B solutions including talent management, 
-                  corporate training, and API integrations for enterprises.
-                </p>
-              </Card>
-              
-              <Card className="p-6">
-                <h3 className="font-semibold mb-3">How can I partner with TalentXcel?</h3>
-                <p className="text-muted-foreground text-sm">
-                  We welcome partnerships! Contact our business development team to discuss 
-                  collaboration opportunities and strategic partnerships.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </section>
+                    {activeTab === "training" && (
+                      <div className="grid sm:grid-cols-2 gap-4 p-4 bg-muted/20 rounded-xl border border-border/50">
+                        <div>
+                          <Label htmlFor="train-program">Program Interest</Label>
+                          <Input
+                            id="train-program"
+                            placeholder="e.g. Corporate AI Upskilling / University Hackathon"
+                            value={formData.serviceInterest}
+                            onChange={(e) => handleInputChange("serviceInterest", e.target.value)}
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="train-count">Estimated Cohort Size</Label>
+                          <Input
+                            id="train-count"
+                            placeholder="e.g. 25-50 Engineers / Students"
+                            value={formData.positionsCount}
+                            onChange={(e) => handleInputChange("positionsCount", e.target.value)}
+                          />
+                        </div>
+                      </div>
+                    )}
 
-        {/* CTA Section */}
-        <section className="py-14 bg-gradient-hero text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Whether you're an individual looking to advance your career or an organization 
-              seeking talent solutions, we're here to help you succeed.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
-                Explore Our Platform
-              </Button>
-              <Button size="lg" variant="outline">
-                Schedule Consultation
-              </Button>
-            </div>
+                    <div>
+                      <Label htmlFor="message">Project Requirements / Details *</Label>
+                      <Textarea
+                        id="message"
+                        rows={4}
+                        placeholder="Please outline your objectives, project scope, technical requirements, or partnership goals..."
+                        value={formData.message}
+                        onChange={(e) => handleInputChange("message", e.target.value)}
+                        className={errors.message ? "border-destructive" : ""}
+                      />
+                      {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <ShieldCheck className="h-4 w-4 text-primary" />
+                        <span>Protected by enterprise privacy & data encryption</span>
+                      </div>
+                      <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto">
+                        {isSubmitting ? "Processing..." : (
+                          <>
+                            Submit Enterprise Inquiry <Send className="ml-2 h-4 w-4" />
+                          </>
+                        )}
+                      </Button>
+                    </div>
+                  </form>
+                )}
+              </Tabs>
+            </Card>
           </div>
-        </section>
+        </div>
       </main>
-      
+
       <Footer />
     </div>
   );

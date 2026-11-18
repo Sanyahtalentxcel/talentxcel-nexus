@@ -1,30 +1,30 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, ExternalLink, MessageCircle } from "lucide-react";
-// Use uploaded logo instead
-const talentxcelLogo = "/lovable-uploads/5b681ba5-58bf-4aae-8bef-3ba691eef586.png";
+
+const talentxcelLogo = "/talentxcel-assets/5b681ba5-58bf-4aae-8bef-3ba691eef586.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const companyLinks = [
     { name: "About Us", href: "/about" },
-    { name: "Team", href: "/team" },
-    { name: "Culture", href: "/culture" },
-    { name: "Careers", href: "/careers" },
+    { name: "Leadership & Governance", href: "/team" },
+    { name: "Culture & Principles", href: "/culture" },
+    { name: "Careers & Internships", href: "/careers" },
   ];
 
   const serviceLinks = [
-    { name: "Resume Building", href: "/services" },
-    { name: "AI Career Tools", href: "/services" },
-    { name: "Corporate Training", href: "/services" },
-    { name: "Mentorship", href: "/services" },
+    { name: "Staffing & Recruitment", href: "/services/staffing-recruitment" },
+    { name: "Training & Education", href: "/services/training-education" },
+    { name: "IT Consulting & Cloud", href: "/services/it-consulting-managed-services" },
+    { name: "All Solutions Overview", href: "/services" },
   ];
 
-  const resourceLinks = [
-    { name: "Investors", href: "/investors" },
-    { name: "Contact", href: "/contact" },
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
+  const proofLinks = [
+    { name: "Case Studies & Outcomes", href: "/case-studies" },
+    { name: "Strategic Partnerships", href: "/partnerships" },
+    { name: "Investor Relations", href: "/investors" },
+    { name: "Contact & Inquiries", href: "/contact" },
   ];
 
   return (
@@ -37,25 +37,31 @@ const Footer = () => {
               <img
                 className="h-10 w-auto"
                 src={talentxcelLogo}
-                alt="TalentXcel"
+                alt="TalentXcel Logo"
               />
               <span className="text-xl font-bold text-foreground">
-                Talentxcel
+                TalentXcel
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Blending workforce solutions and IT services for businesses and job seekers alike. AI-first solutions across India, Europe, and Middle East.
+              Integrated Technology &amp; Talent Solutions. Blending enterprise software engineering, AI automation, workforce solutions, and talent development.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 pt-1">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/talentxcel"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="TalentXcel LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://twitter.com/Talentxcel"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="TalentXcel Twitter"
               >
                 <Twitter className="h-5 w-5" />
               </a>
@@ -64,7 +70,7 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h3 className="text-foreground font-semibold mb-4">Company</h3>
+            <h3 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-wider">Company</h3>
             <ul className="space-y-2">
               {companyLinks.map((link) => (
                 <li key={link.name}>
@@ -79,9 +85,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services Links */}
+          {/* Solutions Links */}
           <div>
-            <h3 className="text-foreground font-semibold mb-4">Services</h3>
+            <h3 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-wider">Solutions</h3>
             <ul className="space-y-2">
               {serviceLinks.map((link) => (
                 <li key={link.name}>
@@ -96,11 +102,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact & Resources */}
+          {/* Proof & Ecosystem */}
           <div>
-            <h3 className="text-foreground font-semibold mb-4">Resources</h3>
+            <h3 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-wider">Enterprise &amp; Proof</h3>
             <ul className="space-y-2 mb-6">
-              {resourceLinks.map((link) => (
+              {proofLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
@@ -113,14 +119,14 @@ const Footer = () => {
             </ul>
 
             {/* External Platform Links */}
-            <div className="space-y-2">
-              <h4 className="text-foreground font-medium text-sm">Our Platforms</h4>
+            <div className="space-y-2 pt-2 border-t border-border/50">
+              <h4 className="text-foreground font-medium text-xs uppercase tracking-wider text-muted-foreground">Product Ecosystem</h4>
               <Link
                 to="/chatr"
                 className="flex items-center space-x-2 text-green-600 hover:text-green-500 transition-colors text-sm font-medium"
               >
                 <MessageCircle className="h-4 w-4" />
-                <span>Chatr</span>
+                <span>CHATR AI Layer</span>
               </Link>
               <a
                 href="https://talentxcel.in"
@@ -137,14 +143,14 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors text-sm"
               >
-                <span>Services Portal</span>
+                <span>Learning &amp; Career Hub</span>
                 <ExternalLink className="h-3 w-3" />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Contact Info Bar */}
+        {/* Contact Info Bar & Legal Links */}
         <div className="border-t border-border mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-sm text-muted-foreground">
@@ -158,11 +164,20 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span>Noida, Uttar Pradesh</span>
+                <span>Plot C, ESquare Building, Sector-45, Noida, UP 201301</span>
               </div>
             </div>
-            <div className="text-sm text-muted-foreground">
-              © {currentYear} Talentxcel. All rights reserved.
+            
+            <div className="flex items-center space-x-6 text-sm text-muted-foreground">
+              <Link to="/privacy" className="hover:text-primary transition-colors text-xs">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-primary transition-colors text-xs">
+                Terms of Service
+              </Link>
+              <span className="text-xs">
+                © {currentYear} TalentXcel. All rights reserved.
+              </span>
             </div>
           </div>
         </div>
