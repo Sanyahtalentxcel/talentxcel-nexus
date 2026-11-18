@@ -21,6 +21,10 @@ const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const Partnerships = lazy(() => import("./pages/Partnerships"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
+const CorporateTraining = lazy(() => import("./pages/CorporateTraining"));
+const StaffingSolutions = lazy(() => import("./pages/StaffingSolutions"));
+const UniversityPartnerships = lazy(() => import("./pages/UniversityPartnerships"));
+const RevenuePortal = lazy(() => import("./pages/RevenuePortal"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -58,6 +62,25 @@ const App = () => (
               <Route path="/partnerships" element={<Partnerships />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
+
+              {/* Commercial Revenue Engines */}
+              <Route path="/corporate-training" element={<CorporateTraining />} />
+              <Route path="/corporate-training/*" element={<CorporateTraining />} />
+              <Route path="/staffing-solutions" element={<StaffingSolutions />} />
+              <Route path="/it-staffing" element={<StaffingSolutions />} />
+              <Route path="/permanent-recruitment" element={<StaffingSolutions />} />
+              <Route path="/contract-staffing" element={<StaffingSolutions />} />
+              <Route path="/executive-search" element={<StaffingSolutions />} />
+              <Route path="/recruitment-process-outsourcing" element={<StaffingSolutions />} />
+              <Route path="/employer-solutions" element={<StaffingSolutions />} />
+              <Route path="/university-partnerships" element={<UniversityPartnerships />} />
+              <Route path="/campus-employability" element={<UniversityPartnerships />} />
+              <Route path="/institutional-training" element={<UniversityPartnerships />} />
+
+              {/* Protected Revenue Operations Portal */}
+              <Route path="/admin" element={<RevenuePortal />} />
+              <Route path="/revenue-portal" element={<RevenuePortal />} />
+
               {/* Catch-all route */}
               <Route path="*" element={<NotFound />} />
             </Routes>

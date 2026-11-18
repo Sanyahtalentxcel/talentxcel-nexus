@@ -153,7 +153,7 @@ export const ThreePillarsSection = () => {
         "Recruitment Process Outsourcing (RPO)",
         "Technical vetting & skills evaluation"
       ],
-      link: "/services/staffing-recruitment",
+      link: "/staffing-solutions",
       badgeColor: "bg-brand-navy/10 text-brand-navy"
     },
     {
@@ -169,7 +169,7 @@ export const ThreePillarsSection = () => {
         "Graduate employability initiatives",
         "Continuous professional development"
       ],
-      link: "/services/training-education",
+      link: "/corporate-training",
       badgeColor: "bg-amber-500/10 text-amber-700"
     }
   ];

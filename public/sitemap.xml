@@ -25,6 +25,30 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Commercial Revenue Engine: Corporate Training & Upskilling -->
+  <url>
+    <loc>https://talentxcel.co.in/corporate-training</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Commercial Revenue Engine: Staffing & Recruitment Solutions -->
+  <url>
+    <loc>https://talentxcel.co.in/staffing-solutions</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Commercial Revenue Engine: University & Institutional Partnerships -->
+  <url>
+    <loc>https://talentxcel.co.in/university-partnerships</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
   <!-- Service: Staffing & Recruitment -->
   <url>
     <loc>https://talentxcel.co.in/services/staffing-recruitment</loc>
