@@ -355,6 +355,12 @@ const StaffingSolutions = () => {
                 </div>
               ))}
             </div>
+            <div className="mt-8 p-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 text-xs flex items-center gap-2.5">
+              <ShieldCheck className="h-4 w-4 text-primary flex-shrink-0" />
+              <span>
+                <strong>Commercial Governance Note:</strong> Engagement models, candidate warranty terms, and fee structures are customized and formalized under bilateral Master Service Agreements (MSAs) following discovery consultation.
+              </span>
+            </div>
           </div>
         </section>
 

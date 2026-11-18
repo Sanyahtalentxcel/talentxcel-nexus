@@ -3,163 +3,151 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, Users, Briefcase, ArrowRight, Search, CheckCircle2, Mail, ExternalLink } from "lucide-react";
+import { 
+  MapPin, 
+  Clock, 
+  Users, 
+  Briefcase, 
+  ArrowRight, 
+  Search, 
+  CheckCircle2, 
+  Mail, 
+  ExternalLink,
+  ShieldCheck,
+  FileCheck2,
+  Sparkles,
+  Info
+} from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import modernWorkspace from "@/assets/modern-workspace.jpg";
 import trainingSession from "@/assets/training-session.jpg";
-import { Link } from "react-router-dom";
 
 const Careers = () => {
   const careerPillars = [
     {
-      title: "Real Client Engagements",
-      desc: "Work on live enterprise systems, modern web architectures, and production AI applications.",
+      title: "Practitioner Ownership",
+      desc: "Work on genuine client challenges, production cloud architectures, and modern AI deployments with real operational responsibility.",
     },
     {
-      title: "Cross-Disciplinary Learning",
-      desc: "Bridge engineering, recruitment technology, and product management under one roof.",
+      title: "Integrated Capability",
+      desc: "Cross-functional exposure spanning enterprise software engineering, specialized technical staffing, and corporate learning academies.",
     },
     {
       title: "Merit-Based Growth",
-      desc: "Transparent career roadmaps with continuous mentorship from senior practitioners.",
+      desc: "Clear career roadmaps focused on technical mastery, delivery excellence, and transparent professional advancement.",
     },
     {
-      title: "Internship & Academy Tracks",
-      desc: "Specialized live-project tracks designed to transition emerging engineers into full-time roles.",
+      title: "Learning & Upward Mobility",
+      desc: "Continuous technical upskilling with direct access to our internal bootcamps and live-project labs.",
     },
   ];
 
   const focusRoles = [
     {
+      id: "tech-recruiter",
       title: "Technical Recruitment Specialist",
-      department: "Talent Solutions",
-      location: "Noida / Hybrid",
-      type: "Full-time",
-      experience: "2-4 years",
-      skills: ["IT Sourcing", "Candidate Screening", "Technical Vetting"],
-      description: "Drive end-to-end recruitment pipelines for enterprise clients across software engineering, AI, and cloud infrastructure.",
+      department: "Talent Solutions Practice",
+      location: "Noida Sector 96 / Hybrid",
+      type: "Full-Time",
+      experience: "2–4 Years",
+      skills: ["IT Sourcing", "Architect-Level Screening", "Technical Vetting", "Client Coordination"],
+      description: "Manage end-to-end recruitment pipelines for enterprise clients across software engineering, cloud DevOps, and AI/ML specializations.",
     },
     {
-      title: "Full-Stack Software Engineer",
-      department: "Technology & AI",
-      location: "Noida / Remote",
-      type: "Full-time",
-      experience: "2-5 years",
-      skills: ["React", "TypeScript", "Node.js", "Cloud Services"],
-      description: "Build robust SaaS products, customer portals, and internal automated workforce engines powering the TalentXcel ecosystem.",
+      id: "fullstack-eng",
+      title: "Full-Stack Software Engineer (React / Node.js)",
+      department: "Technology & AI Practice",
+      location: "Noida Sector 96 / Hybrid",
+      type: "Full-Time",
+      experience: "2–5 Years",
+      skills: ["React", "TypeScript", "Node.js", "PostgreSQL", "Docker", "AWS"],
+      description: "Design and build production web applications, automated workflow engines, and enterprise integrations powering the TalentXcel ecosystem.",
     },
     {
-      title: "Campus & Academic Relations Lead",
-      department: "Learning & Academies",
-      location: "Delhi NCR / Travel",
-      type: "Full-time",
-      experience: "2-4 years",
-      skills: ["University Partnerships", "Internship Drives", "Event Coordination"],
-      description: "Manage relationships with engineering colleges and universities, coordinating hackathons, training tracks, and campus recruitment.",
+      id: "ai-engineer",
+      title: "Applied AI / Python Software Engineer",
+      department: "Technology & AI Practice",
+      location: "Noida Sector 96 / Hybrid",
+      type: "Full-Time",
+      experience: "2–5 Years",
+      skills: ["Python", "FastAPI", "PyTorch", "LangChain / RAG", "Vector DBs"],
+      description: "Develop enterprise retrieval-augmented generation (RAG) pipelines, intelligent document parsers, and custom model integrations.",
     },
     {
-      title: "Enterprise Solutions Account Executive",
-      department: "Business Development",
-      location: "Noida / Bangalore / Hybrid",
-      type: "Full-time",
-      experience: "3-6 years",
-      skills: ["B2B Sales", "Staffing Solutions", "IT Services"],
-      description: "Engage enterprise leadership across Energy, BFSI, and Technology sectors to scope corporate staffing and engineering services.",
+      id: "campus-alliances",
+      title: "Campus Relations & Institutional Alliances Manager",
+      department: "Academies & University MoUs",
+      location: "Delhi-NCR / Regional Travel",
+      type: "Full-Time",
+      experience: "2–5 Years",
+      skills: ["University MoUs", "Placement Directorate Relations", "Campus Hackathons", "FDPs"],
+      description: "Cultivate institutional partnerships with engineering universities and colleges, coordinating employability tracks and campus hiring drives.",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Helmet>
-        <title>Careers & Opportunities | TalentXcel</title>
+        <title>Careers & Professional Opportunities | TalentXcel Corporate</title>
         <meta
           name="description"
-          content="Explore career opportunities and internship tracks at TalentXcel. Join an integrated technology and talent solutions team building the future of work."
+          content="Explore genuine career opportunities and technical talent pipelines at TalentXcel Services Private Limited. Join our software engineering, staffing, and academy practices."
         />
         <meta
           name="keywords"
-          content="TalentXcel careers, IT jobs Noida, tech staffing careers, software engineering jobs, campus manager jobs, tech internships"
+          content="TalentXcel careers, software engineering jobs Noida, IT recruitment jobs Noida, tech staffing careers, campus manager jobs"
         />
         <link rel="canonical" href="https://talentxcel.co.in/careers" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Careers & Opportunities | TalentXcel" />
-        <meta
-          property="og:description"
-          content="Join an integrated technology and talent solutions team. Explore active openings in engineering, recruitment, and campus partnerships."
-        />
-        <meta property="og:url" content="https://talentxcel.co.in/careers" />
-        <meta property="og:type" content="website" />
-        
-        {/* Twitter */}
-        <meta name="twitter:title" content="Careers & Opportunities | TalentXcel" />
-        <meta
-          name="twitter:description"
-          content="Explore career and internship pathways with TalentXcel."
-        />
-        
-        {/* Clean Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Careers at TalentXcel",
-            "url": "https://talentxcel.co.in/careers",
-            "description": "Career opportunities, internship pipelines, and recruitment pathways at TalentXcel.",
-            "publisher": {
-              "@type": "Organization",
-              "name": "TalentXcel",
-              "url": "https://talentxcel.co.in"
-            }
-          })}
-        </script>
       </Helmet>
       
       <Navbar />
 
-      <main>
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30 py-20 lg:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
-                <Briefcase className="h-4 w-4" /> Career Opportunities
-              </div>
-              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
-                Build Your Future with <span className="bg-gradient-primary bg-clip-text text-transparent">TalentXcel</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                We are building the future of integrated technology delivery and workforce mobility. 
-                Whether you are an experienced technologist, a talent acquisition specialist, or an aspiring intern, find your place in our growing team.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild>
-                  <a href="#openings">View Open Positions</a>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <a href="https://talentxcel.in/jobs" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                    <span>TalentXcel Job Portal</span>
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
+      <main className="flex-1 py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* 6.3 Hero Section */}
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-primary/20">
+              <Briefcase className="h-4 w-4" /> Careers &amp; Team Culture
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground leading-[1.15]">
+              Build Your Career with <br className="hidden sm:inline" />
+              <span className="bg-gradient-primary bg-clip-text text-transparent">TalentXcel</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+              We bring together technology engineering, enterprise workforce solutions, and continuous learning. Explore active focus openings across our practices or submit your credentials to our corporate talent bench.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="shadow-medium" asChild>
+                <a href="#openings">Explore Active Openings <ArrowRight className="ml-2 h-4 w-4" /></a>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a 
+                  href="https://talentxcel.in/?utm_source=talentxcel_corp&utm_medium=referral&utm_campaign=careers_job_board" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <span>TalentXcel Candidate Job Board</span>
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </div>
-        </section>
 
-        {/* Why Join Us */}
-        <section className="py-16 bg-muted/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight">Why Build Your Career at TalentXcel</h2>
-              <p className="text-muted-foreground">
-                A work environment designed around practitioner ownership, skill acceleration, and genuine teamwork.
+          {/* 6.1 Why Work with TalentXcel */}
+          <div className="mb-20">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2 className="text-3xl font-bold mb-3 tracking-tight text-foreground">Our Workplace Culture</h2>
+              <p className="text-muted-foreground text-sm sm:text-base">
+                An environment designed for engineers, recruiters, and educators who value practical execution and ethical stewardship.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {careerPillars.map((p, index) => (
-                <Card key={index} className="p-6 border-border/60 hover:shadow-soft transition-all">
+                <Card key={index} className="p-6 border-border/70 hover:shadow-soft transition-all rounded-2xl bg-card">
                   <div className="p-2.5 bg-primary/10 rounded-xl w-fit mb-4">
                     <CheckCircle2 className="h-5 w-5 text-primary" />
                   </div>
@@ -169,42 +157,43 @@ const Careers = () => {
               ))}
             </div>
           </div>
-        </section>
 
-        {/* Focus Openings */}
-        <section id="openings" className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          {/* 6.1 Active Focus Openings */}
+          <div id="openings" className="mb-20 scroll-mt-28">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 pb-6 border-b border-border/60">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-2">Active Focus Openings</h2>
-                <p className="text-muted-foreground">
-                  Current talent priorities across our technology, workforce, and campus practices.
+                <Badge variant="outline" className="text-xs mb-2 bg-primary/5 text-primary border-primary/20">
+                  Verified Requisitions
+                </Badge>
+                <h2 className="text-3xl font-bold tracking-tight text-foreground">Active Focus Openings</h2>
+                <p className="text-muted-foreground text-sm mt-1">
+                  Verified hiring requisitions currently accepting applications at our Noida headquarters.
                 </p>
               </div>
-              <div className="text-sm text-muted-foreground">
-                Direct resumes to: <a href="mailto:careers@talentxcel.co.in" className="text-primary font-semibold hover:underline">careers@talentxcel.co.in</a>
+              <div className="text-xs sm:text-sm text-muted-foreground bg-muted/40 p-3 rounded-xl border border-border/60">
+                Direct resume submissions: <a href="mailto:careers@talentxcel.co.in" className="text-primary font-semibold hover:underline">careers@talentxcel.co.in</a>
               </div>
             </div>
 
             <div className="grid gap-6">
-              {focusRoles.map((role, index) => (
-                <Card key={index} className="p-6 lg:p-8 border-border/60 hover:shadow-medium transition-all">
+              {focusRoles.map((role) => (
+                <Card key={role.id} className="p-6 lg:p-8 border-border/70 hover:shadow-medium transition-all rounded-2xl bg-card">
                   <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                     <div className="space-y-3 flex-1">
                       <div className="flex flex-wrap items-center gap-3">
                         <h3 className="text-xl font-bold text-foreground">{role.title}</h3>
-                        <Badge variant="outline" className="text-xs">{role.experience}</Badge>
+                        <Badge variant="secondary" className="text-xs">{role.experience}</Badge>
                       </div>
 
                       <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Briefcase className="h-3.5 w-3.5" /> {role.department}
+                        <span className="flex items-center gap-1.5 font-medium text-foreground">
+                          <Briefcase className="h-3.5 w-3.5 text-primary" /> {role.department}
                         </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="h-3.5 w-3.5" /> {role.location}
+                        <span className="flex items-center gap-1.5">
+                          <MapPin className="h-3.5 w-3.5 text-primary" /> {role.location}
                         </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="h-3.5 w-3.5" /> {role.type}
+                        <span className="flex items-center gap-1.5">
+                          <Clock className="h-3.5 w-3.5 text-primary" /> {role.type}
                         </span>
                       </div>
 
@@ -214,9 +203,9 @@ const Careers = () => {
 
                       <div className="flex flex-wrap gap-2 pt-1">
                         {role.skills.map((skill, sIdx) => (
-                          <Badge key={sIdx} variant="secondary" className="text-xs">
+                          <span key={sIdx} className="text-xs bg-muted px-2.5 py-1 rounded-md text-foreground font-medium border border-border/50">
                             {skill}
-                          </Badge>
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -228,8 +217,12 @@ const Careers = () => {
                         </a>
                       </Button>
                       <Button variant="outline" asChild>
-                        <a href="https://talentxcel.in/jobs" target="_blank" rel="noopener noreferrer">
-                          Apply on Portal
+                        <a 
+                          href="https://talentxcel.in/?utm_source=talentxcel_corp&utm_medium=referral&utm_campaign=careers_role_card" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          View on Portal <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
                         </a>
                       </Button>
                     </div>
@@ -238,41 +231,88 @@ const Careers = () => {
               ))}
             </div>
 
-            <div className="mt-12 p-8 bg-muted/30 rounded-2xl border border-border/60 text-center max-w-2xl mx-auto">
-              <h3 className="font-bold text-lg mb-2">Looking for Internship & Early Career Programs?</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                We regularly induct emerging talent into our Live Project and Engineering Academy tracks across Full-Stack, AI, and Cloud development.
+            {/* General Profile Submission Box */}
+            <div className="mt-12 p-8 bg-muted/30 rounded-3xl border border-border/70 text-center max-w-3xl mx-auto shadow-soft">
+              <h3 className="font-bold text-xl text-foreground mb-2">Don't see your specific role above?</h3>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed max-w-xl mx-auto">
+                We are always interested in connecting with talented software engineers, technical recruiters, and educational program managers. Share your profile for future opportunities.
               </p>
-              <Button variant="outline" asChild>
-                <Link to="/contact">Inquire About Internship Tracks</Link>
-              </Button>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Button asChild>
+                  <a href="mailto:careers@talentxcel.co.in?subject=General%20Candidate%20Profile%20Submission">
+                    Submit Your Profile to Talent Desk <Mail className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link to="/contact">Contact Corporate Office</Link>
+                </Button>
+              </div>
             </div>
           </div>
-        </section>
 
-        {/* Work Environment */}
-        <section className="py-16 bg-muted/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="rounded-3xl overflow-hidden shadow-large border border-border/60">
-                <img
-                  src={modernWorkspace}
-                  alt="TalentXcel Workspace Environment"
-                  className="w-full h-80 object-cover"
-                  loading="lazy"
-                />
+          {/* 6.1 Application Process & Candidate Privacy Information */}
+          <div className="mb-20 bg-card rounded-3xl p-8 sm:p-12 border border-border/70 shadow-soft">
+            <div className="max-w-2xl mb-8">
+              <h2 className="text-2xl font-bold mb-2 text-foreground">Application Process &amp; Candidate Privacy</h2>
+              <p className="text-muted-foreground text-sm">
+                Transparent evaluation standards and statutory data protection for all prospective team members.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-6 mb-8">
+              <div className="p-5 bg-muted/20 rounded-2xl border border-border/60">
+                <div className="text-xs font-bold text-primary mb-1">Step 01. Review</div>
+                <h4 className="font-bold text-sm text-foreground mb-2">Profile &amp; Code Review</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Submissions are reviewed directly by practicing team leads and software architects—never discarded by blunt automated filters.
+                </p>
               </div>
-              <div className="rounded-3xl overflow-hidden shadow-large border border-border/60">
-                <img
-                  src={trainingSession}
-                  alt="TalentXcel Training & Skill Development"
-                  className="w-full h-80 object-cover"
-                  loading="lazy"
-                />
+              <div className="p-5 bg-muted/20 rounded-2xl border border-border/60">
+                <div className="text-xs font-bold text-primary mb-1">Step 02. Technical Dialogue</div>
+                <h4 className="font-bold text-sm text-foreground mb-2">Practical Assessment</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  A collaborative 45-minute technical conversation focusing on real-world system debugging, architecture trade-offs, and culture.
+                </p>
+              </div>
+              <div className="p-5 bg-muted/20 rounded-2xl border border-border/60">
+                <div className="text-xs font-bold text-primary mb-1">Step 03. Offer &amp; Onboard</div>
+                <h4 className="font-bold text-sm text-foreground mb-2">Transparent Offer</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Clear, formalized offer with competitive compensation, professional growth support, and structured onboarding.
+                </p>
+              </div>
+            </div>
+
+            {/* Candidate Privacy Notice under DPDP Act */}
+            <div className="p-4 bg-muted/40 rounded-xl border border-border/60 flex items-start gap-3">
+              <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <div className="text-xs text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Candidate Data Privacy Notice:</strong> In compliance with the Digital Personal Data Protection Act, 2023 (DPDP Act, India), your resume, portfolio, and contact details are collected strictly for evaluating employment suitability with TalentXcel Services Private Limited. Your data is never sold, shared with unauthorized third parties, or retained beyond the necessary hiring evaluation lifecycle without affirmative consent.
               </div>
             </div>
           </div>
-        </section>
+
+          {/* Genuine Workspace Context */}
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="rounded-3xl overflow-hidden shadow-medium border border-border/60 aspect-[16/10]">
+              <img
+                src={modernWorkspace}
+                alt="TalentXcel Professional Workspace Environment"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="rounded-3xl overflow-hidden shadow-medium border border-border/60 aspect-[16/10]">
+              <img
+                src={trainingSession}
+                alt="TalentXcel Training & Professional Development"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+        </div>
       </main>
 
       <Footer />

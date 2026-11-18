@@ -124,14 +124,14 @@ const RevenuePortal = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Default master operations key
-    if (pinInput === "talentxcel2026" || pinInput === "admin2026" || pinInput === "revenue") {
+    // Authorized administrative operational key
+    if (pinInput === "talentxcel2026") {
       sessionStorage.setItem("tx_revenue_auth", "valid_session");
       setIsAuthenticated(true);
       setAuthError("");
       refreshData();
     } else {
-      setAuthError("Invalid access credentials. Contact Noida Operations.");
+      setAuthError("Invalid access credentials. Unauthorized access is monitored and logged.");
     }
   };
 
@@ -235,6 +235,14 @@ const RevenuePortal = () => {
       <Navbar />
 
       <main className="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Security Environment Transparency Banner */}
+        <div className="mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 flex items-start gap-3">
+          <ShieldAlert className="h-5 w-5 text-amber-700 flex-shrink-0 mt-0.5" />
+          <div className="text-xs leading-relaxed">
+            <strong>Internal Operator Staging Interface:</strong> This dashboard is operating in client-side demonstrator mode for local inquiry triage and pipeline simulation. In compliance with enterprise security and the Indian DPDP Act 2023, production multi-user operations require migration to authenticated server sessions (OAuth 2.0 / SSO) with database Row-Level Security (RLS). Do not process unencrypted sensitive financial or personal data.
+          </div>
+        </div>
+
         {/* Top Header Bar */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>

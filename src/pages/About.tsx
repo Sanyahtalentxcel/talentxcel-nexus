@@ -162,11 +162,14 @@ const About = () => {
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   We blend enterprise technology solutions and workforce expertise to build a comprehensive ecosystem for businesses and professionals alike.
                 </p>
-                <div className="pt-2">
+                <div className="pt-2 flex flex-wrap gap-4">
                   <Button size="lg" asChild>
                     <Link to="/contact">
                       Connect with Our Team <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
+                  </Button>
+                  <Button size="lg" variant="outline" asChild>
+                    <Link to="/team">Meet Founder &amp; Leadership</Link>
                   </Button>
                 </div>
               </div>
