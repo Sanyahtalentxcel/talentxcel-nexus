@@ -4,7 +4,9 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, ExternalLink, MessageSquare, Sh
 const talentxcelLogo = "/talentxcel-assets/5b681ba5-58bf-4aae-8bef-3ba691eef586.png";
 
 const Footer = () => {
+  const foundingYear = 2024;
   const currentYear = new Date().getFullYear();
+  const copyrightYear = currentYear > foundingYear ? `${foundingYear}–${currentYear}` : `${foundingYear}`;
 
   const companyLinks = [
     { name: "About Us", href: "/about" },
@@ -193,7 +195,7 @@ const Footer = () => {
                 Terms of Service
               </Link>
               <span>
-                © {currentYear} TalentXcel Services Private Limited. All rights reserved.
+                © {copyrightYear} TalentXcel Services Private Limited. All rights reserved.
               </span>
             </div>
           </div>

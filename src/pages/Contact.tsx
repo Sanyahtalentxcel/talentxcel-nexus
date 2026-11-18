@@ -343,7 +343,7 @@ const Contact = () => {
                           <Label htmlFor="tech-timeline">Target Timeline</Label>
                           <Input
                             id="tech-timeline"
-                            placeholder="e.g. Immediate (1-2 months), Q3 2026"
+                            placeholder="e.g. Immediate (1-2 months), Next Quarter, or Custom Timeline"
                             value={formData.timeline}
                             onChange={(e) => handleInputChange("timeline", e.target.value)}
                           />

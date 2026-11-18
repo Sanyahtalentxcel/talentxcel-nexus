@@ -257,14 +257,11 @@ const Chatr = () => {
           </div>
         </section>
 
-        {/* Compliance / Branding Footer */}
-        <section className="py-12 bg-background border-t border-border/50">
+        {/* Technology Attribution */}
+        <section className="py-8 bg-slate-50 border-t border-border/60">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-sm text-muted-foreground mb-2">
-              © TalentXcel Technologies Pvt Ltd
-            </p>
-            <p className="text-xs text-muted-foreground/70">
-              CHATR™ is a communication service developed and operated by TalentXcel
+            <p className="text-xs text-muted-foreground">
+              CHATR™ is a conversational AI communication technology developed and operated within the TalentXcel ecosystem.
             </p>
           </div>
         </section>
