@@ -39,7 +39,14 @@ import {
   Phone,
   Mail,
   Building2,
-  FileText
+  FileText,
+  Globe,
+  LineChart,
+  Activity,
+  ExternalLink,
+  Layers,
+  ShieldCheck,
+  AlertTriangle
 } from "lucide-react";
 import {
   revenueOperations,
@@ -48,6 +55,7 @@ import {
   LeadStage,
   PipelineMetrics
 } from "@/services/revenueOperations";
+import { growthTracking, OutboundReferralEvent } from "@/services/growthTracking";
 
 const STAGE_LABELS: Record<LeadStage, { label: string; color: string }> = {
   new: { label: "New Lead", color: "bg-blue-100 text-blue-800 border-blue-200" },
@@ -90,6 +98,8 @@ const RevenuePortal = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [pinInput, setPinInput] = useState("");
   const [authError, setAuthError] = useState("");
+  const [activeTab, setActiveTab] = useState<"pipeline" | "growth_os">("pipeline");
+  const [outboundReferrals, setOutboundReferrals] = useState<OutboundReferralEvent[]>([]);
 
   // Leads & Pipeline Data
   const [leads, setLeads] = useState<Lead[]>([]);
@@ -111,6 +121,7 @@ const RevenuePortal = () => {
   const refreshData = () => {
     setLeads(revenueOperations.getLeads());
     setMetrics(revenueOperations.getPipelineMetrics());
+    setOutboundReferrals(growthTracking.getOutboundReferrals());
   };
 
   useEffect(() => {
@@ -276,6 +287,35 @@ const RevenuePortal = () => {
             </Button>
           </div>
         </div>
+
+        {/* View Mode Switcher */}
+        <div className="flex border-b border-border/80 mb-8 bg-white/60 p-1.5 rounded-xl border border-slate-200 shadow-soft">
+          <button
+            onClick={() => setActiveTab("pipeline")}
+            className={`flex-1 flex items-center justify-center space-x-2 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all ${
+              activeTab === "pipeline"
+                ? "bg-primary text-white shadow-soft"
+                : "text-brand-muted hover:text-brand-navy hover:bg-slate-100"
+            }`}
+          >
+            <Briefcase className="h-4 w-4" />
+            <span>Commercial Lead Pipeline</span>
+          </button>
+          <button
+            onClick={() => setActiveTab("growth_os")}
+            className={`flex-1 flex items-center justify-center space-x-2 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all ${
+              activeTab === "growth_os"
+                ? "bg-primary text-white shadow-soft"
+                : "text-brand-muted hover:text-brand-navy hover:bg-slate-100"
+            }`}
+          >
+            <LineChart className="h-4 w-4" />
+            <span>90-Day Growth &amp; Traffic OS</span>
+          </button>
+        </div>
+
+        {activeTab === "pipeline" ? (
+          <>
 
         {/* Executive KPI Grid */}
         {metrics && (
@@ -463,6 +503,258 @@ const RevenuePortal = () => {
             </table>
           </div>
         </Card>
+      </>
+    ) : (
+      /* Growth & Traffic OS View */
+      <div className="space-y-8">
+        {/* Telemetry & Attribution Status Cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <Card className="p-5 border-border/80 bg-white shadow-soft">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-muted">
+                Google Search Console
+              </span>
+              <Badge variant="outline" className="bg-amber-50 text-amber-800 border-amber-300 text-[10px]">
+                Awaiting Credentials
+              </Badge>
+            </div>
+            <div className="text-lg font-bold text-brand-navy">Property sc-domain</div>
+            <p className="text-xs text-brand-muted mt-1 leading-relaxed">
+              Domain DNS verification ready. Connect GSC Service Account API to ingest daily clicks, impressions &amp; SERP position.
+            </p>
+          </Card>
+
+          <Card className="p-5 border-border/80 bg-white shadow-soft">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-muted">
+                Google Analytics 4
+              </span>
+              <Badge variant="outline" className="bg-amber-50 text-amber-800 border-amber-300 text-[10px]">
+                Stream Unconfigured
+              </Badge>
+            </div>
+            <div className="text-lg font-bold text-brand-navy">G-Measurement ID</div>
+            <p className="text-xs text-brand-muted mt-1 leading-relaxed">
+              Client dataLayer initialized. Supply <code>VITE_GA4_MEASUREMENT_ID</code> to stream live sessions &amp; bounce events.
+            </p>
+          </Card>
+
+          <Card className="p-5 border-border/80 bg-white shadow-soft">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-muted">
+                Multi-Touch UTM
+              </span>
+              <Badge variant="outline" className="bg-emerald-50 text-emerald-800 border-emerald-300 text-[10px]">
+                Active In-App
+              </Badge>
+            </div>
+            <div className="text-lg font-bold text-emerald-700">Client Engine Live</div>
+            <p className="text-xs text-brand-muted mt-1 leading-relaxed">
+              Session attribution captures <code>utm_source</code>, <code>utm_medium</code>, and campaign tags on all incoming links.
+            </p>
+          </Card>
+
+          <Card className="p-5 border-border/80 bg-white shadow-soft">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-muted">
+                Robots &amp; Sitemaps
+              </span>
+              <Badge variant="outline" className="bg-emerald-50 text-emerald-800 border-emerald-300 text-[10px]">
+                Hardened
+              </Badge>
+            </div>
+            <div className="text-lg font-bold text-brand-navy">20 Core URLs</div>
+            <p className="text-xs text-brand-muted mt-1 leading-relaxed">
+              Indexed routes protected; <code>/revenue-portal</code> and <code>/admin</code> disallowed from search crawling.
+            </p>
+          </Card>
+        </div>
+
+        {/* Ecosystem Distribution Hub */}
+        <Card className="p-6 border-border/80 bg-white shadow-soft">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border/60 mb-4">
+            <div>
+              <h3 className="text-xl font-bold text-brand-navy">TalentXcel Connected Ecosystem Routing</h3>
+              <p className="text-xs text-brand-muted">
+                Verified status and outbound referral links across all 4 production ecosystem destinations.
+              </p>
+            </div>
+            <Badge variant="secondary" className="text-xs">
+              4 Active Domains
+            </Badge>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                name: "TalentXcel Corporate",
+                domain: "https://talentxcel.co.in",
+                role: "Corporate HQ & B2B Inquiries",
+                type: "Internal Application"
+              },
+              {
+                name: "TalentXcel Jobs",
+                domain: "https://talentxcel.in",
+                role: "Candidate Job Portal & Profiles",
+                type: "Outbound Referral"
+              },
+              {
+                name: "TalentXcel Academy",
+                domain: "https://talentxcel.net",
+                role: "Learning Hub & Certifications",
+                type: "Outbound Referral"
+              },
+              {
+                name: "CHATR Enterprise",
+                domain: "https://chatr.chat",
+                role: "Secure AI Communication Layer",
+                type: "Outbound Referral"
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="p-4 rounded-xl border border-border/70 bg-slate-50/60 space-y-2">
+                <div className="flex items-center justify-between text-xs font-semibold">
+                  <span className="text-brand-navy font-bold">{item.name}</span>
+                  <span className="font-mono text-[10px] text-primary">{item.type}</span>
+                </div>
+                <div className="text-xs text-brand-muted">{item.role}</div>
+                <div className="pt-2">
+                  <a
+                    href={growthTracking.buildEcosystemUrl(item.domain, "growth_portal_test")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      growthTracking.logOutboundReferral(
+                        item.domain.includes(".in")
+                          ? "talentxcel.in"
+                          : item.domain.includes(".net")
+                          ? "talentxcel.net"
+                          : "chatr.chat",
+                        item.domain,
+                        "Growth Dashboard Check"
+                      )
+                    }
+                    className="inline-flex items-center text-xs font-semibold text-primary hover:underline"
+                  >
+                    <span>{item.domain.replace("https://", "")}</span>
+                    <ExternalLink className="h-3 w-3 ml-1" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        {/* Inbound Lead Channel Attribution Register */}
+        <Card className="p-6 border-border/80 bg-white shadow-soft">
+          <h3 className="text-xl font-bold text-brand-navy mb-1">Commercial Lead Acquisition Channels</h3>
+          <p className="text-xs text-brand-muted mb-4">
+            Real-time attribution captured from incoming customer inquiries across corporate campaigns.
+          </p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr className="border-b border-border/80 bg-slate-50/80 text-[11px] font-bold uppercase tracking-wider text-brand-navy">
+                  <th className="py-2.5 px-3">Lead Ref</th>
+                  <th className="py-2.5 px-3">Organization</th>
+                  <th className="py-2.5 px-3">Acquisition Source</th>
+                  <th className="py-2.5 px-3">Medium</th>
+                  <th className="py-2.5 px-3">Campaign Tag</th>
+                  <th className="py-2.5 px-3">Landing Route</th>
+                  <th className="py-2.5 px-3 font-semibold">Pipeline Value</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border/60">
+                {leads.map((l) => (
+                  <tr key={l.id} className="hover:bg-slate-50/60">
+                    <td className="py-2 px-3 font-mono text-primary font-bold">{l.referenceNumber}</td>
+                    <td className="py-2 px-3 font-semibold text-brand-navy">{l.organization}</td>
+                    <td className="py-2 px-3">
+                      <span className="font-mono text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-700">
+                        {l.source}
+                      </span>
+                    </td>
+                    <td className="py-2 px-3 text-xs text-brand-muted">{l.medium}</td>
+                    <td className="py-2 px-3 text-xs text-brand-muted">{l.campaign || "none"}</td>
+                    <td className="py-2 px-3 font-mono text-xs text-brand-muted">{l.landingPage}</td>
+                    <td className="py-2 px-3 font-semibold text-brand-navy">
+                      {formatINR(l.proposalValue || l.estimatedDealValue || 0)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Card>
+
+        {/* Growth Experiments Register */}
+        <Card className="p-6 border-border/80 bg-white shadow-soft">
+          <div className="flex items-center justify-between pb-4 border-b border-border/60 mb-4">
+            <div>
+              <h3 className="text-xl font-bold text-brand-navy">Active 90-Day Growth Experiments</h3>
+              <p className="text-xs text-brand-muted">
+                Structured hypotheses, measurement windows, and primary conversion targets.
+              </p>
+            </div>
+            <Badge variant="outline" className="text-xs">
+              Phase 1: Days 1–10
+            </Badge>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4 text-xs">
+            {[
+              {
+                id: "EXP-001",
+                title: "Corporate Training Lead Form Conversion",
+                channel: "Direct Organic Search",
+                hypothesis: "Placing verified 4-Stage Practitioner Vetting and 3-5 hr weekly output gain stats above lead form will increase proposal requests by 25%.",
+                kpi: "Lead Submission Rate (%)",
+                status: "Running (Phase 1 Baseline)"
+              },
+              {
+                id: "EXP-002",
+                title: "Founder-Led Authority on LinkedIn",
+                channel: "Organic Social / LinkedIn",
+                hypothesis: "Bi-weekly thought leadership by Sanobar Jahan linking to India IT Hiring Trends Report will drive 150+ high-intent corporate inquiries.",
+                kpi: "Inbound Referral Leads",
+                status: "Scheduled (Days 11–30)"
+              },
+              {
+                id: "EXP-003",
+                title: "University MoU Syllabus Preview Download",
+                channel: "Direct Institutional Outreach",
+                hypothesis: "Providing direct download of Credit-Aligned AI Elective Syllabus will improve dean meeting bookings from 8% to 18%.",
+                kpi: "Discovery Meetings Booked",
+                status: "Design Phase"
+              },
+              {
+                id: "EXP-004",
+                title: "Ecosystem Candidate Job Board Cross-Referral",
+                channel: "Internal Ecosystem Routing",
+                hypothesis: "Contextual job links on Careers and Case Studies pages will direct 500+ qualified candidate views to talentxcel.in monthly.",
+                kpi: "Outbound Referral Clicks",
+                status: "Instrumented & Active"
+              }
+            ].map((exp) => (
+              <div key={exp.id} className="p-4 rounded-xl border border-border/70 bg-slate-50/50 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono font-bold text-primary">{exp.id}</span>
+                  <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                    {exp.status}
+                  </span>
+                </div>
+                <div className="font-bold text-brand-navy text-sm">{exp.title}</div>
+                <p className="text-brand-muted leading-relaxed">{exp.hypothesis}</p>
+                <div className="pt-2 flex items-center justify-between text-[11px] border-t border-border/60 text-brand-muted">
+                  <span>Channel: <strong className="text-brand-navy">{exp.channel}</strong></span>
+                  <span>Target KPI: <strong className="text-primary">{exp.kpi}</strong></span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+    )}
 
         {/* Lead Details & Operations Modal */}
         <Dialog open={!!selectedLead} onOpenChange={(open) => !open && setSelectedLead(null)}>

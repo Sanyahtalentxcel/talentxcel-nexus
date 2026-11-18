@@ -3,6 +3,8 @@
  * Central architecture for B2B Demand Generation, Pipeline Management, and Deal Tracking.
  */
 
+import { growthTracking } from "./growthTracking";
+
 export type LeadCategory =
   | "corporate_training"
   | "ai_training"
@@ -374,15 +376,15 @@ class RevenueOperationsEngine {
     const id = `lead_${Date.now()}_${randomSuffix}`;
     const now = new Date().toISOString();
 
-    // Parse URL params for UTMs
+    // Parse URL params or retrieve active session attribution
     let utmSource = "direct_web";
     let utmMedium = "organic";
     let utmCampaign = "none";
     if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      utmSource = params.get("utm_source") || (document.referrer ? "referral" : "direct_web");
-      utmMedium = params.get("utm_medium") || "inbound";
-      utmCampaign = params.get("utm_campaign") || "website_conversion";
+      const attr = growthTracking.getAttribution();
+      utmSource = attr.source || "direct_web";
+      utmMedium = attr.medium || "organic";
+      utmCampaign = attr.campaign || "website_conversion";
     }
 
     // Default deal estimates based on category

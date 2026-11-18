@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Protected Internal Operations Desks
+Disallow: /revenue-portal
+Disallow: /admin
+
 Sitemap: https://talentxcel.co.in/sitemap.xml
