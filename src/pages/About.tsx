@@ -120,12 +120,19 @@ const About = () => {
                 "description": "TalentXcel brings together technology solutions, workforce expertise, and talent development to help organizations build, scale, and transform.",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "Plot C, ESquare Building, Sector-45",
+                  "streetAddress": "Office 1917, 19th Floor, E-Square Building, Sector 96",
                   "addressLocality": "Noida",
                   "addressRegion": "Uttar Pradesh",
                   "postalCode": "201301",
                   "addressCountry": "India"
                 },
+                "hasMap": "https://share.google/9XwBijGdqZx4s5NN1",
+                "sameAs": [
+                  "https://in.linkedin.com/company/talentxcel-services-private-limited",
+                  "https://talentxcel.in",
+                  "https://talentxcel.net",
+                  "https://chatr.chat"
+                ],
                 "knowsAbout": [
                   "Enterprise Software Development",
                   "Artificial Intelligence",
@@ -175,7 +182,14 @@ const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-6 left-6 text-white">
                     <h2 className="text-xl font-semibold mb-1">Noida Headquarters</h2>
-                    <p className="text-sm opacity-90">Plot C, ESquare Building, Sector-45, Uttar Pradesh, India</p>
+                    <a 
+                      href="https://share.google/9XwBijGdqZx4s5NN1" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-sm opacity-90 hover:underline hover:text-white transition-colors inline-block"
+                    >
+                      Office 1917, 19th Floor, E-Square Building, Sector 96, Noida, Uttar Pradesh, India ↗
+                    </a>
                   </div>
                 </div>
               </div>

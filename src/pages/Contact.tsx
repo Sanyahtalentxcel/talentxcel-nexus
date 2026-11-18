@@ -77,9 +77,9 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Corporate Office",
-      description: "Primary headquarters",
-      info: "Plot C, ESquare Building, Sector-45, Noida, UP 201301",
-      action: "#"
+      description: "Noida headquarters (Google Maps ↗)",
+      info: "Office 1917, 19th Floor, E-Square Building, Sector 96, Noida, UP 201301",
+      action: "https://share.google/9XwBijGdqZx4s5NN1"
     },
     {
       icon: Clock,
@@ -210,6 +210,8 @@ const Contact = () => {
                   <p className="text-xs text-muted-foreground mb-3">{m.description}</p>
                   <a 
                     href={m.action} 
+                    target={m.action.startsWith("http") ? "_blank" : undefined}
+                    rel={m.action.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-xs sm:text-sm font-semibold text-primary hover:underline break-words"
                   >
                     {m.info}

@@ -257,8 +257,15 @@ const Investors = () => {
                   <div className="font-semibold text-white">+91 9717181609</div>
                 </div>
                 <div>
-                  <div className="text-white/70 text-xs uppercase tracking-wider mb-1">Registered Office Location</div>
-                  <div className="font-semibold text-white">Plot C, ESquare Building, Sector-45, Noida, Uttar Pradesh 201301, India</div>
+                  <div className="text-white/70 text-xs uppercase tracking-wider mb-1">Corporate Headquarters</div>
+                  <a 
+                    href="https://share.google/9XwBijGdqZx4s5NN1" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="font-semibold text-white hover:underline block"
+                  >
+                    Office 1917, 19th Floor, E-Square Building, Sector 96, Noida, UP 201301, India (Google Maps ↗)
+                  </a>
                 </div>
               </div>
             </div>

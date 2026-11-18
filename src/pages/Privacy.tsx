@@ -118,7 +118,7 @@ const Privacy = () => {
               </p>
               <div className="bg-muted/40 p-4 rounded-xl text-sm border border-border/50">
                 <p><strong>Email:</strong> privacy@talentxcel.co.in / contact@talentxcel.co.in</p>
-                <p><strong>Address:</strong> Plot C, ESquare Building, Sector-45, Noida, Uttar Pradesh 201301, India</p>
+                <p><strong>Address:</strong> Office 1917, 19th Floor, E-Square Building, Sector 96, Noida, Uttar Pradesh 201301, India</p>
               </div>
             </section>
           </Card>

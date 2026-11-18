@@ -764,15 +764,25 @@ export const ContactPortalSection = () => {
             </p>
 
             <div className="space-y-4 pt-2">
-              <div className="flex items-start space-x-3.5">
-                <div className="p-2.5 rounded-lg bg-white/10 text-brand-electric flex-shrink-0 mt-0.5">
+              <a
+                href="https://share.google/9XwBijGdqZx4s5NN1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-3.5 group"
+                title="View on Google Maps"
+              >
+                <div className="p-2.5 rounded-lg bg-white/10 text-brand-electric group-hover:bg-primary group-hover:text-white transition-colors flex-shrink-0 mt-0.5">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Corporate Headquarters</div>
-                  <div className="text-sm font-medium text-white">Plot C, ESquare Building, Sector-45, Noida, Uttar Pradesh, 201301, India</div>
+                  <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold group-hover:text-brand-electric transition-colors">
+                    Corporate Headquarters (Google Maps ↗)
+                  </div>
+                  <div className="text-sm font-medium text-white group-hover:underline">
+                    Office 1917, 19th Floor, E-Square Building, Sector 96, Noida, Uttar Pradesh, 201301, India
+                  </div>
                 </div>
-              </div>
+              </a>
 
               <div className="flex items-start space-x-3.5">
                 <div className="p-2.5 rounded-lg bg-white/10 text-brand-electric flex-shrink-0 mt-0.5">

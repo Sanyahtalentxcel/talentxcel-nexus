@@ -55,7 +55,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-3 pt-1">
               <a
-                href="https://www.linkedin.com/company/talentxcel"
+                href="https://in.linkedin.com/company/talentxcel-services-private-limited"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-white border border-border/80 text-brand-muted hover:text-primary hover:border-primary transition-colors"
@@ -181,10 +181,16 @@ const Footer = () => {
                 <Phone className="h-4 w-4 text-primary" />
                 <span>+91 9717181609</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4 text-primary" />
-                <span>ESquare Building, Sector-45, Noida, UP 201301</span>
-              </div>
+              <a
+                href="https://share.google/9XwBijGdqZx4s5NN1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-primary transition-colors"
+                title="View on Google Maps"
+              >
+                <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
+                <span>Office 1917, 19th Floor, E-Square Building, Sector 96, Noida, UP 201301</span>
+              </a>
             </div>
             
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2 lg:pt-0">

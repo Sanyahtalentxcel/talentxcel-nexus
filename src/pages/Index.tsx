@@ -87,13 +87,15 @@ const Index = () => {
               },
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Plot C, ESquare Building, Sector-45",
+                "streetAddress": "Office 1917, 19th Floor, E-Square Building, Sector 96",
                 "addressLocality": "Noida",
                 "addressRegion": "Uttar Pradesh",
                 "postalCode": "201301",
                 "addressCountry": "India"
               },
+              "hasMap": "https://share.google/9XwBijGdqZx4s5NN1",
               "sameAs": [
+                "https://in.linkedin.com/company/talentxcel-services-private-limited",
                 "https://talentxcel.in",
                 "https://talentxcel.net",
                 "https://chatr.chat"
