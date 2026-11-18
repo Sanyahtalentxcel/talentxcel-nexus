@@ -5,6 +5,9 @@
 
 import { growthTracking } from "./growthTracking";
 
+export const FOUNDER_EMAIL = "sanobar.jahan@talentxcel.co.in";
+export const CORPORATE_CONTACT_EMAIL = "contact@talentxcel.co.in";
+
 export type LeadCategory =
   | "corporate_training"
   | "ai_training"
@@ -435,8 +438,8 @@ class RevenueOperationsEngine {
           id: `act_${Date.now()}`,
           timestamp: now,
           author: "System Intake",
-          action: "Lead Submitted",
-          note: `New inquiry submitted for ${payload.category} by ${payload.contactPerson} (${payload.organization}).`
+          action: "Lead Submitted & Routed",
+          note: `New inquiry submitted for ${payload.category} by ${payload.contactPerson} (${payload.organization}). Auto-routed to ${FOUNDER_EMAIL} (CC: ${CORPORATE_CONTACT_EMAIL}).`
         }
       ]
     };
@@ -461,7 +464,11 @@ class RevenueOperationsEngine {
         fetch(apiEndpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(lead)
+          body: JSON.stringify({
+            ...lead,
+            routedTo: FOUNDER_EMAIL,
+            cc: CORPORATE_CONTACT_EMAIL,
+          })
         }).catch((err) => console.warn("Webhook dispatch fallback:", err));
       } catch (err) {
         console.warn("Webhook network issue:", err);
@@ -683,3 +690,82 @@ class RevenueOperationsEngine {
 }
 
 export const revenueOperations = new RevenueOperationsEngine();
+
+export const getLeadCategoryLabel = (category: LeadCategory): string => {
+  const map: Record<LeadCategory, string> = {
+    corporate_training: "Corporate Workforce Training",
+    ai_training: "AI & Generative AI Training",
+    it_staffing: "Specialized IT Staffing & Pods",
+    permanent_recruitment: "Permanent Recruitment & Direct Hire",
+    contract_staffing: "Contract Staffing",
+    rpo: "Recruitment Process Outsourcing (RPO)",
+    executive_search: "Executive & Leadership Search",
+    university_partnership: "University Partnership & Institutional MoU",
+    technology_consulting: "Enterprise Technology Consulting",
+    general_enterprise: "General Enterprise Inquiry",
+  };
+  return map[category] || category;
+};
+
+export interface LeadEmailDispatch {
+  to: string;
+  cc: string;
+  subject: string;
+  body: string;
+  mailtoUrl: string;
+}
+
+export const generateLeadEmailDispatch = (
+  lead: LeadSubmissionPayload | Lead,
+  referenceNumber?: string
+): LeadEmailDispatch => {
+  const categoryLabel = getLeadCategoryLabel(lead.category);
+  const refText = referenceNumber ? ` (Ref: ${referenceNumber})` : "";
+  const subject = `[TalentXcel Lead${refText}] ${categoryLabel} - ${lead.organization}`;
+
+  const body = 
+`TALENTXCEL ENTERPRISE INQUIRY NOTIFICATION
+=====================================================
+Executive Recipient: Founder & Managing Director Desk
+Primary: ${FOUNDER_EMAIL}
+CC: ${CORPORATE_CONTACT_EMAIL}
+=====================================================
+
+REFERENCE NUMBER: ${referenceNumber || "PENDING"}
+ENGAGEMENT CATEGORY: ${categoryLabel}
+
+CLIENT / INSTITUTION DETAILS:
+- Organization: ${lead.organization}
+- Contact Person: ${lead.contactPerson}
+- Designation: ${lead.designation || "Not Specified"}
+- Business Email: ${lead.email}
+- Telephone / Mobile: ${lead.phone}
+
+REQUIREMENT SCOPE & OBJECTIVES:
+${lead.businessRequirement}
+
+DELIVERY & PARAMETERS:
+- Participants / Vacancies Needed: ${lead.headcountOrParticipants || "Under Scoping"}
+- Expected Timeline: ${lead.preferredTimeline || "Immediate (Next 30 Days)"}
+- Delivery Mode: ${lead.deliveryMode || "hybrid"}
+- Budget Range: ${lead.budgetRange || "Under Scoping"}
+
+SOURCE ATTRIBUTION:
+- Source URL: ${typeof window !== "undefined" ? window.location.href : "Website Lead Intake"}
+- Timestamp: ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} IST
+=====================================================
+Strict DPDP Act Confidentiality Enforced.
+TalentXcel Services Private Limited | Noida Headquarters`;
+
+  const to = FOUNDER_EMAIL;
+  const cc = CORPORATE_CONTACT_EMAIL;
+  const mailtoUrl = `mailto:${to}?cc=${encodeURIComponent(cc)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  return {
+    to,
+    cc,
+    subject,
+    body,
+    mailtoUrl
+  };
+};

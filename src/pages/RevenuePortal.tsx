@@ -50,6 +50,8 @@ import {
 } from "lucide-react";
 import {
   revenueOperations,
+  generateLeadEmailDispatch,
+  FOUNDER_EMAIL,
   Lead,
   LeadCategory,
   LeadStage,
@@ -808,6 +810,15 @@ const RevenuePortal = () => {
                   </div>
                   <div>
                     <strong>Location:</strong> {selectedLead.location || "N/A"}
+                  </div>
+                  <div className="pt-2">
+                    <a
+                      href={generateLeadEmailDispatch(selectedLead, selectedLead.referenceNumber).mailtoUrl}
+                      className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-primary hover:underline bg-primary/10 px-2.5 py-1.5 rounded-lg border border-primary/20"
+                    >
+                      <Mail className="h-3 w-3" />
+                      <span>Forward to Founder ({FOUNDER_EMAIL})</span>
+                    </a>
                   </div>
                 </div>
 

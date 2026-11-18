@@ -250,7 +250,9 @@ const Investors = () => {
               <div className="space-y-4 text-sm">
                 <div>
                   <div className="text-white/70 text-xs uppercase tracking-wider mb-1">Corporate Email</div>
-                  <div className="font-semibold text-white">investors@talentxcel.co.in / contact@talentxcel.co.in</div>
+                  <a href="mailto:investors@talentxcel.co.in?cc=sanobar.jahan@talentxcel.co.in" className="font-semibold text-white hover:underline block">
+                    investors@talentxcel.co.in / contact@talentxcel.co.in
+                  </a>
                 </div>
                 <div>
                   <div className="text-white/70 text-xs uppercase tracking-wider mb-1">Direct Telephone</div>

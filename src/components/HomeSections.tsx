@@ -790,7 +790,7 @@ export const ContactPortalSection = () => {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Executive Contact</div>
-                  <a href="mailto:contact@talentxcel.co.in" className="text-sm font-medium text-brand-electric hover:underline">
+                  <a href="mailto:contact@talentxcel.co.in?cc=sanobar.jahan@talentxcel.co.in" className="text-sm font-medium text-brand-electric hover:underline">
                     contact@talentxcel.co.in
                   </a>
                 </div>

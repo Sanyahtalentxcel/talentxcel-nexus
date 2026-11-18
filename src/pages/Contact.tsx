@@ -18,7 +18,8 @@ import {
   CheckCircle2, 
   AlertCircle, 
   Send,
-  ShieldCheck 
+  ShieldCheck,
+  Copy
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { useToast } from "@/components/ui/use-toast";
@@ -58,6 +59,9 @@ const Contact = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [mailDispatchUrl, setMailDispatchUrl] = useState<string | null>(null);
+  const [inquirySummary, setInquirySummary] = useState<string>("");
+  const [copied, setCopied] = useState(false);
 
   const contactMethods = [
     {
@@ -65,7 +69,7 @@ const Contact = () => {
       title: "Enterprise Inquiries",
       description: "Direct email contact",
       info: "contact@talentxcel.co.in",
-      action: "mailto:contact@talentxcel.co.in"
+      action: "mailto:contact@talentxcel.co.in?cc=sanobar.jahan@talentxcel.co.in"
     },
     {
       icon: Phone,
@@ -99,6 +103,13 @@ const Contact = () => {
         return next;
       });
     }
+  };
+
+  const handleCopyInquiry = () => {
+    if (!inquirySummary) return;
+    navigator.clipboard.writeText(inquirySummary);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
   };
 
   const validate = (): boolean => {
@@ -143,26 +154,60 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    // Prepare email payload for mailto fallback
-    const subject = encodeURIComponent(
-      `[TalentXcel Inquiry - ${activeTab.toUpperCase()}] from ${formData.organization || formData.name}`
-    );
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "N/A"}\nOrganization: ${formData.organization}\nCategory: ${activeTab}\nService/Requirement: ${formData.serviceInterest || "General"}\nPositions/Participants: ${formData.positionsCount || "N/A"}\nSkills: ${formData.skillsNeeded || "N/A"}\nTimeline: ${formData.timeline || "N/A"}\nLocation: ${formData.location || "N/A"}\n\nProject Scope / Message:\n${formData.message}`
-    );
+    // Prepare formal email payload routed to Founder & Managing Director with CC to contact@
+    const subject = `[TalentXcel Inquiry - ${activeTab.toUpperCase()}] from ${formData.organization || formData.name}`;
+    const bodyText = 
+`TALENTXCEL CONTACT PORTAL INQUIRY
+=====================================================
+Executive Recipient: Founder & Managing Director Desk
+Primary: sanobar.jahan@talentxcel.co.in
+CC: contact@talentxcel.co.in
+=====================================================
 
-    // Simulate safe local handling with mailto dispatch
+CONTACT & ORGANIZATION:
+- Full Name: ${formData.name}
+- Business Email: ${formData.email}
+- Telephone: ${formData.phone || "N/A"}
+- Organization: ${formData.organization}
+
+INQUIRY PARAMETERS:
+- Category / Tab: ${activeTab}
+- Service Area: ${formData.serviceInterest || "General Inquiry"}
+- Headcount / Positions Needed: ${formData.positionsCount || "N/A"}
+- Required Tech Stack / Skills: ${formData.skillsNeeded || "N/A"}
+- Target Timeline: ${formData.timeline || "N/A"}
+- Delivery Location: ${formData.location || "N/A"}
+
+PROJECT SCOPE & MESSAGE:
+${formData.message}
+
+=====================================================
+Submitted via: https://talentxcel.co.in/contact
+Timestamp: ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} IST
+Strict DPDP Act Confidentiality Enforced.`;
+
+    const to = "sanobar.jahan@talentxcel.co.in";
+    const cc = "contact@talentxcel.co.in";
+    const mailtoLink = `mailto:${to}?cc=${encodeURIComponent(cc)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+
+    setMailDispatchUrl(mailtoLink);
+    setInquirySummary(bodyText);
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       toast({
-        title: "Inquiry Form Prepared",
-        description: "Your inquiry details have been registered. Opening your email client to dispatch to our team.",
+        title: "Inquiry Dispatched",
+        description: "Your inquiry details have been routed to sanobar.jahan@talentxcel.co.in (CC: contact@talentxcel.co.in).",
       });
 
-      // Trigger mailto client dispatch
-      window.location.href = `mailto:contact@talentxcel.co.in?subject=${subject}&body=${body}`;
-    }, 600);
+      // Trigger automatic mailto client dispatch
+      try {
+        window.location.href = mailtoLink;
+      } catch (err) {
+        console.warn("Mail client popup suppressed:", err);
+      }
+    }, 500);
   };
 
   return (
@@ -248,21 +293,70 @@ const Contact = () => {
                 </TabsList>
 
                 {isSubmitted ? (
-                  <div className="p-8 text-center space-y-4 bg-primary/5 rounded-2xl border border-primary/20">
-                    <CheckCircle2 className="h-12 w-12 text-primary mx-auto" />
-                    <h3 className="text-xl font-bold text-foreground">Thank You for Reaching Out</h3>
-                    <p className="text-sm text-muted-foreground max-w-md mx-auto">
-                      Your inquiry has been compiled and delivered to our corporate delivery desk at <strong>contact@talentxcel.co.in</strong>. A solution specialist will follow up with you shortly.
+                  <div className="p-6 sm:p-8 text-center space-y-4 bg-white rounded-2xl border border-emerald-300 shadow-soft">
+                    <div className="p-3 bg-emerald-50 text-emerald-600 rounded-2xl w-fit mx-auto">
+                      <CheckCircle2 className="h-10 w-10" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">Inquiry Prepared &amp; Registered</h3>
+                    <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
+                      Your inquiry has been compiled and routed directly to the Executive Leadership &amp; Operations Desk at <strong>sanobar.jahan@talentxcel.co.in</strong> (CC: contact@talentxcel.co.in). A solution specialist will follow up with you shortly.
                     </p>
-                    <Button 
-                      variant="outline" 
-                      onClick={() => {
-                        setIsSubmitted(false);
-                        setFormData(initialFormState);
-                      }}
-                    >
-                      Submit Another Inquiry
-                    </Button>
+
+                    <div className="bg-emerald-50/80 border border-emerald-200/90 rounded-xl p-3.5 sm:p-4 text-xs text-emerald-950 text-left space-y-1.5 max-w-lg mx-auto">
+                      <div className="font-semibold flex items-center gap-1.5 text-emerald-900">
+                        <ShieldCheck className="h-4 w-4 text-emerald-700 flex-shrink-0" />
+                        <span>Executive Delivery Routing</span>
+                      </div>
+                      <p className="text-[11.5px] leading-relaxed text-emerald-900/90">
+                        Primary Recipient: <span className="font-mono font-semibold">sanobar.jahan@talentxcel.co.in</span> (Founder &amp; MD)
+                        <br />
+                        Department CC: <span className="font-mono font-semibold">contact@talentxcel.co.in</span>
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                      {mailDispatchUrl && (
+                        <a
+                          href={mailDispatchUrl}
+                          className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl shadow-soft hover:shadow-medium transition-colors"
+                        >
+                          <Mail className="h-4 w-4" />
+                          <span>Confirm Dispatch in Email App</span>
+                        </a>
+                      )}
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleCopyInquiry}
+                        className="w-full sm:w-auto text-xs sm:text-sm"
+                      >
+                        {copied ? (
+                          <>
+                            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 mr-1.5" />
+                            <span>Inquiry Copied!</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="h-3.5 w-3.5 mr-1.5" />
+                            <span>Copy Inquiry Text</span>
+                          </>
+                        )}
+                      </Button>
+                    </div>
+
+                    <div className="pt-3">
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => {
+                          setIsSubmitted(false);
+                          setFormData(initialFormState);
+                          setMailDispatchUrl(null);
+                        }}
+                      >
+                        Submit Another Inquiry
+                      </Button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">

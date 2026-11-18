@@ -18,10 +18,16 @@ import {
   PhoneCall,
   Clock,
   ArrowRight,
-  FileCheck
+  FileCheck,
+  Mail,
+  Copy
 } from "lucide-react";
 import {
   revenueOperations,
+  generateLeadEmailDispatch,
+  LeadEmailDispatch,
+  FOUNDER_EMAIL,
+  CORPORATE_CONTACT_EMAIL,
   LeadCategory,
   LeadSubmissionPayload
 } from "@/services/revenueOperations";
@@ -60,6 +66,8 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
   const [honeypot, setHoneypot] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedRef, setSubmittedRef] = useState<string | null>(null);
+  const [mailDispatch, setMailDispatch] = useState<LeadEmailDispatch | null>(null);
+  const [copied, setCopied] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validate = (): boolean => {
@@ -79,6 +87,13 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
     return Object.keys(errs).length === 0;
   };
 
+  const handleCopyDetails = () => {
+    if (!mailDispatch) return;
+    navigator.clipboard.writeText(mailDispatch.body);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (honeypot) return; // Silent spam block
@@ -91,6 +106,16 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
       const res = revenueOperations.submitLead(formData);
       if (res.success) {
         setSubmittedRef(res.referenceNumber);
+        const dispatch = generateLeadEmailDispatch(formData, res.referenceNumber);
+        setMailDispatch(dispatch);
+
+        // Auto-direct email client dispatch to Founder & Managing Director
+        try {
+          window.location.href = dispatch.mailtoUrl;
+        } catch (dispatchErr) {
+          console.warn("Mail client auto-launch suppressed by browser:", dispatchErr);
+        }
+
         if (onSuccess) onSuccess(res.referenceNumber);
       }
     } catch (err) {
@@ -100,9 +125,9 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
     }
   };
 
-  if (submittedRef) {
+  if (submittedRef && mailDispatch) {
     return (
-      <div className={`p-8 bg-white border border-emerald-300 rounded-2xl shadow-medium text-center space-y-4 ${className}`}>
+      <div className={`p-6 sm:p-8 bg-white border border-emerald-300 rounded-2xl shadow-medium text-center space-y-4 ${className}`}>
         <div className="p-3 bg-emerald-50 text-emerald-600 rounded-2xl w-fit mx-auto">
           <CheckCircle2 className="h-10 w-10" />
         </div>
@@ -114,8 +139,50 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
           Inquiry Successfully Registered
         </h3>
         <p className="text-sm text-brand-muted max-w-md mx-auto leading-relaxed">
-          Your requirement has been recorded in the central operations registry. An authorized practice lead has been notified and will reach out to <strong>{formData.email}</strong> within 24 business hours.
+          Your requirement has been logged in our central registry and routed directly to the Executive Leadership &amp; Operations Desk at <strong>{FOUNDER_EMAIL}</strong> (CC: {CORPORATE_CONTACT_EMAIL}). A practice specialist will follow up with <strong>{formData.email}</strong> within 24 business hours.
         </p>
+
+        {/* Executive Routing Confirmation Card */}
+        <div className="bg-emerald-50/80 border border-emerald-200/90 rounded-xl p-3.5 sm:p-4 text-xs text-emerald-950 text-left space-y-1.5">
+          <div className="font-semibold flex items-center gap-1.5 text-emerald-900">
+            <ShieldCheck className="h-4 w-4 text-emerald-700 flex-shrink-0" />
+            <span>Executive Mail Delivery Configured</span>
+          </div>
+          <p className="text-[11.5px] leading-relaxed text-emerald-900/90">
+            Primary Recipient: <span className="font-mono font-semibold">{FOUNDER_EMAIL}</span> (Founder &amp; MD Desk)
+            <br />
+            Secondary CC: <span className="font-mono font-semibold">{CORPORATE_CONTACT_EMAIL}</span>
+          </p>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+          <a
+            href={mailDispatch.mailtoUrl}
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl shadow-soft hover:shadow-medium transition-colors"
+          >
+            <Mail className="h-4 w-4" />
+            <span>Confirm Dispatch in Email App</span>
+          </a>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleCopyDetails}
+            className="w-full sm:w-auto text-xs sm:text-sm"
+          >
+            {copied ? (
+              <>
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 mr-1.5" />
+                <span>Inquiry Summary Copied!</span>
+              </>
+            ) : (
+              <>
+                <Copy className="h-3.5 w-3.5 mr-1.5" />
+                <span>Copy Inquiry Details</span>
+              </>
+            )}
+          </Button>
+        </div>
 
         <div className="pt-4 border-t border-slate-200 grid sm:grid-cols-2 gap-3 text-xs text-brand-muted text-left">
           <div className="flex items-center space-x-2">
@@ -130,10 +197,11 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
 
         <div className="pt-3">
           <Button
-            variant="outline"
+            variant="ghost"
             size="sm"
             onClick={() => {
               setSubmittedRef(null);
+              setMailDispatch(null);
               setFormData({
                 category: initialCategory,
                 organization: "",

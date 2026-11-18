@@ -175,7 +175,12 @@ const Footer = () => {
             <div className="flex flex-wrap gap-4 sm:gap-6">
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>contact@talentxcel.co.in</span>
+                <a
+                  href="mailto:contact@talentxcel.co.in?cc=sanobar.jahan@talentxcel.co.in"
+                  className="hover:text-primary transition-colors"
+                >
+                  contact@talentxcel.co.in
+                </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-primary" />

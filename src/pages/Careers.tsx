@@ -171,7 +171,7 @@ const Careers = () => {
                 </p>
               </div>
               <div className="text-xs sm:text-sm text-muted-foreground bg-muted/40 p-3 rounded-xl border border-border/60">
-                Direct resume submissions: <a href="mailto:careers@talentxcel.co.in" className="text-primary font-semibold hover:underline">careers@talentxcel.co.in</a>
+                Direct resume submissions: <a href="mailto:careers@talentxcel.co.in?cc=sanobar.jahan@talentxcel.co.in" className="text-primary font-semibold hover:underline">careers@talentxcel.co.in</a>
               </div>
             </div>
 
@@ -212,7 +212,7 @@ const Careers = () => {
 
                     <div className="flex-shrink-0 flex flex-col sm:flex-row lg:flex-col gap-3">
                       <Button asChild>
-                        <a href={`mailto:careers@talentxcel.co.in?subject=Application:%20${encodeURIComponent(role.title)}`}>
+                        <a href={`mailto:careers@talentxcel.co.in?cc=sanobar.jahan@talentxcel.co.in&subject=Application:%20${encodeURIComponent(role.title)}`}>
                           Apply via Email <Mail className="ml-2 h-4 w-4" />
                         </a>
                       </Button>
@@ -239,7 +239,7 @@ const Careers = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Button asChild>
-                  <a href="mailto:careers@talentxcel.co.in?subject=General%20Candidate%20Profile%20Submission">
+                  <a href="mailto:careers@talentxcel.co.in?cc=sanobar.jahan@talentxcel.co.in&subject=General%20Candidate%20Profile%20Submission">
                     Submit Your Profile to Talent Desk <Mail className="ml-2 h-4 w-4" />
                   </a>
                 </Button>

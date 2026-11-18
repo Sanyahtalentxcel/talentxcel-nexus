@@ -95,7 +95,7 @@ const Terms = () => {
               <h2 className="text-2xl font-bold text-foreground">7. Contact & Notices</h2>
               <p>For inquiries regarding these Terms of Service, contact:</p>
               <div className="bg-muted/40 p-4 rounded-xl text-sm border border-border/50">
-                <p><strong>Legal Department:</strong> legal@talentxcel.co.in / contact@talentxcel.co.in</p>
+                <p><strong>Legal Department:</strong> <a href="mailto:legal@talentxcel.co.in?cc=sanobar.jahan@talentxcel.co.in" className="text-primary hover:underline font-medium">legal@talentxcel.co.in / contact@talentxcel.co.in</a></p>
                 <p><strong>TalentXcel Services Private Limited</strong> | Office 1917, 19th Floor, E-Square Building, Sector 96, Noida, Uttar Pradesh 201301, India</p>
               </div>
             </section>
