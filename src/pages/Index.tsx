@@ -1,20 +1,17 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import FeaturesGrid from "@/components/FeaturesGrid";
-import ServicesPreview from "@/components/ServicesPreview";
-import CompanyOverview from "@/components/CompanyOverview";
-import ChatrSection from "@/components/ChatrSection";
 import ChatrAssistant from "@/components/ChatrAssistant";
 import {
-  CoreCapabilities,
-  ProductsEcosystem,
-  LiveProjects,
-  EnterpriseUseCases,
-  WhyTalentXcel,
-  BuildWithUs,
-  StrongCTA,
-} from "@/components/EnterpriseSections";
+  CorporateIntroSection,
+  ThreePillarsSection,
+  EcosystemSection,
+  LeadershipPreviewSection,
+  WhyTalentXcelSection,
+  CaseStudiesPreviewSection,
+  PartnershipsSection,
+  ContactPortalSection,
+} from "@/components/HomeSections";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
@@ -23,7 +20,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Helmet>
-          <title>TalentXcel — Integrated Technology & Talent Solutions</title>
+          <title>TalentXcel — Integrated Technology &amp; Talent Solutions</title>
           <meta
             name="description"
             content="TalentXcel brings together enterprise technology solutions, workforce expertise, and talent development to help organizations build, scale, and transform."
@@ -35,7 +32,7 @@ const Index = () => {
           <link rel="canonical" href="https://talentxcel.co.in/" />
           
           {/* Open Graph */}
-          <meta property="og:title" content="TalentXcel — Integrated Technology & Talent Solutions" />
+          <meta property="og:title" content="TalentXcel — Integrated Technology &amp; Talent Solutions" />
           <meta
             property="og:description"
             content="Enterprise software, AI automation, IT staffing, and corporate talent development under one roof."
@@ -44,7 +41,7 @@ const Index = () => {
           <meta property="og:type" content="website" />
           
           {/* Twitter */}
-          <meta name="twitter:title" content="TalentXcel — Integrated Technology & Talent Solutions" />
+          <meta name="twitter:title" content="TalentXcel — Integrated Technology &amp; Talent Solutions" />
           <meta
             name="twitter:description"
             content="Technology That Moves Business Forward. Talent That Makes It Possible."
@@ -135,18 +132,32 @@ const Index = () => {
           </script>
         </Helmet>
         
+        {/* Redesigned 52/48 Balanced Hero */}
         <HeroSection />
-        <FeaturesGrid />
-        <CoreCapabilities />
-        <ProductsEcosystem />
-        <ChatrSection />
-        <LiveProjects />
-        <EnterpriseUseCases />
-        <WhyTalentXcel />
-        <BuildWithUs />
-        <ServicesPreview />
-        <CompanyOverview />
-        <StrongCTA />
+
+        {/* Section A — Corporate Introduction */}
+        <CorporateIntroSection />
+
+        {/* Section B — Three Business Pillars */}
+        <ThreePillarsSection />
+
+        {/* Section C — Integrated Ecosystem */}
+        <EcosystemSection />
+
+        {/* Section D — Leadership & Governance */}
+        <LeadershipPreviewSection />
+
+        {/* Section E — Why TalentXcel (Integrated Model Advantage) */}
+        <WhyTalentXcelSection />
+
+        {/* Section F — Case Studies & Client Outcomes */}
+        <CaseStudiesPreviewSection />
+
+        {/* Section G — Strategic Partnerships & MoUs */}
+        <PartnershipsSection />
+
+        {/* Section H — Enterprise Contact & Enquiry Portal */}
+        <ContactPortalSection />
       </main>
       <Footer />
       <ChatrAssistant />

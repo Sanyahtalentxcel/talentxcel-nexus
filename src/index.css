@@ -8,67 +8,66 @@
 
 @layer base {
   :root {
-    /* Apple-inspired Corporate Design System */
-    --background: 0 0% 99%;
-    --foreground: 0 0% 9%;
+    /* TalentXcel World-Class Corporate Design System */
+    --background: 216 33% 98%;
+    --foreground: 221 51% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card-foreground: 221 23% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover-foreground: 221 51% 13%;
 
-    /* Primary Brand - TalentXcel Blue */
-    --primary: 214 95% 45%;
+    /* Primary Brand - Corporate Blue (#1769E8) & Electric Accent (#3985FF) */
+    --primary: 216 83% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 214 95% 55%;
+    --primary-hover: 217 100% 61%;
 
-    /* Secondary - Clean Slate */
-    --secondary: 210 10% 96%;
-    --secondary-foreground: 0 0% 9%;
+    /* Secondary - Clean Corporate Slate */
+    --secondary: 216 28% 95%;
+    --secondary-foreground: 221 51% 13%;
 
-    /* Accent - Minimal Orange */
-    --accent: 25 85% 55%;
+    /* Accent - Electric Blue Accent */
+    --accent: 217 100% 61%;
     --accent-foreground: 0 0% 100%;
 
-    /* Chatr - Brand Green */
-    --chatr: 142 71% 45%;
+    /* Ecosystem product identifiers (restrained) */
+    --chatr: 142 71% 42%;
     --chatr-foreground: 0 0% 100%;
-    --chatr-hover: 142 71% 40%;
+    --chatr-hover: 142 71% 36%;
+    --learning: 25 85% 55%;
 
-    /* Apple-style neutral tones */
-    --muted: 210 6% 97%;
-    --muted-foreground: 214 12% 45%;
+    /* Corporate Neutral Tones (#667085 muted text) */
+    --muted: 216 28% 96%;
+    --muted-foreground: 221 13% 46%;
 
-    --destructive: 0 65% 51%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 12% 92%;
-    --input: 214 12% 95%;
-    --ring: 214 95% 45%;
+    --border: 220 13% 90%;
+    --input: 220 13% 93%;
+    --ring: 216 83% 50%;
 
-    /* Apple-inspired gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(214 95% 45%) 0%, hsl(214 85% 55%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(214 95% 45%) 0%, hsl(25 85% 55%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(25 85% 55%) 0%, hsl(214 95% 45%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%);
+    /* Refined enterprise gradients */
+    --gradient-primary: linear-gradient(135deg, #1769E8 0%, #3985FF 100%);
+    --gradient-hero: linear-gradient(135deg, #101B32 0%, #1769E8 100%);
+    --gradient-accent: linear-gradient(135deg, #1769E8 0%, #3985FF 100%);
     
-    /* Apple-style shadows with better definition */
-    --shadow-soft: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.12);
-    --shadow-medium: 0 4px 12px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.08);
-    --shadow-large: 0 25px 50px rgba(0,0,0,0.12), 0 10px 20px rgba(0,0,0,0.06);
-    --shadow-glass: 0 8px 32px rgba(0,0,0,0.1);
+    /* Subtle enterprise elevation shadows */
+    --shadow-soft: 0 1px 3px rgba(16, 27, 50, 0.05), 0 1px 2px rgba(16, 27, 50, 0.08);
+    --shadow-medium: 0 4px 14px rgba(16, 27, 50, 0.07), 0 2px 6px rgba(16, 27, 50, 0.04);
+    --shadow-large: 0 16px 36px rgba(16, 27, 50, 0.08), 0 6px 12px rgba(16, 27, 50, 0.04);
 
-    --radius: 0.75rem;
+    --radius: 0.625rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 221 51% 13%;
+    --sidebar-primary: 216 83% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 28% 95%;
+    --sidebar-accent-foreground: 221 51% 13%;
+    --sidebar-border: 220 13% 90%;
+    --sidebar-ring: 216 83% 50%;
   }
 
   .dark {
