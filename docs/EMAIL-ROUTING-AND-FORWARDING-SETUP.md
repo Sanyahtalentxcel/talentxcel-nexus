@@ -78,7 +78,47 @@ Used in:
 
 When an external client or prospective employee writes directly from their email client (typing `contact@talentxcel.co.in` or `careers@talentxcel.co.in`), mail server rules must automatically route the email to `sanobar.jahan@talentxcel.co.in`.
 
-Follow the instructions below corresponding to TalentXcel's email hosting provider:
+### ⭐ Primary Setup: Zoho Mail (Confirmed Active Provider)
+
+In Zoho Mail, the best, zero-cost method is setting up **Email Aliases** on Sanobar Jahan's user account. This requires no extra paid licenses, delivers instantly to her inbox, and allows her to reply directly using those departmental addresses.
+
+#### Method 1: Email Aliases (Fastest & 100% Free - 2 Minutes)
+1. Log in to the **Zoho Mail Admin Console**:
+   - India Accounts: **https://mailadmin.zoho.in**
+   - Global Accounts: **https://mailadmin.zoho.com**
+2. On the left navigation sidebar, click **Users**.
+3. Click on **Sanobar Jahan** (`sanobar.jahan@talentxcel.co.in`).
+4. Click on the **Mail Settings** tab (or **Email Accounts**).
+5. In the **Email Aliases** section, click **+ Add New Alias**.
+6. Add the following aliases one by one:
+   - `contact` &rarr; creates `contact@talentxcel.co.in`
+   - `careers` &rarr; creates `careers@talentxcel.co.in`
+   - `support` &rarr; creates `support@talentxcel.co.in`
+   - `partnerships` &rarr; creates `partnerships@talentxcel.co.in`
+   - `investors` &rarr; creates `investors@talentxcel.co.in`
+   - `privacy` &rarr; creates `privacy@talentxcel.co.in`
+   - `legal` &rarr; creates `legal@talentxcel.co.in`
+7. Click **Save**.
+> **Result:** Any email sent to `contact@`, `careers@`, etc., immediately delivers into Sanobar Jahan's inbox. When composing or replying in Zoho Mail, she can also choose `contact@talentxcel.co.in` in the **From** dropdown.
+
+#### Method 2: Catch-All Email (Catches Any Typo or Unassigned Address)
+1. In Zoho Admin Console, click **Domains** on the left menu.
+2. Click on **talentxcel.co.in**.
+3. Locate **Catch-All Account** (or Shadow Account).
+4. Set the destination to **`sanobar.jahan@talentxcel.co.in`**.
+5. Click **Save**.
+> **Result:** If anyone types `info@`, `sales@`, or mistypes any address at `@talentxcel.co.in`, it will automatically land in Sanobar Jahan's inbox.
+
+#### Method 3: If Separate Zoho Mailboxes Already Exist
+If `contact@talentxcel.co.in` was already created as an independent user:
+1. In Zoho Admin Console &rarr; **Users** &rarr; click on `contact@talentxcel.co.in`.
+2. Go to **Mail Settings** &rarr; **Email Forwarding**.
+3. Click **+ Add Forwarding Address** and enter `sanobar.jahan@talentxcel.co.in`.
+4. Click **Save**. Repeat for `careers@talentxcel.co.in`.
+
+---
+
+### Alternative Email Providers Reference (Google Workspace / cPanel / M365)
 
 ### Option A: Google Workspace (Recommended Enterprise Setup)
 1. Log into **Google Admin Console** (`admin.google.com`) as Super Administrator.
