@@ -77,9 +77,13 @@ const App = () => (
               <Route path="/campus-employability" element={<UniversityPartnerships />} />
               <Route path="/institutional-training" element={<UniversityPartnerships />} />
 
-              {/* Protected Revenue Operations Portal */}
-              <Route path="/admin" element={<RevenuePortal />} />
-              <Route path="/revenue-portal" element={<RevenuePortal />} />
+              {/* Internal Revenue Operations Portal: Disabled in public production until server-side OAuth/SSO is deployed */}
+              {import.meta.env.DEV && import.meta.env.VITE_ENABLE_INTERNAL_PORTAL === "true" && (
+                <>
+                  <Route path="/admin" element={<RevenuePortal />} />
+                  <Route path="/revenue-portal" element={<RevenuePortal />} />
+                </>
+              )}
 
               {/* Catch-all route */}
               <Route path="*" element={<NotFound />} />
