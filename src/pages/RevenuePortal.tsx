@@ -96,13 +96,7 @@ const formatINR = (val: number) => {
   }).format(val);
 };
 
-const RevenuePortal = () => {
-  // Security Guard: Disable internal operator portal in public production
-  // Access requires authenticated server-side OAuth 2.0 / SSO session
-  if (import.meta.env.PROD || import.meta.env.VITE_ENABLE_INTERNAL_PORTAL !== "true") {
-    return <NotFound />;
-  }
-
+const RevenuePortalContent = () => {
   const [activeTab, setActiveTab] = useState<"pipeline" | "growth_os">("pipeline");
   const [outboundReferrals, setOutboundReferrals] = useState<OutboundReferralEvent[]>([]);
 
@@ -924,6 +918,16 @@ const RevenuePortal = () => {
       <Footer />
     </div>
   );
+};
+
+const RevenuePortal = () => {
+  // Security Guard: Disable internal operator portal in public production
+  // Access requires authenticated server-side OAuth 2.0 / SSO session
+  if (import.meta.env.PROD || import.meta.env.VITE_ENABLE_INTERNAL_PORTAL !== "true") {
+    return <NotFound />;
+  }
+
+  return <RevenuePortalContent />;
 };
 
 export default RevenuePortal;
