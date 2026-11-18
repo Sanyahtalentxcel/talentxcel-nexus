@@ -2,50 +2,75 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
   Code2,
-  Bot,
-  Link2,
+  Users2,
+  GraduationCap,
   Globe2,
   Cpu,
   MessageSquare,
   FileText,
   Rocket,
   Building2,
-  GraduationCap,
   UserSearch,
   CheckCircle2,
   XCircle,
   ArrowRight,
   Sparkles,
+  ShieldCheck,
+  Briefcase
 } from "lucide-react";
 
 const capabilities = [
   {
     icon: Code2,
-    title: "Software Development",
-    tagline: "We don't just build software. We build scalable digital infrastructure.",
-    items: ["Custom SaaS Platforms", "Web & Mobile Apps", "API & Backend Systems", "Enterprise Systems"],
+    title: "Technology & AI Solutions",
+    tagline: "Engineering scalable software, modern AI systems & cloud foundations.",
+    items: [
+      "Custom Enterprise SaaS Platforms",
+      "Applied AI & Process Automation",
+      "Cloud Infrastructure & DevOps",
+      "Architecture & Systems Modernization"
+    ],
     accent: "primary",
+    link: "/services/it-consulting-managed-services"
   },
   {
-    icon: Bot,
-    title: "AI Solutions",
-    tagline: "AI that drives decisions, not just conversations.",
-    items: ["AI Chatbots (Chatr)", "AI Hiring Systems", "Resume AI + Matching Engine", "Voice AI Systems"],
+    icon: Users2,
+    title: "Talent & Workforce Solutions",
+    tagline: "Vetted engineering talent, contingent staffing & RPO at scale.",
+    items: [
+      "Contingent & Contract IT Staffing",
+      "Executive Search & Direct Hire",
+      "Recruitment Process Outsourcing (RPO)",
+      "Technical Pre-Screening & Code Vetting"
+    ],
     accent: "accent",
+    link: "/services/staffing-recruitment"
   },
   {
-    icon: Link2,
-    title: "Blockchain & Web3",
-    tagline: "Trustless systems for the future of work.",
-    items: ["Smart Contracts", "Web3 Applications", "Decentralized Identity", "Tokenized Ecosystems"],
+    icon: GraduationCap,
+    title: "Learning & Talent Development",
+    tagline: "Bridging academia and enterprise production through live project tracks.",
+    items: [
+      "Enterprise Technical Upskilling",
+      "University MoUs & Campus Academies",
+      "Live-Project Internship Tracks",
+      "Hands-On AI & Full-Stack Curricula"
+    ],
     accent: "primary",
+    link: "/services/training-education"
   },
   {
-    icon: Globe2,
-    title: "Talent Infrastructure",
-    tagline: "From talent discovery to deployment — fully automated.",
-    items: ["AI Job Matching", "Reverse Hiring", "Global Talent Pool", "Workforce Scaling"],
+    icon: ShieldCheck,
+    title: "Enterprise Delivery & Governance",
+    tagline: "Rigorous SLAs, compliance adherence & high-accountability execution.",
+    items: [
+      "DPDP Act & Data Privacy Adherence",
+      "Strict Service Level Agreements (SLAs)",
+      "Multi-Sector Delivery Experience",
+      "Cross-Market Reach: India, EU, ME"
+    ],
     accent: "accent",
+    link: "/case-studies"
   },
 ];
 
@@ -53,71 +78,83 @@ const products = [
   {
     icon: Cpu,
     name: "TalentXcel Platform",
-    desc: "AI hiring, reverse job search, and career tools.",
+    domain: "talentxcel.in",
+    desc: "AI talent matching, reverse candidate discovery, and direct recruitment tools.",
     href: "https://talentxcel.in",
   },
   {
     icon: MessageSquare,
-    name: "Chatr",
-    desc: "Voice AI, real-time chat, and AI assistants.",
+    name: "CHATR Technology",
+    domain: "chatr.chat",
+    desc: "Conversational AI layer, real-time messaging, and voice integration infrastructure.",
     href: "https://chatr.chat",
     chatr: true,
   },
   {
     icon: FileText,
-    name: "Resume + Career AI",
-    desc: "Resume builder, mock interviews, skill gap analysis.",
+    name: "TalentXcel Learning",
+    domain: "talentxcel.net",
+    desc: "Curated learning tracks, resume optimization, and career readiness mentorship.",
     href: "https://talentxcel.net",
   },
 ];
 
 const useCases = [
-  { icon: Rocket, title: "Startups", desc: "MVP build & rapid scaling" },
-  { icon: Building2, title: "Enterprises", desc: "AI transformation at scale" },
-  { icon: GraduationCap, title: "Universities", desc: "Talent pipeline programs" },
-  { icon: UserSearch, title: "Recruiters", desc: "Quality, AI-matched hiring" },
+  { icon: Rocket, title: "High-Growth Startups", desc: "Rapid MVP build, AI features, and on-demand tech pods." },
+  { icon: Building2, title: "Established Enterprises", desc: "Large-scale IT staffing, RPO, and cloud modernization." },
+  { icon: GraduationCap, title: "Universities & Colleges", desc: "Live-project internships and campus placement pipelines." },
+  { icon: UserSearch, title: "Corporate Talent Teams", desc: "Pre-screened, code-vetted engineering hires with fast turnaround." },
 ];
 
 const comparison = [
-  { trad: "Resume-based", us: "Skill + AI-based" },
-  { trad: "Manual screening", us: "Automated matching" },
-  { trad: "Job search", us: "Reverse hiring" },
-  { trad: "Static platforms", us: "Dynamic ecosystem" },
+  { trad: "Generic keyword resume searches", us: "Practitioner-led technical vetting & code benchmarks" },
+  { trad: "Unpredictable contingent fill rates", us: "Dedicated engineering pods & SLA-backed RPO" },
+  { trad: "Isolated staffing disconnected from software", us: "Integrated technology and talent capabilities" },
+  { trad: "Theoretical academic education", us: "Live-project academy tracks on production codebases" },
 ];
 
 export const CoreCapabilities = () => (
   <section className="py-16 lg:py-20 bg-background">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-12 max-w-2xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-4">
-          <Sparkles className="h-3 w-3" /> Core Capabilities
+      <div className="text-center mb-14 max-w-2xl mx-auto">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
+          <Sparkles className="h-3.5 w-3.5" /> Three Business Pillars
         </div>
         <h2 className="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">
-          AI-powered infrastructure for modern businesses
+          Integrated Capabilities for Enterprise Scaling
         </h2>
-        <p className="text-muted-foreground">
-          Software, AI, Blockchain & Talent — engineered as one integrated stack.
+        <p className="text-muted-foreground text-sm sm:text-base">
+          Software engineering, AI automation, and workforce solutions operating as one coherent stack.
         </p>
       </div>
+
       <div className="grid md:grid-cols-2 gap-6">
         {capabilities.map((c) => (
           <div
             key={c.title}
-            className="group bg-card border border-border/60 rounded-2xl p-8 hover:shadow-large hover:-translate-y-1 transition-all duration-300"
+            className="group bg-card border border-border/60 rounded-2xl p-8 hover:shadow-large hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
           >
-            <div className={`inline-flex p-3 rounded-xl mb-5 ${c.accent === "accent" ? "bg-accent/10" : "bg-primary/10"}`}>
-              <c.icon className={`h-6 w-6 ${c.accent === "accent" ? "text-accent" : "text-primary"}`} />
+            <div>
+              <div className={`inline-flex p-3 rounded-xl mb-5 ${c.accent === "accent" ? "bg-accent/10" : "bg-primary/10"}`}>
+                <c.icon className={`h-6 w-6 ${c.accent === "accent" ? "text-accent" : "text-primary"}`} />
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-foreground">{c.title}</h3>
+              <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{c.tagline}</p>
+              <ul className="space-y-2.5 mb-6">
+                {c.items.map((i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm text-foreground/90">
+                    <CheckCircle2 className={`h-4 w-4 flex-shrink-0 ${c.accent === "accent" ? "text-accent" : "text-primary"}`} />
+                    <span>{i}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <h3 className="text-xl font-bold mb-2">{c.title}</h3>
-            <p className="text-sm text-muted-foreground italic mb-5">"{c.tagline}"</p>
-            <ul className="space-y-2">
-              {c.items.map((i) => (
-                <li key={i} className="flex items-center gap-2 text-sm">
-                  <CheckCircle2 className={`h-4 w-4 flex-shrink-0 ${c.accent === "accent" ? "text-accent" : "text-primary"}`} />
-                  <span>{i}</span>
-                </li>
-              ))}
-            </ul>
+
+            <div className="pt-2">
+              <Link to={c.link} className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
+                Explore Detailed Pillar Solutions <ArrowRight className="ml-1 h-3.5 w-3.5" />
+              </Link>
+            </div>
           </div>
         ))}
       </div>
@@ -129,9 +166,12 @@ export const ProductsEcosystem = () => (
   <section className="py-16 lg:py-20 bg-muted/30">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12 max-w-2xl mx-auto">
-        <h2 className="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Products Ecosystem</h2>
-        <p className="text-muted-foreground">An integrated ecosystem powering careers and companies.</p>
+        <h2 className="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">The TalentXcel Product Ecosystem</h2>
+        <p className="text-muted-foreground text-sm sm:text-base">
+          Synergistic platforms powering corporate workforce management, career discovery, and AI communications.
+        </p>
       </div>
+
       <div className="grid md:grid-cols-3 gap-6">
         {products.map((p) => (
           <div
@@ -141,11 +181,12 @@ export const ProductsEcosystem = () => (
             <div className={`inline-flex p-3 rounded-xl mb-4 w-fit ${p.chatr ? "bg-chatr/10" : "bg-primary/10"}`}>
               <p.icon className={`h-6 w-6 ${p.chatr ? "text-chatr" : "text-primary"}`} />
             </div>
-            <h3 className="text-lg font-bold mb-2">{p.name}</h3>
-            <p className="text-sm text-muted-foreground mb-5 flex-1">{p.desc}</p>
+            <div className="text-xs font-mono text-muted-foreground mb-1">{p.domain}</div>
+            <h3 className="text-lg font-bold mb-2 text-foreground">{p.name}</h3>
+            <p className="text-sm text-muted-foreground mb-5 flex-1 leading-relaxed">{p.desc}</p>
             <Button variant={p.chatr ? "chatr" : "outline"} size="sm" asChild>
               <a href={p.href} target="_blank" rel="noopener noreferrer">
-                Explore <ArrowRight className="h-3 w-3" />
+                Explore Platform <ArrowRight className="ml-1.5 h-3 w-3" />
               </a>
             </Button>
           </div>
@@ -160,36 +201,56 @@ export const LiveProjects = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+            <GraduationCap className="h-3.5 w-3.5" /> Hands-On Talent Engine
+          </div>
           <h2 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tight">
-            Build Real Products, Not Just Skills
+            Build Real Products, Not Just Theoretical Skills
           </h2>
-          <p className="text-muted-foreground mb-6">
-            Our internship & live-project engine puts engineers on real client work across AI, Full Stack and Blockchain — with certification and a placement pipeline.
+          <p className="text-muted-foreground mb-6 leading-relaxed">
+            Our internship and live-project academy tracks place emerging engineers onto production software codebases across AI, Full-Stack, and Cloud architectures with direct client mentorship.
           </p>
-          <div className="grid grid-cols-2 gap-3 mb-6">
-            {["Real client projects", "AI / Full Stack / Web3 tracks", "Industry certification", "Placement pipeline"].map((t) => (
-              <div key={t} className="flex items-center gap-2 text-sm">
-                <CheckCircle2 className="h-4 w-4 text-accent" />
+          <div className="grid sm:grid-cols-2 gap-3 mb-8">
+            {[
+              "Real client project codebases",
+              "AI, Full-Stack & Cloud tracks",
+              "Production code review standards",
+              "Direct enterprise placement pipeline"
+            ].map((t) => (
+              <div key={t} className="flex items-center gap-2 text-sm text-foreground/90">
+                <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
                 <span>{t}</span>
               </div>
             ))}
           </div>
-          <Button size="lg" asChild>
-            <Link to="/careers">Join Program <ArrowRight className="h-4 w-4" /></Link>
-          </Button>
-        </div>
-        <div className="relative">
-          <div className="grid grid-cols-2 gap-4">
-            {["AI", "Full Stack", "Blockchain", "Cloud"].map((t, i) => (
-              <div
-                key={t}
-                className={`bg-card border border-border/60 rounded-2xl p-6 ${i % 2 ? "translate-y-6" : ""}`}
-              >
-                <div className="text-xs text-muted-foreground mb-1">Track</div>
-                <div className="text-lg font-bold">{t}</div>
-              </div>
-            ))}
+          <div className="flex flex-wrap gap-4">
+            <Button size="lg" asChild>
+              <Link to="/careers">
+                Explore Internship Tracks <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/partnerships">University Alliances</Link>
+            </Button>
           </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { track: "Applied AI & Automation", desc: "Python, PyTorch, LLMs, Vision AI" },
+            { track: "Full-Stack SaaS", desc: "React, TypeScript, Node.js, Next.js" },
+            { track: "Cloud & DevOps", desc: "AWS, Docker, Kubernetes, CI/CD" },
+            { track: "Talent Operations", desc: "Technical Sourcing, Vetting, RPO" },
+          ].map((item, idx) => (
+            <div
+              key={item.track}
+              className={`bg-card border border-border/60 rounded-2xl p-6 shadow-soft ${idx % 2 ? "sm:translate-y-4" : ""}`}
+            >
+              <div className="text-xs uppercase tracking-wider text-primary font-bold mb-1">Track 0{idx + 1}</div>
+              <div className="font-bold text-foreground text-base mb-1">{item.track}</div>
+              <div className="text-xs text-muted-foreground">{item.desc}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -200,20 +261,23 @@ export const EnterpriseUseCases = () => (
   <section className="py-16 lg:py-20 bg-muted/30">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12 max-w-2xl mx-auto">
-        <h2 className="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Built for every stage</h2>
-        <p className="text-muted-foreground">From early-stage startups to global enterprises.</p>
+        <h2 className="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Structured for Every Organizational Stage</h2>
+        <p className="text-muted-foreground text-sm sm:text-base">
+          From fast-scaling venture startups to regulated multinational corporations and universities.
+        </p>
       </div>
+
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {useCases.map((u) => (
           <div
             key={u.title}
             className="bg-card border border-border/60 rounded-2xl p-6 hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
           >
-            <div className="inline-flex p-3 bg-primary/10 rounded-xl mb-4">
-              <u.icon className="h-5 w-5 text-primary" />
+            <div className="inline-flex p-3 bg-primary/10 rounded-xl mb-4 text-primary">
+              <u.icon className="h-5 w-5" />
             </div>
-            <h3 className="font-bold mb-1">{u.title}</h3>
-            <p className="text-sm text-muted-foreground">{u.desc}</p>
+            <h3 className="font-bold mb-1 text-foreground">{u.title}</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">{u.desc}</p>
           </div>
         ))}
       </div>
@@ -224,22 +288,27 @@ export const EnterpriseUseCases = () => (
 export const WhyTalentXcel = () => (
   <section className="py-16 lg:py-20 bg-background">
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Why TalentXcel</h2>
-        <p className="text-muted-foreground">A different operating model for hiring & building.</p>
+      <div className="text-center mb-12">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Why Enterprise Leaders Choose TalentXcel</h2>
+        <p className="text-muted-foreground text-sm sm:text-base">
+          A modern operating model built to eliminate the divide between software engineering and talent acquisition.
+        </p>
       </div>
-      <div className="bg-card border border-border/60 rounded-2xl overflow-hidden">
-        <div className="grid grid-cols-2 bg-muted/50 text-sm font-semibold">
-          <div className="p-4 border-r border-border/60">Traditional Hiring</div>
-          <div className="p-4 text-primary">TalentXcel</div>
+
+      <div className="bg-card border border-border/60 rounded-2xl overflow-hidden shadow-soft">
+        <div className="grid grid-cols-2 bg-muted/60 text-sm font-semibold">
+          <div className="p-4 border-r border-border/60 text-muted-foreground">Traditional Segmented Model</div>
+          <div className="p-4 text-primary font-bold">The TalentXcel Integrated Model</div>
         </div>
         {comparison.map((row, i) => (
           <div key={i} className="grid grid-cols-2 border-t border-border/60 text-sm">
             <div className="p-4 border-r border-border/60 flex items-center gap-2 text-muted-foreground">
-              <XCircle className="h-4 w-4 text-destructive/70" /> {row.trad}
+              <XCircle className="h-4 w-4 text-destructive/70 flex-shrink-0" />
+              <span>{row.trad}</span>
             </div>
-            <div className="p-4 flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-accent" /> {row.us}
+            <div className="p-4 flex items-center gap-2 font-medium text-foreground">
+              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+              <span>{row.us}</span>
             </div>
           </div>
         ))}
@@ -252,25 +321,28 @@ export const BuildWithUs = () => (
   <section className="py-16 lg:py-20 bg-muted/30">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-10 max-w-2xl mx-auto">
-        <h2 className="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Build With Us</h2>
-        <p className="text-muted-foreground">Pick the path that fits your goal.</p>
+        <h2 className="text-3xl lg:text-4xl font-bold mb-3 tracking-tight">Engage With TalentXcel</h2>
+        <p className="text-muted-foreground text-sm sm:text-base">Select the pathway aligned with your strategic goals.</p>
       </div>
+
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { title: "Hire Developers", desc: "AI-vetted engineers, on-demand.", to: "/contact" },
-          { title: "Build Your Startup", desc: "Product, design, AI engineering.", to: "/services" },
-          { title: "Partner With Us", desc: "Enterprise & university partnerships.", to: "/contact" },
-          { title: "Join as Talent", desc: "Get placed on real projects.", to: "/careers" },
+          { title: "Enterprise Technology", desc: "Custom software, AI automation & cloud pipelines.", to: "/services" },
+          { title: "Specialized Staffing", desc: "Vetted developers & executive recruitment.", to: "/contact?tab=staffing" },
+          { title: "Corporate Academies", desc: "Custom employee upskilling & university MoUs.", to: "/partnerships" },
+          { title: "Leadership & Case Studies", desc: "Explore our governance & client outcomes.", to: "/case-studies" },
         ].map((b) => (
           <Link
             key={b.title}
             to={b.to}
-            className="group bg-card border border-border/60 rounded-2xl p-6 hover:shadow-medium hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            className="group bg-card border border-border/60 rounded-2xl p-6 hover:shadow-medium hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
           >
-            <h3 className="font-bold mb-2">{b.title}</h3>
-            <p className="text-sm text-muted-foreground mb-4 flex-1">{b.desc}</p>
-            <span className="inline-flex items-center text-sm text-primary font-medium">
-              Get started <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+            <div>
+              <h3 className="font-bold mb-2 text-foreground">{b.title}</h3>
+              <p className="text-xs text-muted-foreground mb-4 leading-relaxed">{b.desc}</p>
+            </div>
+            <span className="inline-flex items-center text-xs text-primary font-semibold">
+              Explore Pathway <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
             </span>
           </Link>
         ))}
@@ -284,22 +356,20 @@ export const StrongCTA = () => (
     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.15),transparent_60%)]" />
     <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
       <h2 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight">
-        Ready to build, hire, or scale?
+        Let's Build Your Next Technology or Talent Solution.
       </h2>
-      <p className="text-lg text-white/85 mb-8 max-w-2xl mx-auto">
-        Join the next generation of companies running on AI-powered talent infrastructure.
+      <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+        Connect with our enterprise solution architects to scope dedicated engineering pods, IT staffing, or institutional partnerships.
       </p>
-      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button size="lg" variant="glass" asChild>
-          <Link to="/contact">Get Started</Link>
+          <Link to="/contact">Discuss an Enterprise Solution</Link>
         </Button>
         <Button size="lg" variant="glass" asChild>
-          <Link to="/contact">Book Demo</Link>
+          <Link to="/case-studies">Explore Case Studies</Link>
         </Button>
         <Button size="lg" variant="glass" asChild>
-          <a href="https://talentxcel.in" target="_blank" rel="noopener noreferrer">
-            Explore Platform
-          </a>
+          <Link to="/team">Meet Leadership</Link>
         </Button>
       </div>
     </div>

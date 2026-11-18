@@ -86,20 +86,32 @@ const Services = () => {
       
       <main>
         <Helmet>
-          <title>Services - Staffing, Training, IT Consulting | Talentxcel Enterprise & Career Solutions</title>
-          <meta name="description" content="Talentxcel services: Enterprise staffing & recruitment, IT consulting & managed services, training & education programs. Individual services: AI resume builder, job matching, career coaching. Serving India, Europe, Middle East." />
-          <meta name="keywords" content="Talentxcel services, staffing solutions, recruitment services, IT consulting, managed IT services, training programs, AI resume builder, job matching, career coaching, RPO services, corporate training, talent management" />
+          <title>Services & Solutions | TalentXcel</title>
+          <meta
+            name="description"
+            content="Explore TalentXcel integrated solutions: Enterprise software and AI development, specialized IT staffing, and corporate training programs."
+          />
+          <meta
+            name="keywords"
+            content="TalentXcel services, IT staffing solutions, recruitment services, enterprise software development, IT consulting, corporate training, workforce solutions"
+          />
           <link rel="canonical" href="https://talentxcel.co.in/services" />
           
           {/* Open Graph */}
-          <meta property="og:title" content="Services - Enterprise & Career Solutions | Talentxcel" />
-          <meta property="og:description" content="Comprehensive workforce solutions: Staffing, IT consulting, training. AI-powered career services: Resume builder, job matching, coaching." />
+          <meta property="og:title" content="Services & Solutions | TalentXcel" />
+          <meta
+            property="og:description"
+            content="Integrated Technology & Talent Solutions: Software, AI, IT Staffing, and Corporate Upskilling."
+          />
           <meta property="og:url" content="https://talentxcel.co.in/services" />
           <meta property="og:type" content="website" />
           
           {/* Twitter */}
-          <meta name="twitter:title" content="Services - Enterprise & Career Solutions | Talentxcel" />
-          <meta name="twitter:description" content="Staffing, IT consulting, training & AI-powered career services." />
+          <meta name="twitter:title" content="Services & Solutions | TalentXcel" />
+          <meta
+            name="twitter:description"
+            content="Enterprise software, AI systems, IT staffing & corporate training."
+          />
           
           {/* Structured Data - Service */}
           <script type="application/ld+json">

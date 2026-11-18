@@ -23,51 +23,63 @@ const Index = () => {
       <Navbar />
       <main>
         <Helmet>
-          <title>Talentxcel - AI-Powered Talent Management Platform | 5K+ Users, 100+ Enterprises | India's Leading Career Ecosystem</title>
-          <meta name="description" content="Talentxcel: AI-first career ecosystem founded 2024. 5,000+ active users, 100+ enterprise clients, 95% retention. Complete workforce solutions: staffing, IT consulting, training. Individual services: AI resume builder, job matching, career coaching. Serving India, Europe, Middle East." />
-          <meta name="keywords" content="Talentxcel, AI talent management, career platform India, job matching, resume builder, workforce solutions, staffing services, IT consulting, recruitment India, HR tech, career development, enterprise hiring" />
+          <title>TalentXcel — Integrated Technology & Talent Solutions</title>
+          <meta
+            name="description"
+            content="TalentXcel brings together enterprise technology solutions, workforce expertise, and talent development to help organizations build, scale, and transform."
+          />
+          <meta
+            name="keywords"
+            content="TalentXcel, technology solutions, IT staffing, AI solutions, workforce solutions, enterprise software development, corporate training, RPO, India, Europe, Middle East"
+          />
           <link rel="canonical" href="https://talentxcel.co.in/" />
           
           {/* Open Graph */}
-          <meta property="og:title" content="Talentxcel - AI Career Ecosystem | 5K+ Users, 100+ Enterprises" />
-          <meta property="og:description" content="India's leading AI-powered talent platform. 95% retention, comprehensive workforce & career solutions." />
+          <meta property="og:title" content="TalentXcel — Integrated Technology & Talent Solutions" />
+          <meta
+            property="og:description"
+            content="Enterprise software, AI automation, IT staffing, and corporate talent development under one roof."
+          />
           <meta property="og:url" content="https://talentxcel.co.in/" />
           <meta property="og:type" content="website" />
           
           {/* Twitter */}
-          <meta name="twitter:title" content="Talentxcel - AI Career Ecosystem" />
-          <meta name="twitter:description" content="5K+ users, 100+ enterprises. AI-powered talent management & career development." />
+          <meta name="twitter:title" content="TalentXcel — Integrated Technology & Talent Solutions" />
+          <meta
+            name="twitter:description"
+            content="Technology That Moves Business Forward. Talent That Makes It Possible."
+          />
           
           {/* Structured Data - Website */}
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Talentxcel",
-              "alternateName": "TalentXcel",
+              "name": "TalentXcel",
+              "alternateName": ["Talentxcel", "TalentXcel Corporate"],
               "url": "https://talentxcel.co.in",
-              "description": "AI-powered career ecosystem providing talent management, workforce solutions, and career development services",
+              "description": "Integrated technology and talent solutions company providing enterprise software, AI development, workforce solutions, and talent development.",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://talentxcel.co.in/search?q={search_term_string}",
+                "target": "https://talentxcel.co.in/services?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             })}
           </script>
           
-          {/* Structured Data - Organization with detailed info */}
+          {/* Structured Data - Organization */}
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Talentxcel",
-              "alternateName": "TalentXcel",
+              "@id": "https://talentxcel.co.in/#organization",
+              "name": "TalentXcel",
+              "alternateName": "TalentXcel Services Private Limited",
               "url": "https://talentxcel.co.in",
-              "logo": "https://talentxcel.co.in/lovable-uploads/5b681ba5-58bf-4aae-8bef-3ba691eef586.png",
+              "logo": "https://talentxcel.co.in/talentxcel-assets/5b681ba5-58bf-4aae-8bef-3ba691eef586.png",
               "foundingDate": "2024-07",
-              "description": "AI-first career ecosystem empowering professionals and enterprises with talent management, workforce solutions, and career development services",
-              "slogan": "Empowering Careers, Transforming Businesses",
-              "numberOfEmployees": "50-100",
+              "description": "TalentXcel delivers integrated technology and talent solutions, combining enterprise software and AI engineering with comprehensive workforce and learning services.",
+              "slogan": "Technology That Moves Business Forward. Talent That Makes It Possible.",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+91-9717181609",
@@ -78,7 +90,7 @@ const Index = () => {
               },
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Plot C, ESquare Building, 2, Sector-45",
+                "streetAddress": "Plot C, ESquare Building, Sector-45",
                 "addressLocality": "Noida",
                 "addressRegion": "Uttar Pradesh",
                 "postalCode": "201301",
@@ -86,47 +98,43 @@ const Index = () => {
               },
               "sameAs": [
                 "https://talentxcel.in",
-                "https://talentxcel.net"
+                "https://talentxcel.net",
+                "https://chatr.chat"
               ],
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "Talentxcel Services",
+                "name": "TalentXcel Solutions Portfolio",
                 "itemListElement": [
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Staffing & Recruitment Solutions",
-                      "description": "Comprehensive workforce solutions for enterprises"
+                      "name": "Technology & AI Solutions",
+                      "description": "Enterprise software engineering, AI/ML development, cloud infrastructure, and systems modernization."
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "AI Career Services",
-                      "description": "AI-powered resume building, job matching, and career coaching"
+                      "name": "Talent & Workforce Solutions",
+                      "description": "IT staffing, permanent recruitment, contract staffing, executive search, and recruitment process outsourcing."
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "IT Consulting & Managed Services",
-                      "description": "Expert IT infrastructure and managed operations"
+                      "name": "Learning & Talent Development",
+                      "description": "Corporate technical upskilling, university partnerships, and internship development engines."
                     }
                   }
                 ]
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "ratingCount": "5000",
-                "bestRating": "5"
               }
             })}
           </script>
         </Helmet>
+        
         <HeroSection />
         <FeaturesGrid />
         <CoreCapabilities />

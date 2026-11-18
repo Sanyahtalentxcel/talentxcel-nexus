@@ -60,7 +60,7 @@ const servicesData = {
 
 const ServiceDetail = () => {
   const { slug } = useParams();
-  const service = slug ? (servicesData as any)[slug] : undefined;
+  const service = slug && slug in servicesData ? servicesData[slug as keyof typeof servicesData] : undefined;
 
   if (!service) {
     return (
@@ -83,12 +83,12 @@ const ServiceDetail = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>{`${service.title} | Talentxcel Services`}</title>
+        <title>{`${service.title} | TalentXcel Solutions`}</title>
         <meta
           name="description"
-          content={`Talentxcel ${service.title} — ${service.description}`}
+          content={`TalentXcel ${service.title} — ${service.description}`}
         />
-        <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
+        <link rel="canonical" href={`https://talentxcel.co.in/services/${slug}`} />
       </Helmet>
       <Navbar />
 

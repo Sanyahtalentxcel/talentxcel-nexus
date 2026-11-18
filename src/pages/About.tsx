@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Building2, Globe, Target, Users, Award, TrendingUp, Heart, Shield, Lightbulb, Zap } from "lucide-react";
+import { Building2, Globe, Target, Users, Award, Heart, Shield, Lightbulb, Zap, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import corporateOffice from "@/assets/corporate-office.jpg";
@@ -10,68 +10,69 @@ import teamCollaboration from "@/assets/team-collaboration.jpg";
 import globalNetwork from "@/assets/global-network.jpg";
 import modernWorkspace from "@/assets/modern-workspace.jpg";
 import conferenceRoom from "@/assets/conference-room.jpg";
+
 const About = () => {
   const values = [
     {
       icon: Lightbulb,
-      title: "Innovation",
-      description: "Continuously evolving our solutions to meet the changing needs of the talent ecosystem through cutting-edge AI technology."
+      title: "Innovation & Agility",
+      description: "Continuously evolving our solutions to meet the demands of modern technology and engineering ecosystems."
     },
     {
       icon: Heart,
-      title: "Integrity",
-      description: "Building trust through transparency, honesty, and ethical practices in everything we do across all our services."
+      title: "Integrity & Transparency",
+      description: "Building lasting trust through honest communication, ethical staffing, and reliable enterprise delivery."
     },
     {
       icon: Award,
-      title: "Excellence",
-      description: "Striving for excellence in every interaction, product, and service we deliver to our clients and candidates."
+      title: "Engineering Excellence",
+      description: "Striving for high technical standards across software delivery, AI pipelines, and talent curation."
     },
     {
       icon: Shield,
-      title: "Adaptability",
-      description: "Embracing change and continuously adapting to market demands and emerging technologies."
+      title: "Security & Governance",
+      description: "Committed to robust data protection, regulatory compliance, and responsible technology stewardship."
     },
     {
       icon: Users,
-      title: "Diversity & Inclusion",
-      description: "Fostering an inclusive environment that celebrates diversity and promotes equal opportunities for all."
+      title: "Collaborative Partnerships",
+      description: "Fostering close, synergistic relationships with clients, institutions, and candidate communities."
     },
     {
       icon: Globe,
-      title: "Sustainability",
-      description: "Committed to sustainable business practices that benefit our stakeholders and the environment."
+      title: "Ecosystem Synergy",
+      description: "Seamlessly connecting enterprise engineering needs with dynamic workforce and learning opportunities."
     }
   ];
 
   const timeline = [
     {
       year: "2024",
-      title: "Foundation",
-      description: "Talentxcel was founded in July 2024 with a vision to revolutionize workforce solutions through AI-first technology."
+      title: "Corporate Foundation",
+      description: "TalentXcel was established in July 2024 with a vision to integrate enterprise technology engineering and specialized talent solutions under one corporate roof."
     },
     {
       year: "Late 2024",
-      title: "Platform Launch",
-      description: "Beta platform launched with early traction across metros, focusing on AI-powered talent matching."
+      title: "Platform & Practice Rollout",
+      description: "Launched beta platforms, initialized IT staffing practices, and introduced specialized recruitment services across major metropolitan hubs."
     },
     {
       year: "2025",
-      title: "Rapid Growth",
-      description: "Achieved significant milestones: 5,000+ active users, 100+ enterprise clients, and substantial revenue growth."
+      title: "Operational Expansion",
+      description: "Expanded enterprise technology capabilities, launched live-project internship tracks, and deepened industry delivery across key sectors."
     },
     {
-      year: "Future",
-      title: "Global Expansion",
-      description: "Positioning for Series A funding while expanding operations across India, Europe, and the Middle East."
+      year: "2026 & Beyond",
+      title: "Global Ecosystem Integration",
+      description: "Deepening cross-border delivery across India, Europe, and the Middle East while scaling AI-driven communication and workforce tools."
     }
   ];
 
-  const stats = [
-    { number: "5,000+", label: "Active Users", growth: "+150% YoY" },
-    { number: "100+", label: "Enterprise Clients", growth: "+200% YoY" },
-    { number: "95%", label: "Customer Retention", growth: "+5% YoY" },
-    { number: "$2.1B", label: "India TAM", growth: "15% CAGR" }
+  const snapshotMetrics = [
+    { number: "3", label: "Integrated Pillars", note: "Technology, Talent & Learning" },
+    { number: "4+", label: "Focus Sectors", note: "Energy, BFSI, Tech, Healthcare" },
+    { number: "100%", label: "Delivery Focus", note: "SLA-Driven Outcomes" },
+    { number: "2024", label: "Founded", note: "Noida Headquarters" }
   ];
 
   return (
@@ -80,20 +81,32 @@ const About = () => {
       
       <main>
         <Helmet>
-          <title>About Talentxcel - AI-Powered Career Ecosystem | Founded 2024 | 5K+ Users</title>
-          <meta name="description" content="Talentxcel: Founded July 2024 in Noida. AI-first talent management platform serving 5,000+ users, 100+ enterprises across India, Europe & Middle East. 95% retention, $2.3B TAM. Innovation-driven workforce solutions." />
-          <meta name="keywords" content="Talentxcel company, about Talentxcel, AI talent management, workforce solutions India, HR tech startup, Talentxcel history, founded 2024, Noida headquarters, talent ecosystem, career platform" />
+          <title>About Us | TalentXcel — Integrated Solutions</title>
+          <meta
+            name="description"
+            content="Learn about TalentXcel: Our corporate story, mission, and vision bringing together enterprise technology solutions, workforce expertise, and talent development."
+          />
+          <meta
+            name="keywords"
+            content="About TalentXcel, corporate identity, technology solutions company, IT staffing company, Noida headquarters, talent ecosystem"
+          />
           <link rel="canonical" href="https://talentxcel.co.in/about" />
           
           {/* Open Graph */}
-          <meta property="og:title" content="About Talentxcel - AI Career Ecosystem | 5K+ Users, 100+ Enterprises" />
-          <meta property="og:description" content="Founded July 2024. AI-first platform serving 5,000+ users with 95% retention. Innovation-driven talent solutions." />
+          <meta property="og:title" content="About Us | TalentXcel — Integrated Solutions" />
+          <meta
+            property="og:description"
+            content="Blending enterprise software engineering, AI automation, and workforce solutions for modern organizations."
+          />
           <meta property="og:url" content="https://talentxcel.co.in/about" />
           <meta property="og:type" content="website" />
           
           {/* Twitter */}
-          <meta name="twitter:title" content="About Talentxcel - AI Career Ecosystem" />
-          <meta name="twitter:description" content="Founded July 2024. 5K+ users, 100+ enterprises, 95% retention. AI-first talent management." />
+          <meta name="twitter:title" content="About Us | TalentXcel" />
+          <meta
+            name="twitter:description"
+            content="Technology That Moves Business Forward. Talent That Makes It Possible."
+          />
           
           {/* Structured Data */}
           <script type="application/ld+json">
@@ -102,57 +115,67 @@ const About = () => {
               "@type": "AboutPage",
               "mainEntity": {
                 "@type": "Organization",
-                "name": "Talentxcel",
+                "name": "TalentXcel",
                 "foundingDate": "2024-07",
-                "description": "AI-powered career ecosystem providing comprehensive workforce solutions",
-                "numberOfEmployees": "50-100",
+                "description": "TalentXcel brings together technology solutions, workforce expertise, and talent development to help organizations build, scale, and transform.",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "Plot C, ESquare Building, 2, Sector-45",
+                  "streetAddress": "Plot C, ESquare Building, Sector-45",
                   "addressLocality": "Noida",
                   "addressRegion": "Uttar Pradesh",
                   "postalCode": "201301",
                   "addressCountry": "India"
                 },
-                "knowsAbout": ["Artificial Intelligence", "Talent Management", "HR Technology", "Career Development"],
-                "award": ["5000+ Active Users", "95% Customer Retention", "100+ Enterprise Clients"]
+                "knowsAbout": [
+                  "Enterprise Software Development",
+                  "Artificial Intelligence",
+                  "IT Staffing & Recruitment",
+                  "Workforce Management",
+                  "Technical Upskilling"
+                ]
               }
             })}
           </script>
         </Helmet>
+
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                    <Building2 className="h-4 w-4" />
-                    <span>Founded July 2024</span>
-                  </div>
-                  <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                    About <span className="bg-gradient-primary bg-clip-text text-transparent">Talentxcel</span>
-                  </h1>
-                  <p className="text-xl text-muted-foreground leading-relaxed">
-                    We blend workforce solutions and IT services for businesses and job seekers alike, 
-                    creating a comprehensive AI-first career ecosystem.
-                  </p>
+              <div className="space-y-6">
+                <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                  <Building2 className="h-4 w-4" />
+                  <span>Founded July 2024</span>
+                </div>
+                <h1 className="text-4xl lg:text-6xl font-bold leading-tight tracking-tight">
+                  About <span className="bg-gradient-primary bg-clip-text text-transparent">TalentXcel</span>
+                </h1>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  We blend enterprise technology solutions and workforce expertise to build a comprehensive ecosystem for businesses and professionals alike.
+                </p>
+                <div className="pt-2">
+                  <Button size="lg" asChild>
+                    <Link to="/contact">
+                      Connect with Our Team <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
                 </div>
               </div>
               
               <div className="relative">
-                <div className="relative rounded-3xl overflow-hidden shadow-large">
+                <div className="relative rounded-3xl overflow-hidden shadow-large border border-border/60">
                   <img 
                     src={corporateOffice} 
-                    alt="Talentxcel Corporate Office"
+                    alt="TalentXcel Corporate Headquarters"
                     className="w-full h-96 object-cover"
+                    loading="eager"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-6 left-6 text-white">
-                    <h3 className="text-xl font-semibold mb-2">Noida Headquarters</h3>
-                    <p className="text-sm opacity-90">Plot C, ESquare Building, Sector-45</p>
+                    <h2 className="text-xl font-semibold mb-1">Noida Headquarters</h2>
+                    <p className="text-sm opacity-90">Plot C, ESquare Building, Sector-45, Uttar Pradesh, India</p>
                   </div>
                 </div>
               </div>
@@ -160,22 +183,22 @@ const About = () => {
           </div>
         </section>
 
-        {/* Company Stats */}
+        {/* Company Snapshot */}
         <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Company Snapshot</h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-3 tracking-tight">Company Snapshot</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Key metrics demonstrating our rapid growth and market impact since our founding in 2024.
+                Core dimensions reflecting our institutional focus, capabilities, and geographic delivery.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <Card key={index} className="p-8 text-center hover:shadow-medium transition-all duration-300">
-                  <div className="text-3xl font-bold text-primary mb-2">{stat.number}</div>
-                  <div className="text-foreground font-medium mb-2">{stat.label}</div>
-                  <div className="text-sm text-accent font-medium">{stat.growth}</div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {snapshotMetrics.map((stat, index) => (
+                <Card key={index} className="p-6 text-center hover:shadow-medium transition-all duration-300">
+                  <div className="text-3xl font-bold text-primary mb-1">{stat.number}</div>
+                  <div className="text-foreground font-semibold mb-1 text-base">{stat.label}</div>
+                  <div className="text-xs text-muted-foreground">{stat.note}</div>
                 </Card>
               ))}
             </div>
@@ -183,27 +206,25 @@ const About = () => {
         </section>
 
         {/* Vision & Mission */}
-        <section className="py-14">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <Card className="p-8 hover:shadow-medium transition-shadow duration-300">
-                  <Target className="h-12 w-12 text-primary mb-6" />
-                  <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
-                  <p className="text-muted-foreground leading-relaxed">
-                    To be a global leader in integrated workforce and IT solutions, empowering both 
-                    businesses and professionals through agile, scalable, and personalized services 
-                    across India, Europe, and the Middle East.
+              <div className="space-y-6">
+                <Card className="p-8 hover:shadow-medium transition-shadow duration-300 border-border/60">
+                  <Target className="h-10 w-10 text-primary mb-4" />
+                  <h2 className="text-2xl font-bold mb-3">Our Vision</h2>
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                    To be a trusted global leader in integrated technology and talent solutions, enabling organizations 
+                    to accelerate their engineering capabilities while cultivating resilient, highly skilled workforce pipelines.
                   </p>
                 </Card>
                 
-                <Card className="p-8 hover:shadow-medium transition-shadow duration-300">
-                  <Zap className="h-12 w-12 text-accent mb-6" />
-                  <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
-                  <p className="text-muted-foreground leading-relaxed">
-                    To revolutionize workforce solutions through AI-first technology, delivering 
-                    comprehensive services from staffing and training to IT consulting, creating 
-                    value for businesses and career growth opportunities for professionals.
+                <Card className="p-8 hover:shadow-medium transition-shadow duration-300 border-border/60">
+                  <Zap className="h-10 w-10 text-accent mb-4" />
+                  <h2 className="text-2xl font-bold mb-3">Our Mission</h2>
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                    To deliver scalable enterprise software, intelligent automation, and specialized workforce services 
+                    that bridge the divide between technology development, human capability, and career readiness.
                   </p>
                 </Card>
               </div>
@@ -211,8 +232,9 @@ const About = () => {
               <div className="relative">
                 <img 
                   src={teamCollaboration} 
-                  alt="Team Collaboration"
-                  className="w-full h-96 object-cover rounded-3xl shadow-large"
+                  alt="TalentXcel Team Collaboration"
+                  className="w-full h-96 object-cover rounded-3xl shadow-large border border-border/60"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-3xl" />
               </div>
@@ -220,47 +242,50 @@ const About = () => {
           </div>
         </section>
 
-        {/* Apple-inspired image gallery */}
-        <section className="py-14">
+        {/* Workplace & Innovation Spaces */}
+        <section className="py-14 bg-muted/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2">
-                <div className="relative group rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                <div className="relative group rounded-3xl overflow-hidden shadow-glass border border-border/60">
                   <img 
                     src={modernWorkspace} 
-                    alt="Modern Workspace Culture"
-                    className="w-full h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="TalentXcel Modern Workspace"
+                    className="w-full h-80 lg:h-96 object-cover"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="text-xl font-semibold mb-2">Innovation Culture</h3>
-                    <p className="text-sm opacity-90">Where creativity meets technology</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-xl font-semibold mb-1">Collaborative Engineering Culture</h3>
+                    <p className="text-sm opacity-90">Where problem-solving meets modern technology architectures</p>
                   </div>
                 </div>
               </div>
               
               <div className="space-y-6">
-                <div className="relative group rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                <div className="relative group rounded-3xl overflow-hidden shadow-glass border border-border/60">
                   <img 
                     src={conferenceRoom} 
-                    alt="Collaboration Spaces"
-                    className="w-full h-36 lg:h-44 object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="Executive Strategy Space"
+                    className="w-full h-36 lg:h-44 object-cover"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h4 className="font-semibold text-sm">Strategic Meetings</h4>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-3 left-3 text-white">
+                    <h4 className="font-semibold text-sm">Strategic Governance</h4>
                   </div>
                 </div>
                 
-                <div className="relative group rounded-3xl overflow-hidden shadow-glass hover:shadow-large transition-all duration-500">
+                <div className="relative group rounded-3xl overflow-hidden shadow-glass border border-border/60">
                   <img 
                     src={teamCollaboration} 
-                    alt="Team Collaboration"
-                    className="w-full h-36 lg:h-44 object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="Engineering Team Dynamics"
+                    className="w-full h-36 lg:h-44 object-cover"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-3 left-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h4 className="font-semibold text-sm">Team Synergy</h4>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-3 left-3 text-white">
+                    <h4 className="font-semibold text-sm">Cross-Functional Delivery</h4>
                   </div>
                 </div>
               </div>
@@ -269,21 +294,20 @@ const About = () => {
         </section>
 
         {/* Core Values */}
-        <section className="py-14 bg-muted/30">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-3 tracking-tight">Our Core Operating Values</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                These values guide every decision we make and every interaction we have 
-                with our community of professionals and partners.
+                Principles that guide our daily client engagements, technology choices, and workforce practices.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {values.map((value, index) => (
-                <Card key={index} className="p-8 text-center hover:shadow-medium transition-all duration-300 group">
-                  <value.icon className="h-12 w-12 text-primary mx-auto mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="font-semibold text-lg mb-4">{value.title}</h3>
+                <Card key={index} className="p-6 text-center hover:shadow-medium transition-all duration-300 border-border/60">
+                  <value.icon className="h-10 w-10 text-primary mx-auto mb-4" />
+                  <h3 className="font-bold text-lg mb-2">{value.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {value.description}
                   </p>
@@ -293,34 +317,34 @@ const About = () => {
           </div>
         </section>
 
-        {/* Global Reach */}
-        <section className="py-14">
+        {/* Geographic Delivery */}
+        <section className="py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <img 
                   src={globalNetwork} 
-                  alt="Global Network"
-                  className="w-full h-80 object-cover rounded-3xl shadow-large"
+                  alt="TalentXcel Geographic Network"
+                  className="w-full h-80 object-cover rounded-3xl shadow-large border border-border/60"
+                  loading="lazy"
                 />
               </div>
               
               <div className="space-y-6">
-                <h2 className="text-3xl font-bold mb-4">Global Reach</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  With headquarters in Noida, India, we serve clients across multiple continents, 
-                  focusing on industries such as Energy, BFSI, Technology, and Healthcare.
+                <h2 className="text-3xl font-bold tracking-tight">Cross-Market Engagement</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Headquartered in Noida, India, TalentXcel supports enterprises and institutions with cross-market technology delivery and specialized workforce sourcing.
                 </p>
                 
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-4 pt-2">
                   {[
-                    { region: "India", desc: "Primary Market" },
-                    { region: "Europe", desc: "Expanding Operations" },
-                    { region: "Middle East", desc: "Strategic Partnerships" }
+                    { region: "India", desc: "Core Engineering & Staffing Hub" },
+                    { region: "Europe", desc: "Expanding Solutions Engagements" },
+                    { region: "Middle East", desc: "Enterprise & Tech Partnerships" }
                   ].map((region, index) => (
-                    <div key={index} className="text-center">
-                      <div className="text-lg font-semibold text-primary">{region.region}</div>
-                      <div className="text-sm text-muted-foreground">{region.desc}</div>
+                    <div key={index} className="p-4 bg-card rounded-xl border border-border/60 text-center">
+                      <div className="text-base font-bold text-primary mb-1">{region.region}</div>
+                      <div className="text-xs text-muted-foreground">{region.desc}</div>
                     </div>
                   ))}
                 </div>
@@ -329,63 +353,47 @@ const About = () => {
           </div>
         </section>
 
-        {/* Our Journey */}
-        <section className="py-14 bg-muted/30">
+        {/* Corporate Journey */}
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Our Journey</h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-3 tracking-tight">Corporate Milestones</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                From founding to rapid growth, here's how we've evolved to become 
-                a leading player in the talent ecosystem.
+                Key progression points establishing our integrated technology and workforce capabilities.
               </p>
             </div>
             
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/20 h-full hidden lg:block"></div>
-              
-              <div className="space-y-12">
-                {timeline.map((item, index) => (
-                  <div key={index} className={`flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-                    <div className="lg:w-1/2 lg:px-8">
-                      <Card className="p-8 hover:shadow-medium transition-shadow duration-300">
-                        <div className="flex items-center mb-4">
-                          <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold">
-                            {item.year}
-                          </div>
-                        </div>
-                        <h3 className="font-semibold text-xl mb-3">{item.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                      </Card>
-                    </div>
-                    
-                    <div className="hidden lg:flex items-center justify-center w-12 h-12 bg-primary rounded-full border-4 border-background shadow-medium z-10">
-                      <Award className="h-5 w-5 text-primary-foreground" />
-                    </div>
-                    
-                    <div className="lg:w-1/2"></div>
+            <div className="space-y-6 max-w-4xl mx-auto">
+              {timeline.map((item, index) => (
+                <Card key={index} className="p-6 border-border/60 hover:shadow-soft transition-all">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                    <span className="text-sm font-bold text-primary uppercase tracking-wider">
+                      {item.year}
+                    </span>
+                    <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
                   </div>
-                ))}
-              </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-14 bg-gradient-hero text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Join Our Mission?</h2>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Whether you're a professional looking to grow your career or an organization 
-              seeking comprehensive workforce solutions, we're here to help you succeed.
+        <section className="py-16 bg-gradient-hero text-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold mb-4 tracking-tight">Explore Enterprise Solutions with TalentXcel</h2>
+            <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed">
+              Whether you require specialized IT staffing, custom software engineering, or corporate upskilling programs, our teams are ready to collaborate.
             </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" asChild>
-                  <Link to="/careers">Explore Careers</Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link to="/contact">Contact Us</Link>
-                </Button>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="secondary" asChild>
+                <Link to="/contact">Discuss a Solution</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10" asChild>
+                <Link to="/services">View Capabilities</Link>
+              </Button>
+            </div>
           </div>
         </section>
       </main>
