@@ -6,7 +6,14 @@
 import { growthTracking } from "./growthTracking";
 
 export const FOUNDER_EMAIL = "sanobar.jahan@talentxcel.co.in";
+export const ENTERPRISE_SALES_EMAIL = "enterprise@talentxcel.co.in";
 export const CORPORATE_CONTACT_EMAIL = "contact@talentxcel.co.in";
+export const CAREERS_EMAIL = "careers@talentxcel.co.in";
+export const INVESTORS_EMAIL = "investors@talentxcel.co.in";
+export const LEGAL_EMAIL = "legal@talentxcel.co.in";
+export const PRESS_EMAIL = "press@talentxcel.co.in";
+export const PRIVACY_EMAIL = "privacy@talentxcel.co.in";
+export const SUPPORT_EMAIL = "support@talentxcel.co.in";
 
 export type LeadCategory =
   | "corporate_training"
@@ -728,7 +735,7 @@ export const generateLeadEmailDispatch = (
 =====================================================
 Executive Recipient: Founder & Managing Director Desk
 Primary: ${FOUNDER_EMAIL}
-CC: ${CORPORATE_CONTACT_EMAIL}
+Department CC: ${ENTERPRISE_SALES_EMAIL}, ${CORPORATE_CONTACT_EMAIL}
 =====================================================
 
 REFERENCE NUMBER: ${referenceNumber || "PENDING"}
@@ -758,7 +765,7 @@ Strict DPDP Act Confidentiality Enforced.
 TalentXcel Services Private Limited | Noida Headquarters`;
 
   const to = FOUNDER_EMAIL;
-  const cc = CORPORATE_CONTACT_EMAIL;
+  const cc = `${ENTERPRISE_SALES_EMAIL}, ${CORPORATE_CONTACT_EMAIL}`;
   const mailtoUrl = `mailto:${to}?cc=${encodeURIComponent(cc)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   return {

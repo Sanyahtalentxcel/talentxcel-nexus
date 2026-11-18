@@ -66,10 +66,10 @@ const Contact = () => {
   const contactMethods = [
     {
       icon: Mail,
-      title: "Enterprise Inquiries",
+      title: "Enterprise Sales & Inquiries",
       description: "Direct email contact",
-      info: "contact@talentxcel.co.in",
-      action: "mailto:contact@talentxcel.co.in?cc=sanobar.jahan@talentxcel.co.in"
+      info: "enterprise@talentxcel.co.in",
+      action: "mailto:enterprise@talentxcel.co.in?cc=sanobar.jahan@talentxcel.co.in"
     },
     {
       icon: Phone,
@@ -187,7 +187,11 @@ Timestamp: ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} I
 Strict DPDP Act Confidentiality Enforced.`;
 
     const to = "sanobar.jahan@talentxcel.co.in";
-    const cc = "contact@talentxcel.co.in";
+    const cc = activeTab === "staffing"
+      ? "careers@talentxcel.co.in, enterprise@talentxcel.co.in"
+      : activeTab === "general"
+      ? "support@talentxcel.co.in, contact@talentxcel.co.in"
+      : "enterprise@talentxcel.co.in, contact@talentxcel.co.in";
     const mailtoLink = `mailto:${to}?cc=${encodeURIComponent(cc)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
 
     setMailDispatchUrl(mailtoLink);
