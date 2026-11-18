@@ -344,13 +344,15 @@ class RevenueOperationsEngine {
 
   private loadFromStorage() {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        this.leads = JSON.parse(stored);
-      } else {
-        this.leads = INITIAL_BASELINE_LEADS;
-        this.persist();
+      if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          this.leads = JSON.parse(stored);
+          return;
+        }
       }
+      this.leads = INITIAL_BASELINE_LEADS;
+      this.persist();
     } catch {
       this.leads = INITIAL_BASELINE_LEADS;
     }
@@ -358,7 +360,9 @@ class RevenueOperationsEngine {
 
   private persist() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.leads));
+      if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(this.leads));
+      }
     } catch (err) {
       console.error("Failed to persist revenue leads:", err);
     }
@@ -465,8 +469,11 @@ class RevenueOperationsEngine {
   }
 
   private dispatchWebhook(lead: Lead) {
-    const apiEndpoint = import.meta.env.VITE_CONTACT_API_ENDPOINT;
-    if (apiEndpoint) {
+    const apiEndpoint =
+      typeof import.meta !== "undefined" && import.meta.env
+        ? import.meta.env.VITE_CONTACT_API_ENDPOINT
+        : undefined;
+    if (apiEndpoint && typeof fetch !== "undefined") {
       try {
         fetch(apiEndpoint, {
           method: "POST",
