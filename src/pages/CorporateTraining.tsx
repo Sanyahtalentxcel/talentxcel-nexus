@@ -165,7 +165,7 @@ const CorporateTraining = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-brand-soft pt-14 pb-20 border-b border-border/80">
+        <section className="relative overflow-hidden bg-brand-soft pt-10 pb-12 lg:pt-12 lg:pb-14 border-b border-border/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 space-y-6">
@@ -243,14 +243,14 @@ const CorporateTraining = () => {
         </section>
 
         {/* Programme Portfolio Navigator */}
-        <section id="programmes" className="py-16 lg:py-24 bg-white border-b border-border/70">
+        <section id="programmes" className="py-10 lg:py-14 bg-white border-b border-border/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="text-center max-w-3xl mx-auto mb-8">
               <div className="inline-flex items-center space-x-2 bg-slate-100 text-brand-navy px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
                 <BookOpen className="h-3.5 w-3.5 text-primary" />
                 <span>Commercial Training Portfolio</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy tracking-tight mb-3">
                 Targeted Workforce Programmes Built for Real ROI
               </h2>
               <p className="text-base text-brand-muted leading-relaxed">
@@ -259,7 +259,7 @@ const CorporateTraining = () => {
             </div>
 
             {/* Program Selection Buttons */}
-            <div className="flex flex-wrap justify-center gap-2 mb-10">
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
               {programmes.map((p) => (
                 <button
                   key={p.id}
@@ -276,8 +276,8 @@ const CorporateTraining = () => {
             </div>
 
             {/* Selected Program Showcase Card */}
-            <div className="max-w-5xl mx-auto bg-brand-soft rounded-3xl border border-border/80 p-8 sm:p-12 shadow-medium">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/70 pb-6 mb-8">
+            <div className="max-w-5xl mx-auto bg-brand-soft rounded-3xl border border-border/80 p-6 sm:p-8 lg:p-10 shadow-medium">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/70 pb-5 mb-6">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md bg-primary/10 text-primary">
                     {activeProgramme.badge}
@@ -341,7 +341,7 @@ const CorporateTraining = () => {
         </section>
 
         {/* Commercial Form Section */}
-        <section id="training-form" className="py-16 lg:py-24 bg-brand-soft border-b border-border/70">
+        <section id="training-form" className="py-10 lg:py-14 bg-brand-soft border-b border-border/70">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <LeadCaptureForm
               initialCategory="corporate_training"
@@ -353,9 +353,9 @@ const CorporateTraining = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 lg:py-20 bg-white">
+        <section className="py-10 lg:py-14 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy tracking-tight mb-2">
                 Frequently Asked Questions
               </h2>

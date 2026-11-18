@@ -106,7 +106,7 @@ const Chatr = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10">
+        <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-30">
             <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
@@ -114,9 +114,9 @@ const Chatr = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl" />
           </div>
 
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-10 lg:py-14">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full mb-4">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -125,7 +125,7 @@ const Chatr = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 tracking-tight">
               <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
                 CHATR
               </span>
@@ -135,20 +135,20 @@ const Chatr = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-4">
+            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-2">
               Chat, call, earn, pay, and collaborate — all in one platform.
             </p>
-            <p className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-10">
+            <p className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-6">
               A next-gen communication technology built by TalentXcel.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
               {isMobile ? (
                 <>
                   <Button 
                     size="lg" 
-                    className="w-full sm:w-auto min-w-[220px] h-14 text-lg font-semibold shadow-large hover:shadow-xl transition-all"
+                    className="w-full sm:w-auto min-w-[220px] h-12 text-base font-semibold shadow-large hover:shadow-xl transition-all"
                     onClick={handleInstallClick}
                   >
                     <Download className="mr-2 h-5 w-5" />
@@ -157,7 +157,7 @@ const Chatr = () => {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="w-full sm:w-auto min-w-[220px] h-14 text-lg"
+                    className="w-full sm:w-auto min-w-[220px] h-12 text-base"
                     asChild
                   >
                     <a href="https://chatr.chat" target="_blank" rel="noopener noreferrer">
@@ -170,7 +170,7 @@ const Chatr = () => {
                 <>
                   <Button 
                     size="lg" 
-                    className="w-full sm:w-auto min-w-[220px] h-14 text-lg font-semibold shadow-large hover:shadow-xl transition-all"
+                    className="w-full sm:w-auto min-w-[220px] h-12 text-base font-semibold shadow-large hover:shadow-xl transition-all"
                     asChild
                   >
                     <a href="https://chatr.chat" target="_blank" rel="noopener noreferrer">
@@ -181,7 +181,7 @@ const Chatr = () => {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="w-full sm:w-auto min-w-[220px] h-14 text-lg"
+                    className="w-full sm:w-auto min-w-[220px] h-12 text-base"
                     onClick={handleInstallClick}
                   >
                     <Download className="mr-2 h-5 w-5" />
@@ -192,7 +192,7 @@ const Chatr = () => {
             </div>
 
             {/* Device Indicator */}
-            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-8">
+            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
               {isMobile ? (
                 <>
                   <Smartphone className="h-4 w-4" />
@@ -207,7 +207,7 @@ const Chatr = () => {
             </div>
 
             {/* Trust Line */}
-            <p className="text-sm text-muted-foreground/70 border-t border-border/50 pt-6 inline-block px-8">
+            <p className="text-sm text-muted-foreground/70 border-t border-border/50 pt-4 inline-block px-8">
               CHATR is a core service operated by{" "}
               <span className="font-semibold text-foreground">TalentXcel Technologies</span>
             </p>
@@ -215,10 +215,10 @@ const Chatr = () => {
         </section>
 
         {/* Service Highlights */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-10 lg:py-14 bg-muted/30">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            <div className="text-center mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold mb-2">
                 Built for Modern Communication
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">

@@ -89,13 +89,13 @@ const Culture = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30 py-20">
+        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30 py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
                 <Sparkles className="h-4 w-4" /> Work Principles & Values
               </div>
-              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-4">
                 Culture Built on <span className="bg-gradient-primary bg-clip-text text-transparent">Excellence & Empathy</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -107,10 +107,10 @@ const Culture = () => {
         </section>
 
         {/* Culture Pillars */}
-        <section className="py-16">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14 max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight">Our Cultural Pillars</h2>
+            <div className="text-center mb-8 max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight">Our Cultural Pillars</h2>
               <p className="text-muted-foreground">
                 The standards that define how we build products, serve enterprise clients, and treat one another.
               </p>
@@ -136,12 +136,12 @@ const Culture = () => {
         </section>
 
         {/* Operating Principles */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-10 lg:py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4 tracking-tight">How We Work</h2>
-                <p className="text-muted-foreground mb-8 leading-relaxed">
+                <h2 className="text-3xl font-bold mb-3 tracking-tight">How We Work</h2>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
                   We reject corporate bureaucracy and vanity metrics in favor of clear goals, high individual autonomy, and rigorous technical standards.
                 </p>
 
@@ -170,10 +170,10 @@ const Culture = () => {
         </section>
 
         {/* Development Offerings */}
-        <section className="py-16">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight">Growth & Development</h2>
+            <div className="max-w-3xl mx-auto text-center mb-6">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight">Growth & Development</h2>
               <p className="text-muted-foreground">
                 We invest in our people so they can tackle challenging enterprise problems with confidence.
               </p>
@@ -191,10 +191,10 @@ const Culture = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-gradient-hero text-white">
+        <section className="py-10 lg:py-14 bg-gradient-hero text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4 tracking-tight">Want to Build With Us?</h2>
-            <p className="text-lg mb-8 opacity-90 max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold mb-3 tracking-tight">Want to Build With Us?</h2>
+            <p className="text-lg mb-6 opacity-90 max-w-xl mx-auto">
               Explore open positions, internship programs, and opportunities to shape the future of technology and talent.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

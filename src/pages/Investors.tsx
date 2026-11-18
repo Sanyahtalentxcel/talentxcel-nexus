@@ -105,16 +105,16 @@ const Investors = () => {
         </Helmet>
 
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30 py-20 lg:py-24">
+        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30 py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
                 <TrendingUp className="h-4 w-4" /> Corporate Strategy & Investment
               </div>
-              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-4">
                 Investing in the Convergence of <span className="bg-gradient-primary bg-clip-text text-transparent">Technology & Talent</span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+              <p className="text-xl text-muted-foreground leading-relaxed mb-6">
                 As artificial intelligence and distributed engineering reshape global business, organizations require both advanced technical infrastructure and the skilled human capital to operate it. TalentXcel is built to capture this convergence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -132,10 +132,10 @@ const Investors = () => {
         </section>
 
         {/* Strategic Pillars Grid */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-10 lg:py-14 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight">Strategic Dimensions</h2>
+            <div className="text-center mb-6 max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight">Strategic Dimensions</h2>
               <p className="text-muted-foreground">
                 Fundamental operational pillars positioning TalentXcel for durable, long-term enterprise value creation.
               </p>
@@ -158,10 +158,10 @@ const Investors = () => {
         </section>
 
         {/* Competitive Edge */}
-        <section className="py-16">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14 max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight">Our Competitive Advantage</h2>
+            <div className="text-center mb-8 max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight">Our Competitive Advantage</h2>
               <p className="text-muted-foreground">
                 Core differentiators driving client retention and operational leverage across our service verticals.
               </p>
@@ -189,10 +189,10 @@ const Investors = () => {
         </section>
 
         {/* Timeline */}
-        <section className="py-16 bg-muted/20">
+        <section className="py-10 lg:py-14 bg-muted/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight">Corporate Progression</h2>
+            <div className="text-center mb-6 max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight">Corporate Progression</h2>
               <p className="text-muted-foreground">
                 Methodical expansion from foundation to multi-market solutions delivery.
               </p>
@@ -215,9 +215,9 @@ const Investors = () => {
         </section>
 
         {/* Visual Showcase */}
-        <section className="py-16">
+        <section className="py-10 lg:py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 items-center mb-12">
+            <div className="grid lg:grid-cols-2 gap-8 items-center mb-8">
               <div className="rounded-3xl overflow-hidden shadow-large border border-border/60">
                 <img 
                   src={businessStrategy} 
@@ -239,10 +239,10 @@ const Investors = () => {
         </section>
 
         {/* Investor Contact */}
-        <section className="py-16 bg-gradient-hero text-white">
+        <section className="py-10 lg:py-14 bg-gradient-hero text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4 tracking-tight">Connect with Investor Relations</h2>
-            <p className="text-lg mb-8 opacity-90 max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold mb-3 tracking-tight">Connect with Investor Relations</h2>
+            <p className="text-lg mb-6 opacity-90 max-w-xl mx-auto">
               For corporate governance inquiries, institutional briefings, or strategic partnership discussions, reach out to our corporate office.
             </p>
             

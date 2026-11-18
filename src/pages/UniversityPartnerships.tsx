@@ -76,7 +76,7 @@ const UniversityPartnerships = () => {
 
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-brand-soft pt-14 pb-20 border-b border-border/80">
+        <section className="relative overflow-hidden bg-brand-soft pt-10 pb-12 lg:pt-12 lg:pb-14 border-b border-border/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 space-y-6">
@@ -127,10 +127,10 @@ const UniversityPartnerships = () => {
         </section>
 
         {/* Partnership Models */}
-        <section id="partnership-models" className="py-16 lg:py-24 bg-white border-b border-border/70">
+        <section id="partnership-models" className="py-10 lg:py-14 bg-white border-b border-border/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy tracking-tight mb-4">
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy tracking-tight mb-3">
                 Structured Institutional Partnership Models
               </h2>
               <p className="text-base text-brand-muted leading-relaxed">
@@ -173,7 +173,7 @@ const UniversityPartnerships = () => {
         </section>
 
         {/* Form Section */}
-        <section id="mou-form" className="py-16 lg:py-24 bg-brand-soft">
+        <section id="mou-form" className="py-10 lg:py-14 bg-brand-soft">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <LeadCaptureForm
               initialCategory="university_partnership"

@@ -182,14 +182,14 @@ const Contact = () => {
       
       <Navbar />
 
-      <main className="py-16 lg:py-24">
+      <main className="py-10 lg:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
               <Mail className="h-4 w-4" /> Enterprise Conversion Portal
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-3">
               Connect with <span className="bg-gradient-primary bg-clip-text text-transparent">TalentXcel</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -198,7 +198,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Methods Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {contactMethods.map((m, index) => {
               const Icon = m.icon;
               return (
@@ -223,8 +223,8 @@ const Contact = () => {
 
           {/* Dedicated Conversion Pathways */}
           <div className="max-w-4xl mx-auto">
-            <Card className="p-6 sm:p-10 border-border/60 shadow-medium">
-              <div className="mb-8">
+            <Card className="p-6 sm:p-8 border-border/60 shadow-medium">
+              <div className="mb-6">
                 <h2 className="text-2xl font-bold tracking-tight mb-2">Select Your Inquiry Pathway</h2>
                 <p className="text-sm text-muted-foreground">
                   Choose the specialized department to ensure your request reaches the right solution architect.
@@ -232,7 +232,7 @@ const Contact = () => {
               </div>
 
               <Tabs defaultValue="enterprise-tech" onValueChange={setActiveTab} className="w-full">
-                <TabsList className="grid grid-cols-2 sm:grid-cols-4 w-full mb-8 h-auto p-1 gap-1">
+                <TabsList className="grid grid-cols-2 sm:grid-cols-4 w-full mb-6 h-auto p-1 gap-1">
                   <TabsTrigger value="enterprise-tech" className="text-xs sm:text-sm py-2.5">
                     Technology & AI
                   </TabsTrigger>

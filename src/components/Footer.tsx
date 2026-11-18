@@ -31,7 +31,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-slate-50 border-t border-border/80 text-brand-navy">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Company Brand Column (2 cols on lg) */}
           <div className="lg:col-span-2 space-y-4">
@@ -170,7 +170,7 @@ const Footer = () => {
         </div>
 
         {/* Contact Info Bar & Legal Links */}
-        <div className="border-t border-border/80 mt-12 pt-8">
+        <div className="border-t border-border/80 mt-8 pt-6">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 text-xs text-brand-muted">
             <div className="flex flex-wrap gap-4 sm:gap-6">
               <div className="flex items-center space-x-2">

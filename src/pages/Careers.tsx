@@ -103,19 +103,19 @@ const Careers = () => {
       
       <Navbar />
 
-      <main className="flex-1 py-16 lg:py-24">
+      <main className="flex-1 py-10 lg:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* 6.3 Hero Section */}
-          <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-8 lg:mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-primary/20">
               <Briefcase className="h-4 w-4" /> Careers &amp; Team Culture
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground leading-[1.15]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4 text-foreground leading-[1.15]">
               Build Your Career with <br className="hidden sm:inline" />
               <span className="bg-gradient-primary bg-clip-text text-transparent">TalentXcel</span>
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-6">
               We bring together technology engineering, enterprise workforce solutions, and continuous learning. Explore active focus openings across our practices or submit your credentials to our corporate talent bench.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -137,9 +137,9 @@ const Careers = () => {
           </div>
 
           {/* 6.1 Why Work with TalentXcel */}
-          <div className="mb-20">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight text-foreground">Our Workplace Culture</h2>
+          <div className="mb-10 lg:mb-12">
+            <div className="text-center max-w-2xl mx-auto mb-6">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight text-foreground">Our Workplace Culture</h2>
               <p className="text-muted-foreground text-sm sm:text-base">
                 An environment designed for engineers, recruiters, and educators who value practical execution and ethical stewardship.
               </p>
@@ -159,8 +159,8 @@ const Careers = () => {
           </div>
 
           {/* 6.1 Active Focus Openings */}
-          <div id="openings" className="mb-20 scroll-mt-28">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 pb-6 border-b border-border/60">
+          <div id="openings" className="mb-10 lg:mb-12 scroll-mt-28">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4 pb-4 border-b border-border/60">
               <div>
                 <Badge variant="outline" className="text-xs mb-2 bg-primary/5 text-primary border-primary/20">
                   Verified Requisitions
@@ -232,9 +232,9 @@ const Careers = () => {
             </div>
 
             {/* General Profile Submission Box */}
-            <div className="mt-12 p-8 bg-muted/30 rounded-3xl border border-border/70 text-center max-w-3xl mx-auto shadow-soft">
+            <div className="mt-8 p-6 sm:p-8 bg-muted/30 rounded-3xl border border-border/70 text-center max-w-3xl mx-auto shadow-soft">
               <h3 className="font-bold text-xl text-foreground mb-2">Don't see your specific role above?</h3>
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed max-w-xl mx-auto">
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed max-w-xl mx-auto">
                 We are always interested in connecting with talented software engineers, technical recruiters, and educational program managers. Share your profile for future opportunities.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
@@ -251,15 +251,15 @@ const Careers = () => {
           </div>
 
           {/* 6.1 Application Process & Candidate Privacy Information */}
-          <div className="mb-20 bg-card rounded-3xl p-8 sm:p-12 border border-border/70 shadow-soft">
-            <div className="max-w-2xl mb-8">
+          <div className="mb-10 lg:mb-12 bg-card rounded-3xl p-6 sm:p-8 lg:p-10 border border-border/70 shadow-soft">
+            <div className="max-w-2xl mb-6">
               <h2 className="text-2xl font-bold mb-2 text-foreground">Application Process &amp; Candidate Privacy</h2>
               <p className="text-muted-foreground text-sm">
                 Transparent evaluation standards and statutory data protection for all prospective team members.
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-3 gap-6 mb-8">
+            <div className="grid sm:grid-cols-3 gap-6 mb-6">
               <div className="p-5 bg-muted/20 rounded-2xl border border-border/60">
                 <div className="text-xs font-bold text-primary mb-1">Step 01. Review</div>
                 <h4 className="font-bold text-sm text-foreground mb-2">Profile &amp; Code Review</h4>

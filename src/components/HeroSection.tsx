@@ -5,7 +5,7 @@ import modernWorkspace from "@/assets/modern-workspace.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-brand-soft pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-border/70">
+    <section className="relative overflow-hidden bg-brand-soft pt-10 pb-12 lg:pt-14 lg:pb-16 border-b border-border/70">
       {/* Subtle background ambient geometric grid */}
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none"

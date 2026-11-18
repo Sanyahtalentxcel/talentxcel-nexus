@@ -128,25 +128,25 @@ const Team = () => {
       
       <Navbar />
 
-      <main className="flex-1 py-16 lg:py-24">
+      <main className="flex-1 py-10 lg:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-primary/20">
+          <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-3 border border-primary/20">
               <ShieldCheck className="h-4 w-4" /> Founder &amp; Corporate Governance
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-foreground">
+            <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-foreground">
               Leadership Built on <span className="bg-gradient-primary bg-clip-text text-transparent">Purpose &amp; Integrity</span>
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               TalentXcel was established to bridge the structural divide between enterprise technology engineering and human talent mobility. Meet our Founder and explore our corporate leadership architecture.
             </p>
           </div>
 
           {/* Genuine Founder Profile Spotlight */}
-          <div className="mb-20">
-            <Card className="p-8 lg:p-12 border-border/80 bg-gradient-to-br from-card via-card to-muted/20 shadow-large relative overflow-hidden rounded-3xl">
+          <div className="mb-10 lg:mb-12">
+            <Card className="p-6 sm:p-8 lg:p-10 border-border/80 bg-gradient-to-br from-card via-card to-muted/20 shadow-large relative overflow-hidden rounded-3xl">
               <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
               
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -257,12 +257,12 @@ const Team = () => {
           </div>
 
           {/* Departmental Management & Practice Directorate */}
-          <div className="mb-20">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-muted rounded-full text-xs font-medium text-muted-foreground mb-3">
+          <div className="mb-10 lg:mb-12">
+            <div className="text-center max-w-2xl mx-auto mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-muted rounded-full text-xs font-medium text-muted-foreground mb-2">
                 <Users2 className="h-3.5 w-3.5" /> Functional Leadership Structure
               </div>
-              <h2 className="text-3xl font-bold mb-3 tracking-tight text-foreground">Practice Directorates &amp; Management</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2 tracking-tight text-foreground">Practice Directorates &amp; Management</h2>
               <p className="text-muted-foreground text-sm sm:text-base">
                 Operational execution is structured across six dedicated practice directorates to deliver end-to-end service reliability.
               </p>
@@ -316,9 +316,9 @@ const Team = () => {
           </div>
 
           {/* Governance Principles */}
-          <div className="mb-20 bg-muted/20 rounded-3xl p-8 lg:p-12 border border-border/60">
-            <div className="max-w-2xl mb-10">
-              <h2 className="text-2xl lg:text-3xl font-bold mb-3 text-foreground">Corporate Governance Commitments</h2>
+          <div className="mb-10 lg:mb-12 bg-muted/20 rounded-3xl p-6 sm:p-8 lg:p-10 border border-border/60">
+            <div className="max-w-2xl mb-6">
+              <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-foreground">Corporate Governance Commitments</h2>
               <p className="text-muted-foreground text-sm sm:text-base">
                 How our leadership upholds institutional trust, statutory discipline, and client confidentiality.
               </p>
@@ -339,7 +339,7 @@ const Team = () => {
           </div>
 
           {/* Verification Protocol Transparency */}
-          <div className="p-8 rounded-2xl border border-dashed border-border bg-card/60 text-center max-w-3xl mx-auto mb-16">
+          <div className="p-6 sm:p-8 rounded-2xl border border-dashed border-border bg-card/60 text-center max-w-3xl mx-auto mb-10">
             <h3 className="text-lg font-bold mb-2 text-foreground">Team Verification Register Protocol</h3>
             <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
               In strict adherence to corporate governance, individual biographical profiles and executive appointments are published on this website only after verification and authorization in our internal register. We do not use synthetic personas or unauthorized personnel records.

@@ -87,3 +87,24 @@ All 15 core routes were audited on local test harness (`http://localhost:8080`) 
 ## 5. Audit Conclusions & Operational Sign-Off
 
 The root cause of the visual scale discrepancy has been eliminated. The Services page now presents with identical visual weight, generous spacing, dominant typography, and executive polish matching the rest of the corporate site.
+
+---
+
+## 6. Global Spacing Tightening Addendum (Elimination of Large Blank Spaces)
+
+Following executive feedback regarding excessive vertical empty space ("large blanks spaces in all the pages"), a comprehensive whitespace audit and compression pass was executed across all components and page templates.
+
+### 6.1 Diagnostic Findings: The Compounding Whitespace Bug
+- **Stacked Section Compounding:** Adjacent sections each used `py-16 lg:py-24` (96px padding-top + 96px padding-bottom = **192px of empty gap** between content blocks).
+- **Compounding Header Margins:** Section header wrappers featured `mb-14` to `mb-20` (56px–80px) plus container internal padding (`p-12 lg:p-16`), creating 150px+ of unused dead space above content.
+- **Top-of-Page Pushdown:** `main` containers carried `py-16 lg:py-24` directly underneath the 80px fixed navbar, pushing page headlines down by 176px from the screen top.
+
+### 6.2 The Normalized Spacing Standard (Applied to all 19 Components/Pages)
+1. **Page `<main>` Wrappers:** Standardized to `py-10 lg:py-14` (40px mobile / 56px desktop), keeping headlines immediate and above the fold.
+2. **Stacked Content Sections:** Reduced from `py-16 lg:py-24` to `py-10 lg:py-14` (56px top/bottom), cutting inter-section gaps from 192px down to a crisp 112px.
+3. **Interior Headers:** Normalized to `mb-6` to `mb-8 lg:mb-10`, removing the detached floating feel of subheads.
+4. **Card Padding:** Normalized from `p-8 sm:p-12 lg:p-16` to `p-6 sm:p-8 lg:p-10`.
+5. **Footer:** Reduced from `py-14` to `py-10 lg:py-12`, with top divider margin lowered from `mt-12 pt-8` to `mt-8 pt-6`.
+
+All 19 components pass linting (0 errors) and Vite production build with zero defects.
+

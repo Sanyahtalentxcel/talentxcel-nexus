@@ -172,19 +172,19 @@ const Partnerships = () => {
       
       <Navbar />
 
-      <main className="flex-1 py-16 lg:py-24">
+      <main className="flex-1 py-10 lg:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* 5.2 Hero */}
-          <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-8 lg:mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-primary/20">
               <Handshake className="h-4 w-4" /> Strategic Alliances &amp; Ecosystem
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground leading-[1.15]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4 text-foreground leading-[1.15]">
               Building Partnerships That <br className="hidden sm:inline" />
               <span className="bg-gradient-primary bg-clip-text text-transparent">Create Lasting Value</span>
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-6">
               We welcome collaborations with institutions, employers and technology organisations to develop skills, solve business challenges and create meaningful opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -198,8 +198,8 @@ const Partnerships = () => {
           </div>
 
           {/* 5.1 Section A: Verified Partnerships Transparency */}
-          <div className="mb-20">
-            <Card className="p-8 lg:p-10 border-border/80 bg-muted/20 rounded-3xl">
+          <div className="mb-10 lg:mb-12">
+            <Card className="p-6 sm:p-8 lg:p-10 border-border/80 bg-muted/20 rounded-3xl">
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-border/60">
                 <div>
                   <Badge variant="outline" className="text-xs mb-2 bg-primary/5 text-primary border-primary/20">
@@ -233,9 +233,9 @@ const Partnerships = () => {
           </div>
 
           {/* 5.1 & 5.2 Section B: Partnership Opportunities (4 Pillars) */}
-          <div id="partnership-opportunities" className="mb-24 scroll-mt-28">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-4 text-foreground">
+          <div id="partnership-opportunities" className="mb-12 lg:mb-14 scroll-mt-28">
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-3 text-foreground">
                 Partnership Opportunities Across 4 Sectors
               </h2>
               <p className="text-muted-foreground text-base">
@@ -291,9 +291,9 @@ const Partnerships = () => {
           </div>
 
           {/* Section C: Partner Benefits */}
-          <div className="mb-24 bg-gradient-to-br from-card via-card to-muted/30 rounded-3xl p-8 sm:p-12 border border-border/70 shadow-soft">
-            <div className="max-w-2xl mb-10">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-foreground">Why Partner with TalentXcel?</h2>
+          <div className="mb-12 lg:mb-14 bg-gradient-to-br from-card via-card to-muted/30 rounded-3xl p-6 sm:p-8 lg:p-10 border border-border/70 shadow-soft">
+            <div className="max-w-2xl mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-foreground">Why Partner with TalentXcel?</h2>
               <p className="text-muted-foreground text-sm sm:text-base">
                 Core advantages delivered to our institutional, corporate, and technology partners.
               </p>
@@ -314,9 +314,9 @@ const Partnerships = () => {
           </div>
 
           {/* Product Ecosystem Gateway */}
-          <div className="mb-24">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight text-foreground">The TalentXcel Product Ecosystem</h2>
+          <div className="mb-12 lg:mb-14">
+            <div className="text-center max-w-2xl mx-auto mb-8">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight text-foreground">The TalentXcel Product Ecosystem</h2>
               <p className="text-muted-foreground text-sm sm:text-base">
                 A connected multi-domain network serving enterprise buyers, candidates, and engineering learners.
               </p>
@@ -365,7 +365,7 @@ const Partnerships = () => {
           </div>
 
           {/* 5.3 Partnership Enquiry Form */}
-          <div id="partnership-form" className="scroll-mt-28 mb-16">
+          <div id="partnership-form" className="scroll-mt-28 mb-10">
             <LeadCaptureForm 
               initialCategory="university_partnership"
               title="Official Partnership & Institutional Inquiry"

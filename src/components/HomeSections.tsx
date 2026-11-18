@@ -34,7 +34,7 @@ import aiTechnology from "@/assets/ai-technology.jpg";
    ========================================================================= */
 export const CorporateIntroSection = () => {
   return (
-    <section className="py-16 lg:py-24 bg-white border-b border-border/70">
+    <section className="py-10 lg:py-14 bg-white border-b border-border/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Story & Mission (7 cols) */}
@@ -175,10 +175,10 @@ export const ThreePillarsSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-brand-soft border-b border-border/70">
+    <section className="py-10 lg:py-14 bg-brand-soft border-b border-border/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-10">
           <div className="inline-flex items-center space-x-2 bg-white border border-border/80 text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 shadow-xs">
             <Sparkles className="h-3.5 w-3.5" />
             <span>Section B • Core Offerings</span>
@@ -292,9 +292,9 @@ export const EcosystemSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white border-b border-border/70">
+    <section className="py-10 lg:py-14 bg-white border-b border-border/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-10">
           <div className="inline-flex items-center space-x-2 bg-slate-100 text-brand-navy px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
             <Layers className="h-3.5 w-3.5 text-primary" />
             <span>Section C • Digital Platforms</span>
@@ -371,7 +371,7 @@ export const EcosystemSection = () => {
    ========================================================================= */
 export const LeadershipPreviewSection = () => {
   return (
-    <section className="py-16 lg:py-24 bg-brand-soft border-b border-border/70">
+    <section className="py-10 lg:py-14 bg-brand-soft border-b border-border/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-5 space-y-6">
@@ -392,13 +392,13 @@ export const LeadershipPreviewSection = () => {
               <div className="flex items-start space-x-3">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-brand-charcoal">
-                  <strong>Registered Corporate Entity:</strong> Official corporate governance registered in Uttar Pradesh, India.
+                  <strong>Registered Corporate Entity:</strong> Official corporate governance registered in Uttar Pradesh, India (CIN: U85500UP2024PTC206390).
                 </p>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-brand-charcoal">
-                  <strong>Zero Synthetic Personas:</strong> All leadership biographies represent genuine executive leaders and practice directors.
+                  <strong>Founder-Led Governance:</strong> Founded by Sanobar Jahan with genuine practice directorates across technology, staffing, and academies.
                 </p>
               </div>
             </div>
@@ -406,7 +406,7 @@ export const LeadershipPreviewSection = () => {
             <div className="pt-2">
               <Button asChild className="bg-primary hover:bg-primary-hover text-white font-semibold">
                 <Link to="/team" className="inline-flex items-center space-x-2">
-                  <span>View Leadership &amp; Team Register</span>
+                  <span>Meet Founder &amp; Leadership</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -419,12 +419,12 @@ export const LeadershipPreviewSection = () => {
               <div className="p-2.5 rounded-xl bg-primary/10 text-primary w-fit mb-3">
                 <Briefcase className="h-5 w-5" />
               </div>
-              <h3 className="font-bold text-brand-navy text-base mb-1">Executive Leadership</h3>
+              <h3 className="font-bold text-brand-navy text-base mb-1">Founder &amp; Executive Leadership</h3>
               <p className="text-xs text-brand-muted leading-relaxed mb-3">
-                Managing Director &amp; Corporate Strategy oversight across all operational verticals.
+                Sanobar Jahan (Founder) &amp; corporate strategy oversight across all operational verticals.
               </p>
               <div className="text-[11px] font-semibold text-primary uppercase tracking-wider">
-                Executive Governance
+                Founder Governance
               </div>
             </div>
 
@@ -497,9 +497,9 @@ export const WhyTalentXcelSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white border-b border-border/70">
+    <section className="py-10 lg:py-14 bg-white border-b border-border/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-10">
           <div className="inline-flex items-center space-x-2 bg-slate-100 text-brand-navy px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
             <TrendingUp className="h-3.5 w-3.5 text-primary" />
             <span>Section E • Operating Model</span>
@@ -575,9 +575,9 @@ export const CaseStudiesPreviewSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-brand-soft border-b border-border/70">
+    <section className="py-10 lg:py-14 bg-brand-soft border-b border-border/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 lg:mb-10">
           <div>
             <div className="inline-flex items-center space-x-2 bg-white border border-border/80 text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 shadow-xs">
               <Award className="h-3.5 w-3.5" />
@@ -680,9 +680,9 @@ export const PartnershipsSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white border-b border-border/70">
+    <section className="py-10 lg:py-14 bg-white border-b border-border/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-10">
           <div className="inline-flex items-center space-x-2 bg-slate-100 text-brand-navy px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
             <Handshake className="h-3.5 w-3.5 text-primary" />
             <span>Section G • Strategic Alliances</span>
@@ -735,7 +735,7 @@ export const PartnershipsSection = () => {
    ========================================================================= */
 export const ContactPortalSection = () => {
   return (
-    <section className="py-16 lg:py-24 bg-brand-navy text-white relative overflow-hidden">
+    <section className="py-10 lg:py-14 bg-brand-navy text-white relative overflow-hidden">
       {/* Subtle geometric lines */}
       <div 
         className="absolute inset-0 opacity-[0.04] pointer-events-none"

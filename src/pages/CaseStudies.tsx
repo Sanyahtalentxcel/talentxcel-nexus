@@ -118,24 +118,24 @@ const CaseStudies = () => {
       
       <Navbar />
 
-      <main className="flex-1 py-16 lg:py-24">
+      <main className="flex-1 py-10 lg:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-primary/20">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-3 border border-primary/20">
               <Code2 className="h-4 w-4" /> Technical Capability &amp; Domain Architecture
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-foreground">
+            <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-foreground">
               Technology Capabilities &amp; <span className="bg-gradient-primary bg-clip-text text-transparent">Solution Scenarios</span>
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               Explore how TalentXcel structures solutions across critical enterprise domains. The following illustrative scenarios demonstrate our engineering methodology, talent pod integration, and technical stacks.
             </p>
           </div>
 
           {/* Corporate Transparency Callout */}
-          <div className="mb-14 p-5 rounded-2xl bg-muted/40 border border-border/80 flex items-start gap-3.5 max-w-4xl mx-auto">
+          <div className="mb-8 p-4 sm:p-5 rounded-2xl bg-muted/40 border border-border/80 flex items-start gap-3.5 max-w-4xl mx-auto">
             <Info className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
             <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               <strong className="text-foreground">Corporate Transparency Commitment:</strong> The scenarios presented on this page are architectural capability models and delivery frameworks developed by our engineering and staffing practices. For proprietary client engagements governed by mutual non-disclosure agreements (NDAs), verified commercial references and sanitized architectural briefings are provided directly to enterprise procurement teams upon request.
@@ -143,7 +143,7 @@ const CaseStudies = () => {
           </div>
 
           {/* Sector Overview Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
             {[
               { label: "Energy & Utilities", focus: "Grid Telemetry & Cloud Pods" },
               { label: "BFSI & Fintech", focus: "Parsing & Compliance Pods" },
@@ -158,7 +158,7 @@ const CaseStudies = () => {
           </div>
 
           {/* Detailed Solution Scenarios Grid */}
-          <div className="space-y-12 mb-20">
+          <div className="space-y-8 mb-12">
             {solutionScenarios.map((scenario) => (
               <Card key={scenario.id} className="p-8 lg:p-10 border-border/80 hover:shadow-medium transition-all rounded-3xl bg-card">
                 

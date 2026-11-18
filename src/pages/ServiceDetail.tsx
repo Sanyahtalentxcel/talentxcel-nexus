@@ -96,7 +96,7 @@ const ServiceDetail = () => {
         {/* Hero */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 grid lg:grid-cols-2 gap-10 items-center">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 grid lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
                 <Building2 className="h-4 w-4" />
@@ -136,10 +136,10 @@ const ServiceDetail = () => {
         </section>
 
         {/* Details */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10">
-            <div className="lg:col-span-2 space-y-8">
-              <Card className="p-8">
+        <section className="py-10 lg:py-14">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 space-y-6">
+              <Card className="p-6 sm:p-8">
                 <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   {service.features.map((f: string) => (

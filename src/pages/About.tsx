@@ -149,7 +149,7 @@ const About = () => {
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(214,211,209,0.1),transparent_50%)]" />
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
@@ -201,10 +201,10 @@ const About = () => {
         </section>
 
         {/* Company Snapshot */}
-        <section className="py-14 bg-muted/30">
+        <section className="py-10 lg:py-12 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight">Company Snapshot</h2>
+            <div className="text-center mb-6">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight">Company Snapshot</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Core dimensions reflecting our institutional focus, capabilities, and geographic delivery.
               </p>
@@ -223,7 +223,7 @@ const About = () => {
         </section>
 
         {/* Vision & Mission */}
-        <section className="py-16">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
@@ -260,7 +260,7 @@ const About = () => {
         </section>
 
         {/* Workplace & Innovation Spaces */}
-        <section className="py-14 bg-muted/20">
+        <section className="py-10 lg:py-12 bg-muted/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2">
@@ -311,10 +311,10 @@ const About = () => {
         </section>
 
         {/* Core Values */}
-        <section className="py-16">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight">Our Core Operating Values</h2>
+            <div className="text-center mb-6">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight">Our Core Operating Values</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Principles that guide our daily client engagements, technology choices, and workforce practices.
               </p>
@@ -335,7 +335,7 @@ const About = () => {
         </section>
 
         {/* Geographic Delivery */}
-        <section className="py-14 bg-muted/30">
+        <section className="py-10 lg:py-12 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
@@ -371,10 +371,10 @@ const About = () => {
         </section>
 
         {/* Corporate Journey */}
-        <section className="py-16">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight">Corporate Milestones</h2>
+            <div className="text-center mb-6">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight">Corporate Milestones</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Key progression points establishing our integrated technology and workforce capabilities.
               </p>
@@ -397,10 +397,10 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-hero text-white">
+        <section className="py-10 lg:py-14 bg-gradient-hero text-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4 tracking-tight">Explore Enterprise Solutions with TalentXcel</h2>
-            <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-3xl font-bold mb-3 tracking-tight">Explore Enterprise Solutions with TalentXcel</h2>
+            <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto leading-relaxed">
               Whether you require specialized IT staffing, custom software engineering, or corporate upskilling programs, our teams are ready to collaborate.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

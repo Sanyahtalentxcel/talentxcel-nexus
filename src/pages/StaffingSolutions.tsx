@@ -122,7 +122,7 @@ const StaffingSolutions = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-brand-soft pt-14 pb-20 border-b border-border/80">
+        <section className="relative overflow-hidden bg-brand-soft pt-10 pb-12 lg:pt-12 lg:pb-14 border-b border-border/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 space-y-6">
@@ -200,14 +200,14 @@ const StaffingSolutions = () => {
         </section>
 
         {/* Engagement Models Showcase */}
-        <section id="models" className="py-16 lg:py-24 bg-white border-b border-border/70">
+        <section id="models" className="py-10 lg:py-14 bg-white border-b border-border/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="text-center max-w-3xl mx-auto mb-8">
               <div className="inline-flex items-center space-x-2 bg-slate-100 text-brand-navy px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
                 <Briefcase className="h-3.5 w-3.5 text-primary" />
                 <span>Commercial Hiring Structures</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy tracking-tight mb-3">
                 Tailored Staffing Models for Every Organizational Stage
               </h2>
               <p className="text-base text-brand-muted leading-relaxed">
@@ -216,7 +216,7 @@ const StaffingSolutions = () => {
             </div>
 
             {/* Model Tabs */}
-            <div className="flex flex-wrap justify-center gap-2 mb-10">
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
               {models.map((m) => (
                 <button
                   key={m.id}
@@ -233,8 +233,8 @@ const StaffingSolutions = () => {
             </div>
 
             {/* Selected Model Card */}
-            <div className="max-w-5xl mx-auto bg-brand-soft rounded-3xl border border-border/80 p-8 sm:p-12 shadow-medium">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/70 pb-6 mb-8">
+            <div className="max-w-5xl mx-auto bg-brand-soft rounded-3xl border border-border/80 p-6 sm:p-8 lg:p-10 shadow-medium">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/70 pb-5 mb-6">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md bg-primary/10 text-primary">
                     {activeModel.badge}
@@ -295,10 +295,10 @@ const StaffingSolutions = () => {
         </section>
 
         {/* 4-Stage Vetting Process */}
-        <section className="py-16 lg:py-20 bg-brand-soft border-b border-border/70">
+        <section className="py-10 lg:py-14 bg-brand-soft border-b border-border/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy tracking-tight mb-3">
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy tracking-tight mb-2">
                 Our 4-Stage Practitioner Vetting Framework
               </h2>
               <p className="text-sm text-brand-muted">
@@ -340,9 +340,9 @@ const StaffingSolutions = () => {
         </section>
 
         {/* Sector Focus Grid */}
-        <section className="py-16 bg-white border-b border-border/70">
+        <section className="py-10 lg:py-12 bg-white border-b border-border/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto mb-10">
+            <div className="text-center max-w-2xl mx-auto mb-6">
               <h3 className="text-xl font-bold text-brand-navy mb-2">Core Industry Specializations</h3>
               <p className="text-xs sm:text-sm text-brand-muted">Deep domain understanding across high-impact sectors.</p>
             </div>
@@ -365,7 +365,7 @@ const StaffingSolutions = () => {
         </section>
 
         {/* Form Intake Section */}
-        <section id="staffing-form" className="py-16 lg:py-24 bg-brand-soft">
+        <section id="staffing-form" className="py-10 lg:py-14 bg-brand-soft">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <LeadCaptureForm
               initialCategory="it_staffing"

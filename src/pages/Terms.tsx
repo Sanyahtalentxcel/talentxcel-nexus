@@ -17,20 +17,20 @@ const Terms = () => {
       </Helmet>
       <Navbar />
 
-      <main className="py-16 lg:py-24">
+      <main className="py-10 lg:py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold mb-4">
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold mb-3">
               <Scale className="h-4 w-4" /> Legal Framework
             </div>
-            <h1 className="text-4xl font-bold tracking-tight mb-4">Terms of Service</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-4xl font-bold tracking-tight mb-2">Terms of Service</h1>
+            <p className="text-muted-foreground text-sm">
               Last Updated: November 2026 | Effective Date: July 2024
             </p>
           </div>
 
-          <Card className="p-8 sm:p-12 space-y-8 text-foreground/90 leading-relaxed border-border/60">
+          <Card className="p-6 sm:p-8 space-y-6 text-foreground/90 leading-relaxed border-border/60">
             <section className="space-y-3">
               <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <FileCheck className="h-5 w-5 text-primary" /> 1. Acceptance of Terms

@@ -204,21 +204,21 @@ const Services = () => {
 
       <Navbar />
       
-      <main className="flex-1 py-16 lg:py-24">
+      <main className="flex-1 py-10 lg:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* 3.1 Hero Section — Harmonized Global Layout */}
-          <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="text-center max-w-4xl mx-auto mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-primary/20">
               <Building2 className="h-4 w-4" /> Integrated Technology &amp; Talent Solutions
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground leading-[1.15]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-5 text-foreground leading-[1.15]">
               Solutions That Help Businesses <br className="hidden sm:inline" />
               <span className="bg-gradient-primary bg-clip-text text-transparent">Hire, Develop and Transform</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-10">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-6">
               TalentXcel brings together technology expertise, workforce solutions, and learning capabilities to help organisations solve complex business challenges and build future-ready engineering teams.
             </p>
             
@@ -235,12 +235,12 @@ const Services = () => {
           </div>
 
           {/* 3.2 & 3.3 Three Primary Service Pillars */}
-          <div id="pillars" className="mb-24 scroll-mt-28">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-4 text-foreground">
+          <div id="pillars" className="mb-14 scroll-mt-28">
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-3 text-foreground">
                 Three Pillars of Enterprise Capability
               </h2>
-              <p className="text-muted-foreground text-base">
+              <p className="text-muted-foreground text-sm sm:text-base">
                 Discover our three interconnected disciplines designed to scale technical organizations sustainably.
               </p>
             </div>
@@ -315,15 +315,15 @@ const Services = () => {
           </div>
 
           {/* 3.4 Commercial Pathways: "What does your organisation need?" */}
-          <section id="pathways" className="mb-24 scroll-mt-28 bg-gradient-to-br from-card via-card to-muted/30 rounded-3xl p-8 sm:p-12 lg:p-16 border border-border/70 shadow-medium">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
+          <section id="pathways" className="mb-14 scroll-mt-28 bg-gradient-to-br from-card via-card to-muted/30 rounded-3xl p-6 sm:p-8 lg:p-10 border border-border/70 shadow-medium">
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wider mb-2">
                 <Briefcase className="h-3.5 w-3.5" /> Direct Commercial Pathways
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-4 text-foreground">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-2 text-foreground">
                 What does your organisation need?
               </h2>
-              <p className="text-muted-foreground text-base">
+              <p className="text-muted-foreground text-sm sm:text-base">
                 Select your immediate corporate priority to connect with the appropriate practice directorate.
               </p>
             </div>
