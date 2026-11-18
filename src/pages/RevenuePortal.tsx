@@ -96,10 +96,6 @@ const formatINR = (val: number) => {
 };
 
 const RevenuePortal = () => {
-  // Simple session authentication gate
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [pinInput, setPinInput] = useState("");
-  const [authError, setAuthError] = useState("");
   const [activeTab, setActiveTab] = useState<"pipeline" | "growth_os">("pipeline");
   const [outboundReferrals, setOutboundReferrals] = useState<OutboundReferralEvent[]>([]);
 
@@ -127,26 +123,8 @@ const RevenuePortal = () => {
   };
 
   useEffect(() => {
-    // Check if session pin already validated
-    const storedAuth = sessionStorage.getItem("tx_revenue_auth");
-    if (storedAuth === "valid_session") {
-      setIsAuthenticated(true);
-      refreshData();
-    }
+    refreshData();
   }, []);
-
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Authorized administrative operational key
-    if (pinInput === "talentxcel2026") {
-      sessionStorage.setItem("tx_revenue_auth", "valid_session");
-      setIsAuthenticated(true);
-      setAuthError("");
-      refreshData();
-    } else {
-      setAuthError("Invalid access credentials. Unauthorized access is monitored and logged.");
-    }
-  };
 
   const handleStageChange = (newStage: LeadStage) => {
     if (!selectedLead) return;
@@ -198,50 +176,6 @@ const RevenuePortal = () => {
     return matchesSearch && matchesCategory && matchesStage;
   });
 
-  // Login Gate View
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen bg-slate-100 flex flex-col justify-between">
-        <Navbar />
-        <div className="flex-1 flex items-center justify-center p-4">
-          <Card className="max-w-md w-full p-8 border-border shadow-large bg-white">
-            <div className="text-center mb-6">
-              <div className="p-3 bg-brand-navy text-white rounded-2xl w-fit mx-auto mb-3">
-                <Lock className="h-6 w-6 text-brand-electric" />
-              </div>
-              <h2 className="text-2xl font-bold text-brand-navy">Revenue Operations Desk</h2>
-              <p className="text-xs text-brand-muted mt-1">
-                Restricted access for TalentXcel executive partners and authorized practice heads.
-              </p>
-            </div>
-
-            <form onSubmit={handleLogin} className="space-y-4">
-              <div>
-                <Input
-                  type="password"
-                  placeholder="Enter Corporate Access Key"
-                  value={pinInput}
-                  onChange={(e) => setPinInput(e.target.value)}
-                  className="h-11 text-center text-sm font-mono tracking-widest"
-                  autoFocus
-                />
-                {authError && <p className="text-xs text-rose-500 mt-1.5 text-center">{authError}</p>}
-              </div>
-
-              <Button type="submit" className="w-full bg-primary hover:bg-primary-hover text-white font-semibold h-11">
-                Authenticate &amp; Access Pipeline
-              </Button>
-
-              <p className="text-[11px] text-center text-brand-muted pt-2">
-                Protected by DPDP Act 2023 Access Protocols • TalentXcel Noida HQ
-              </p>
-            </form>
-          </Card>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-brand-soft">
