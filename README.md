@@ -1,73 +1,111 @@
-# Welcome to your Lovable project
+# TalentXcel Nexus — Corporate Website
 
-## Project info
+Official corporate website repository for **TalentXcel** ([talentxcel.co.in](https://talentxcel.co.in)).
 
-**URL**: https://lovable.dev/projects/f45e17eb-fa8d-433c-be5c-37867d903828
+TalentXcel operates as an integrated technology and workforce solutions company, providing enterprise software engineering, artificial intelligence automation, specialized IT staffing, and corporate talent academies.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 1. Overview & Business Positioning
 
-**Use Lovable**
+TalentXcel brings together three interconnected business pillars:
+1. **Technology & AI Solutions:** Enterprise software engineering, AI/ML systems, intelligent process automation, and cloud infrastructure.
+2. **Talent & Workforce Solutions:** Specialized IT staffing, permanent recruitment, contract augmentation, executive search, and Recruitment Process Outsourcing (RPO).
+3. **Learning & Talent Development:** Corporate technology training, university partnerships, and internship production academies.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f45e17eb-fa8d-433c-be5c-37867d903828) and start prompting.
+### Ecosystem Hierarchy
+- **[talentxcel.co.in](https://talentxcel.co.in):** Parent corporate identity, enterprise solutions, governance, and investor relations.
+- **[talentxcel.in](https://talentxcel.in):** Career, recruitment, and candidate talent marketplace platform.
+- **[talentxcel.net](https://talentxcel.net):** Learning portal and professional skill-development ecosystem.
+- **[chatr.chat](https://chatr.chat):** Real-time conversational AI and communication layer.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 2. Technology Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Framework:** React 18 with TypeScript
+- **Build Tool:** Vite 5 (independent React SWC plugin)
+- **Styling:** Tailwind CSS, PostCSS, class-variance-authority
+- **UI Components:** Radix UI primitives, Lucide React icons
+- **Routing:** React Router DOM (v6) with route-level code splitting (`React.lazy` + `Suspense`)
+- **Metadata & SEO:** React Helmet Async, Schema.org JSON-LD
+- **State & Query:** TanStack React Query
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 3. Local Development Setup
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Prerequisites
+- Node.js >= 18.0.0
+- npm >= 9.0.0
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Installation
+```bash
+# Clone repository
+git clone https://github.com/Sanyahtalentxcel/talentxcel-nexus.git
+cd talentxcel-nexus
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start local development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The development server will bind to `http://localhost:8080/` by default.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 4. Production Build & Verification
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+# Type check and build production bundle
+npm run build
 
-## What technologies are used for this project?
+# Preview production build locally
+npm run preview
+```
 
-This project is built with:
+Output is emitted to the `dist/` directory.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Performance & Code Splitting
+Route components are split dynamically via `React.lazy()` to optimize initial bundle sizes, reducing the initial JavaScript payload to well under standard mobile thresholds.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/f45e17eb-fa8d-433c-be5c-37867d903828) and click on Share -> Publish.
+## 5. Single Page Application (SPA) Hosting
 
-## Can I connect a custom domain to my Lovable project?
+To ensure that direct navigation to subpaths (e.g. `/about`, `/services`, `/contact`) resolves without 404 errors, the repository includes native rewrite configurations:
 
-Yes, you can!
+- **Netlify:** `public/_redirects` (`/*  /index.html  200`)
+- **Vercel:** `vercel.json` rewrite configuration
+- **GitHub Pages / Static Servers:** `public/404.html` fallback redirect
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 6. Environment Variables
+
+Copy `.env.example` to `.env.local` for local customizations:
+
+```env
+VITE_APP_ENV=production
+VITE_SITE_URL=https://talentxcel.co.in
+VITE_CONTACT_API_ENDPOINT=
+```
+
+---
+
+## 7. Governance & Contribution Policy
+
+- **Branching:** Feature and maintenance work must be developed on dedicated topic branches (e.g., `chore/*`, `feat/*`).
+- **Evidence-First Publishing:** No unverified metrics, fake employee profiles, or fabricated case studies may be published. Unverified statutory or commercial claims must be submitted to the corporate governance desk.
+- **Independence:** The codebase operates independently of third-party website builders. All builds and assets are self-contained.
+
+---
+
+## 8. Corporate Contact & Inquiries
+
+- **Corporate Desk:** `contact@talentxcel.co.in`
+- **Careers:** `careers@talentxcel.co.in`
+- **Investor Relations:** `investors@talentxcel.co.in`
+- **Office Location:** Plot C, ESquare Building, Sector-45, Noida, Uttar Pradesh 201301, India
