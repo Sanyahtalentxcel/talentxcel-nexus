@@ -150,12 +150,27 @@
   - `https://talentxcel.co.in/site.webmanifest` -> HTTP 200, 802 bytes
   - Live HTML head verified on `https://talentxcel.co.in/`.
 
+### Task: RALPH-TASK-011 — Google Search Console Indexing Remediation & Breadcrumbs (November 19, 2026)
+- **Objective:** Fix the 4 Page Indexing reasons reported in Google Search Console (3 404s, 2 Redirects, 1 Canonical Alternate, 1 Crawled Unindexed), eliminate redirecting sitemap entries, enforce server-level 301/308 redirects, noindex error pages, and deploy Schema.org `BreadcrumbList` across all 16 subpages.
+- **Root Cause & Remediations:**
+  1. *Not found (404) [3 pages]:* Historical legacy from pre-commit `91e0502` when Vercel static 404 intercepted deep routes. Remediated `src/pages/NotFound.tsx` by removing the incorrect `/404` canonical tag and adding `<meta name="robots" content="noindex, nofollow" />`.
+  2. *Page with redirect [2 pages]:* `sitemap.xml` previously submitted `/services/staffing-recruitment` and `/services/training-education`, which redirected to canonical hubs. Removed redirecting URLs from `sitemap.xml` and implemented instant HTTP 308 server-level redirects in `vercel.json`.
+  3. *Alternate page with proper canonical [1 page]:* `www.talentxcel.co.in` cleanly canonicalizes to `https://talentxcel.co.in/`.
+  4. *Crawled - currently not indexed [1 page]:* Added crawlable `<noscript>` primary directory fallback in `index.html` and absolute OG/Twitter image paths.
+  5. *BreadcrumbList Schema:* Integrated `BreadcrumbList` JSON-LD across all 16 subpages to unlock rich navigational breadcrumb snippets in Google Search results.
+- **Verification Battery Results:**
+  - ESLint (`npm run lint`): 0 errors (Exit code 0).
+  - Breadcrumb Suite: 16/16 pages validated (0 errors).
+  - Production Build (`npm run build`): 1763 modules transformed (Exit code 0).
+  - Email Dispatch Suite: 66/66 passed (100%).
+  - Live Production Probe: HTTP 308 redirects confirmed; sitemap verified clean; noscript fallback live.
+
 ---
 
 ## 3. CUMULATIVE METRICS & HEALTH
 
-- **Total Tasks Completed:** 5 (Framework Setup, RALPH-TASK-010, RALPH-TASK-014, Phase 2 Hardening)
-- **Total Tasks Pending:** 8 (Backlog)
+- **Total Tasks Completed:** 6 (Framework Setup, RALPH-TASK-010, RALPH-TASK-011, RALPH-TASK-014, Phase 2 Hardening)
+- **Total Tasks Pending:** 7 (Backlog)
 - **Failed Test Attempts:** 0
 - **Regression Incidents:** 0
-- **Current Production Alignment:** `main` at commit `bcfafe3` (Live on `https://talentxcel.co.in/`)
+- **Current Production Alignment:** `main` at commit `3e6858e` (Live on `https://talentxcel.co.in/`)
