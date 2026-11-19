@@ -17,9 +17,9 @@ const Footer = () => {
   ];
 
   const serviceLinks = [
-    { name: "Technology & AI Solutions", href: "/services/it-consulting-managed-services" },
-    { name: "Talent & Workforce Solutions", href: "/services/staffing-recruitment" },
-    { name: "Learning & Academies", href: "/services/training-education" },
+    { name: "IT Staffing & Pods", href: "/staffing-solutions" },
+    { name: "Corporate AI & Training", href: "/corporate-training" },
+    { name: "University Alliances", href: "/university-partnerships" },
     { name: "All Solutions Overview", href: "/services" },
   ];
 

@@ -109,18 +109,28 @@ const Team = () => {
         />
         <link rel="canonical" href="https://talentxcel.co.in/team" />
 
-        {/* Structured Data: Founder & Organization */}
+        {/* Structured Data: Founder Linked to Canonical Organization */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
+            "@id": "https://talentxcel.co.in/team#founder",
             "name": "Sanobar Jahan",
             "jobTitle": "Founder",
             "worksFor": {
               "@type": "Organization",
+              "@id": "https://talentxcel.co.in/#organization",
               "name": "TalentXcel Services Private Limited",
               "url": "https://talentxcel.co.in"
             },
+            "image": "https://talentxcel.co.in/talentxcel-assets/sanobar-jahan-founder.jpg",
+            "knowsAbout": [
+              "Talent Acquisition",
+              "Technical Recruitment",
+              "Workforce Learning & Enablement",
+              "Enterprise Staffing",
+              "Campus Hiring Alliances"
+            ],
             "description": "Founder of TalentXcel Services Private Limited, leading integrated technology, talent acquisition, and workforce learning solutions."
           })}
         </script>

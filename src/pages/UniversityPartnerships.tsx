@@ -70,6 +70,31 @@ const UniversityPartnerships = () => {
           content="University partnerships, campus placement training, institutional MoU engineering colleges, student internship academy, TPO partnership Noida Delhi NCR"
         />
         <link rel="canonical" href="https://talentxcel.co.in/university-partnerships" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOccupationalProgram",
+            "@id": "https://talentxcel.co.in/university-partnerships#campus-employability",
+            "name": "Campus-to-Corporate Employability & Job Readiness Program",
+            "programType": "University Employability Program",
+            "description": "Institutional MoUs and campus employability academies bridging the gap between theoretical academic syllabi and enterprise software production engineering.",
+            "provider": {
+              "@type": "Organization",
+              "@id": "https://talentxcel.co.in/#organization",
+              "name": "TalentXcel Services Private Limited",
+              "url": "https://talentxcel.co.in"
+            },
+            "occupationalCategory": "Software Engineering & Technology",
+            "offers": {
+              "@type": "Offer",
+              "category": "Institutional Partnership",
+              "price": "0",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://talentxcel.co.in/university-partnerships"
+            }
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

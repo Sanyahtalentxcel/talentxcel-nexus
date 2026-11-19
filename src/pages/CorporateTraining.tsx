@@ -159,6 +159,32 @@ const CorporateTraining = () => {
           content="Corporate training India, AI training for employees, Generative AI corporate training, technical upskilling, leadership development, employee upskilling Noida Delhi NCR"
         />
         <link rel="canonical" href="https://talentxcel.co.in/corporate-training" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "@id": "https://talentxcel.co.in/corporate-training#genai-bootcamp",
+            "name": "Generative AI & Enterprise Workplace Productivity",
+            "description": "Practical hands-on enablement transforming routine business tasks with Generative AI, prompt engineering, and automated knowledge workflows.",
+            "provider": {
+              "@type": "Organization",
+              "@id": "https://talentxcel.co.in/#organization",
+              "name": "TalentXcel Services Private Limited",
+              "url": "https://talentxcel.co.in"
+            },
+            "courseMode": ["onsite", "online", "blended"],
+            "courseWorkload": "PT16H",
+            "timeRequired": "P2D",
+            "offers": {
+              "@type": "Offer",
+              "category": "Corporate Quote",
+              "price": "0",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://talentxcel.co.in/corporate-training"
+            }
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

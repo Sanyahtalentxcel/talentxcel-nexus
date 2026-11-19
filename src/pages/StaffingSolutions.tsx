@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   Users2,
   Code2,
@@ -26,82 +26,100 @@ import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import modernWorkspace from "@/assets/modern-workspace.jpg";
 import corporateOffice from "@/assets/corporate-office.jpg";
 
-const StaffingSolutions = () => {
-  const models = [
-    {
-      id: "permanent-recruitment",
-      badge: "Model 01 • Direct Hire",
-      title: "Permanent Recruitment & Specialized Contingency",
-      turnaround: "7 to 14 Business Days",
-      target: "Fast-scaling tech companies & established enterprises seeking permanent engineering talent",
-      overview:
-        "Precision hiring across senior engineers, software architects, and product leads. Every candidate undergoes rigorous code evaluations before profile submission.",
-      benefits: [
-        "Practitioner-led technical vetting (Zero resume-broker keyword spam)",
-        "Standard contingency engagement: fees payable only upon successful joining",
-        "90-Day replacement guarantee backed by formal commercial SLAs",
-        "Comprehensive background verification and past credential checks"
-      ],
-      idealFor: "Senior Full-Stack, AI/ML Engineers, Cloud Architects, and Engineering Managers."
-    },
-    {
-      id: "it-staffing",
-      badge: "Model 02 • Specialized Pods",
-      title: "IT Staffing & Dedicated Engineering Pods",
-      turnaround: "48 to 72 Hours for Pre-Screened Pods",
-      target: "Enterprises needing rapid project scaling, specialized technology pods, or urgent surge capacity",
-      overview:
-        "Deploy cohesive pods of vetted software engineers, QA leads, and cloud architects working as a direct extension of your core engineering team.",
-      benefits: [
-        "Pre-screened talent pools in React, Node, Python, Golang, and Cloud DevOps",
-        "Flexible scaling: expand or contract pod headcount based on sprint milestones",
-        "Complete intellectual property (IP) assignment and NDA compliance",
-        "Direct alignment with client Agile/Scrum rituals and Jira workflows"
-      ],
-      idealFor: "SaaS product rebuilds, migration sprints, and MVP acceleration."
-    },
-    {
-      id: "rpo",
-      badge: "Model 03 • Enterprise RPO",
-      title: "Recruitment Process Outsourcing (RPO)",
-      turnaround: "Long-Term Dedicated SLA",
-      target: "Mid-to-large enterprises with high-volume technical hiring mandates (20+ annual hires)",
-      overview:
-        "Full or modular outsourcing of your technical recruitment operations. We embed dedicated talent acquisition pods, employer branding, and pipeline automation.",
-      benefits: [
-        "Dedicated full-time technical recruiters embedded into your hiring cadence",
-        "Reduced Cost-Per-Hire (up to 35% reduction compared to traditional agency fees)",
-        "Standardized candidate experience and rigorous SLA performance dashboards",
-        "Custom ATS integration and automated candidate pipeline tracking"
-      ],
-      idealFor: "Rapid enterprise expansion, new tech center setup, or seasonal hiring surges."
-    },
-    {
-      id: "executive-search",
-      badge: "Model 04 • C-Suite Search",
-      title: "Executive & Strategic Leadership Search",
-      turnaround: "Confidential Retained Cadence",
-      target: "Boards, Founders, and CEOs hiring VP of Engineering, CTO, and Practice Directors",
-      overview:
-        "Discreet, research-driven search for transformational technology leadership. We evaluate executive track records, cultural resilience, and strategic architecture capability.",
-      benefits: [
-        "Strictly confidential market mapping and targeted passive candidate outreach",
-        "Comprehensive leadership competency assessments and architectural interviews",
-        "Detailed reference audits with past corporate board members and peers",
-        "Structured compensation negotiation and transition advisory"
-      ],
-      idealFor: "CTO, VP of Engineering, Chief Information Security Officer (CISO), Head of Product."
-    }
-  ];
+const models = [
+  {
+    id: "permanent-recruitment",
+    badge: "Model 01 • Direct Hire",
+    title: "Permanent Recruitment & Specialized Contingency",
+    turnaround: "7 to 14 Business Days",
+    target: "Fast-scaling tech companies & established enterprises seeking permanent engineering talent",
+    overview:
+      "Precision hiring across senior engineers, software architects, and product leads. Every candidate undergoes rigorous code evaluations before profile submission.",
+    benefits: [
+      "Practitioner-led technical vetting (Zero resume-broker keyword spam)",
+      "Standard contingency engagement: fees payable only upon successful joining",
+      "90-Day replacement guarantee backed by formal commercial SLAs",
+      "Comprehensive background verification and past credential checks"
+    ],
+    idealFor: "Senior Full-Stack, AI/ML Engineers, Cloud Architects, and Engineering Managers."
+  },
+  {
+    id: "it-staffing",
+    badge: "Model 02 • Specialized Pods",
+    title: "IT Staffing & Dedicated Engineering Pods",
+    turnaround: "48 to 72 Hours for Pre-Screened Pods",
+    target: "Enterprises needing rapid project scaling, specialized technology pods, or urgent surge capacity",
+    overview:
+      "Deploy cohesive pods of vetted software engineers, QA leads, and cloud architects working as a direct extension of your core engineering team.",
+    benefits: [
+      "Pre-screened talent pools in React, Node, Python, Golang, and Cloud DevOps",
+      "Flexible scaling: expand or contract pod headcount based on sprint milestones",
+      "Complete intellectual property (IP) assignment and NDA compliance",
+      "Direct alignment with client Agile/Scrum rituals and Jira workflows"
+    ],
+    idealFor: "SaaS product rebuilds, migration sprints, and MVP acceleration."
+  },
+  {
+    id: "rpo",
+    badge: "Model 03 • Enterprise RPO",
+    title: "Recruitment Process Outsourcing (RPO)",
+    turnaround: "Long-Term Dedicated SLA",
+    target: "Mid-to-large enterprises with high-volume technical hiring mandates (20+ annual hires)",
+    overview:
+      "Full or modular outsourcing of your technical recruitment operations. We embed dedicated talent acquisition pods, employer branding, and pipeline automation.",
+    benefits: [
+      "Dedicated full-time technical recruiters embedded into your hiring cadence",
+      "Reduced Cost-Per-Hire (up to 35% reduction compared to traditional agency fees)",
+      "Standardized candidate experience and rigorous SLA performance dashboards",
+      "Custom ATS integration and automated candidate pipeline tracking"
+    ],
+    idealFor: "Rapid enterprise expansion, new tech center setup, or seasonal hiring surges."
+  },
+  {
+    id: "executive-search",
+    badge: "Model 04 • C-Suite Search",
+    title: "Executive & Strategic Leadership Search",
+    turnaround: "Confidential Retained Cadence",
+    target: "Boards, Founders, and CEOs hiring VP of Engineering, CTO, and Practice Directors",
+    overview:
+      "Discreet, research-driven search for transformational technology leadership. We evaluate executive track records, cultural resilience, and strategic architecture capability.",
+    benefits: [
+      "Strictly confidential market mapping and targeted passive candidate outreach",
+      "Comprehensive leadership competency assessments and architectural interviews",
+      "Detailed reference audits with past corporate board members and peers",
+      "Structured compensation negotiation and transition advisory"
+    ],
+    idealFor: "CTO, VP of Engineering, Chief Information Security Officer (CISO), Head of Product."
+  }
+];
 
+const sectors = [
+  { title: "Technology & SaaS", desc: "Full-Stack, Applied AI, Cloud Architecture, DevOps & SRE" },
+  { title: "BFSI & Regulated Fintech", desc: "Core Banking APIs, Cyber Compliance, Quantitative Analytics" },
+  { title: "Energy & Infrastructure", desc: "Telemetry Microservices, SCADA/PLC Data Pipelines, Grid Tech" },
+  { title: "Healthcare & Life Sciences", desc: "Clinical Data Ingestion, EHR Systems, HIPAA/DPDP Architecture" }
+];
+
+const StaffingSolutions = () => {
+  const location = useLocation();
   const [activeModel, setActiveModel] = useState(models[0]);
 
-  const sectors = [
-    { title: "Technology & SaaS", desc: "Full-Stack, Applied AI, Cloud Architecture, DevOps & SRE" },
-    { title: "BFSI & Regulated Fintech", desc: "Core Banking APIs, Cyber Compliance, Quantitative Analytics" },
-    { title: "Energy & Infrastructure", desc: "Telemetry Microservices, SCADA/PLC Data Pipelines, Grid Tech" },
-    { title: "Healthcare & Life Sciences", desc: "Clinical Data Ingestion, EHR Systems, HIPAA/DPDP Architecture" }
-  ];
+  useEffect(() => {
+    const slug = location.pathname.replace(/^\//, "");
+    if (slug === "it-staffing" || slug === "contract-staffing") {
+      const found = models.find((m) => m.id === "it-staffing");
+      if (found) setActiveModel(found);
+    } else if (slug === "permanent-recruitment") {
+      const found = models.find((m) => m.id === "permanent-recruitment");
+      if (found) setActiveModel(found);
+    } else if (slug === "rpo" || slug === "recruitment-process-outsourcing") {
+      const found = models.find((m) => m.id === "rpo");
+      if (found) setActiveModel(found);
+    } else if (slug === "executive-search") {
+      const found = models.find((m) => m.id === "executive-search");
+      if (found) setActiveModel(found);
+    }
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -116,6 +134,60 @@ const StaffingSolutions = () => {
           content="IT staffing services India, IT recruitment Noida, permanent recruitment agency, contract staffing, RPO services, developer staffing Noida Delhi NCR"
         />
         <link rel="canonical" href="https://talentxcel.co.in/staffing-solutions" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "@id": "https://talentxcel.co.in/staffing-solutions#it-staffing",
+            "name": "IT Staffing & Enterprise Recruitment Solutions",
+            "serviceType": "IT Staffing & Recruitment",
+            "description": "Enterprise IT staffing, permanent recruitment, dedicated developer pods, and recruitment process outsourcing (RPO) vetted by active software engineers.",
+            "provider": {
+              "@type": "Organization",
+              "@id": "https://talentxcel.co.in/#organization",
+              "name": "TalentXcel Services Private Limited",
+              "url": "https://talentxcel.co.in"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "India"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Staffing & Recruitment Models",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Permanent Recruitment & Specialized Contingency"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "IT Staffing & Dedicated Engineering Pods"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Executive Search & Technology Leadership"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Recruitment Process Outsourcing (RPO)"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

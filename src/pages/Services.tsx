@@ -48,7 +48,7 @@ const Services = () => {
         "Recruitment Process Outsourcing (RPO)",
         "Dedicated Managed Agile Engineering Pods"
       ],
-      detailLink: "/services/staffing-recruitment"
+      detailLink: "/staffing-solutions"
     },
     {
       id: "training",
@@ -69,7 +69,7 @@ const Services = () => {
         "Next-Gen Quality Engineering & Automation",
         "University Employability & MoU Programmes"
       ],
-      detailLink: "/services/training-education"
+      detailLink: "/corporate-training"
     },
     {
       id: "technology",

@@ -109,12 +109,8 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
         const dispatch = generateLeadEmailDispatch(formData, res.referenceNumber);
         setMailDispatch(dispatch);
 
-        // Auto-direct email client dispatch to Founder & Managing Director
-        try {
-          window.location.href = dispatch.mailtoUrl;
-        } catch (dispatchErr) {
-          console.warn("Mail client auto-launch suppressed by browser:", dispatchErr);
-        }
+        // Prepared email client dispatch for manual confirmation by user
+        // Automatic window.location.href suppressed to prevent jarring app-switching
 
         if (onSuccess) onSuccess(res.referenceNumber);
       }
@@ -246,9 +242,10 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
           name="work_role_verification"
           value={honeypot}
           onChange={(e) => setHoneypot(e.target.value)}
-          className="hidden"
+          className="sr-only absolute -left-[9999px]"
           tabIndex={-1}
           autoComplete="off"
+          aria-hidden="true"
         />
 
         <div className="grid sm:grid-cols-2 gap-4">

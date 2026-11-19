@@ -47,88 +47,21 @@ const Index = () => {
             content="Technology That Moves Business Forward. Talent That Makes It Possible."
           />
           
-          {/* Structured Data - Website */}
+          {/* Structured Data - WebSite linked to canonical Organization in index.html */}
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
+              "@id": "https://talentxcel.co.in/#website",
               "name": "TalentXcel",
               "alternateName": ["Talentxcel", "TalentXcel Corporate"],
               "url": "https://talentxcel.co.in",
               "description": "Integrated technology and talent solutions company providing enterprise software, AI development, workforce solutions, and talent development.",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://talentxcel.co.in/services?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            })}
-          </script>
-          
-          {/* Structured Data - Organization */}
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "@id": "https://talentxcel.co.in/#organization",
-              "name": "TalentXcel",
-              "alternateName": "TalentXcel Services Private Limited",
-              "url": "https://talentxcel.co.in",
-              "logo": "https://talentxcel.co.in/talentxcel-assets/5b681ba5-58bf-4aae-8bef-3ba691eef586.png",
-              "foundingDate": "2024-07",
-              "description": "TalentXcel delivers integrated technology and talent solutions, combining enterprise software and AI engineering with comprehensive workforce and learning services.",
-              "slogan": "Technology That Moves Business Forward. Talent That Makes It Possible.",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-9717181609",
-                "contactType": "customer service",
-                "email": "contact@talentxcel.co.in",
-                "areaServed": ["IN", "EU", "ME"],
-                "availableLanguage": ["English", "Hindi"]
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Office 1917, 19th Floor, E-Square Building, Sector 96",
-                "addressLocality": "Noida",
-                "addressRegion": "Uttar Pradesh",
-                "postalCode": "201301",
-                "addressCountry": "India"
-              },
-              "hasMap": "https://share.google/9XwBijGdqZx4s5NN1",
-              "sameAs": [
-                "https://in.linkedin.com/company/talentxcel-services-private-limited",
-                "https://talentxcel.in",
-                "https://talentxcel.net",
-                "https://chatr.chat"
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "TalentXcel Solutions Portfolio",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Technology & AI Solutions",
-                      "description": "Enterprise software engineering, AI/ML development, cloud infrastructure, and systems modernization."
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Talent & Workforce Solutions",
-                      "description": "IT staffing, permanent recruitment, contract staffing, executive search, and recruitment process outsourcing."
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Learning & Talent Development",
-                      "description": "Corporate technical upskilling, university partnerships, and internship development engines."
-                    }
-                  }
-                ]
+              "publisher": {
+                "@type": "Organization",
+                "@id": "https://talentxcel.co.in/#organization",
+                "name": "TalentXcel Services Private Limited",
+                "url": "https://talentxcel.co.in"
               }
             })}
           </script>

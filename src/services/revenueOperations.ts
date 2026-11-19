@@ -658,6 +658,16 @@ class RevenueOperationsEngine {
     };
   }
 
+  // Sanitize spreadsheet formula execution characters (CSV Injection / CWE-1236)
+  private sanitizeCSVField(val: string | number | undefined | null): string {
+    if (val === null || val === undefined) return '""';
+    let str = String(val).replace(/"/g, '""');
+    if (/^[=+\-@\t\r]/.test(str)) {
+      str = `'${str}`;
+    }
+    return `"${str}"`;
+  }
+
   public exportLeadsCSV(): string {
     const headers = [
       "Reference Number",
@@ -680,23 +690,23 @@ class RevenueOperationsEngine {
     ];
 
     const rows = this.leads.map((l) => [
-      `"${l.referenceNumber}"`,
-      `"${l.category}"`,
-      `"${l.organization.replace(/"/g, '""')}"`,
-      `"${l.contactPerson.replace(/"/g, '""')}"`,
-      `"${(l.designation || "").replace(/"/g, '""')}"`,
-      `"${l.email}"`,
-      `"${l.phone}"`,
-      `"${l.stage}"`,
-      `"${l.assignedOwner}"`,
+      this.sanitizeCSVField(l.referenceNumber),
+      this.sanitizeCSVField(l.category),
+      this.sanitizeCSVField(l.organization),
+      this.sanitizeCSVField(l.contactPerson),
+      this.sanitizeCSVField(l.designation),
+      this.sanitizeCSVField(l.email),
+      this.sanitizeCSVField(l.phone),
+      this.sanitizeCSVField(l.stage),
+      this.sanitizeCSVField(l.assignedOwner),
       l.estimatedDealValue || 0,
       l.proposalValue || 0,
       l.closedRevenue || 0,
-      `"${l.nextFollowUpDate || ""}"`,
-      `"${l.source}"`,
-      `"${l.medium}"`,
-      `"${l.campaign || ""}"`,
-      `"${l.createdAt}"`
+      this.sanitizeCSVField(l.nextFollowUpDate),
+      this.sanitizeCSVField(l.source),
+      this.sanitizeCSVField(l.medium),
+      this.sanitizeCSVField(l.campaign),
+      this.sanitizeCSVField(l.createdAt)
     ]);
 
     return [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
