@@ -95,6 +95,27 @@ const Investors = () => {
           />
           <link rel="canonical" href="https://talentxcel.co.in/investors" />
           
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://talentxcel.co.in"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Investor Relations",
+                  "item": "https://talentxcel.co.in/investors"
+                }
+              ]
+            })}
+          </script>
+          
           <meta property="og:title" content="Investor Relations & Corporate Strategy | TalentXcel" />
           <meta
             property="og:description"

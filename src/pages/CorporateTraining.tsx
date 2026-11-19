@@ -162,6 +162,32 @@ const CorporateTraining = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://talentxcel.co.in"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://talentxcel.co.in/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Corporate Training",
+                "item": "https://talentxcel.co.in/corporate-training"
+              }
+            ]
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "Course",
             "@id": "https://talentxcel.co.in/corporate-training#genai-bootcamp",
             "name": "Generative AI & Enterprise Workplace Productivity",

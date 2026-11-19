@@ -73,6 +73,32 @@ const UniversityPartnerships = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://talentxcel.co.in"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://talentxcel.co.in/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "University Partnerships",
+                "item": "https://talentxcel.co.in/university-partnerships"
+              }
+            ]
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "EducationalOccupationalProgram",
             "@id": "https://talentxcel.co.in/university-partnerships#campus-employability",
             "name": "Campus-to-Corporate Employability & Job Readiness Program",

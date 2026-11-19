@@ -99,6 +99,26 @@ const Careers = () => {
           content="TalentXcel careers, software engineering jobs Noida, IT recruitment jobs Noida, tech staffing careers, campus manager jobs"
         />
         <link rel="canonical" href="https://talentxcel.co.in/careers" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://talentxcel.co.in"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Careers",
+                "item": "https://talentxcel.co.in/careers"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       
       <Navbar />

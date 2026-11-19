@@ -73,6 +73,27 @@ const Chatr = () => {
         <meta name="keywords" content="CHATR, TalentXcel, communication app, messaging India, chat app, voice calls, digital wallet, micro-tasks, privacy messaging" />
         <link rel="canonical" href="https://talentxcel.co.in/chatr" />
         
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://talentxcel.co.in"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "CHATR",
+                "item": "https://talentxcel.co.in/chatr"
+              }
+            ]
+          })}
+        </script>
+        
         <meta property="og:title" content="CHATR - Communication Service by TalentXcel" />
         <meta property="og:description" content="Next-gen communication technology. Chat, call, earn, pay — all in one platform built for India." />
         <meta property="og:url" content="https://talentxcel.co.in/chatr" />

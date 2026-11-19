@@ -227,6 +227,26 @@ Strict DPDP Act Confidentiality Enforced.`;
           content="Contact TalentXcel, enterprise tech inquiry, hire developers, IT staffing inquiry, corporate training, Noida office"
         />
         <link rel="canonical" href="https://talentxcel.co.in/contact" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://talentxcel.co.in"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact",
+                "item": "https://talentxcel.co.in/contact"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       
       <Navbar />

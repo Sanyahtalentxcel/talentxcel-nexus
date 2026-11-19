@@ -12,6 +12,26 @@
       ],
       "destination": "https://talentxcel.co.in/$1",
       "permanent": true
+    },
+    {
+      "source": "/services/staffing-recruitment",
+      "destination": "/staffing-solutions",
+      "permanent": true
+    },
+    {
+      "source": "/services/training-education",
+      "destination": "/corporate-training",
+      "permanent": true
+    },
+    {
+      "source": "/leadership",
+      "destination": "/team",
+      "permanent": true
+    },
+    {
+      "source": "/404",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [

@@ -65,6 +65,10 @@ const ServiceDetail = () => {
   if (!service) {
     return (
       <div className="min-h-screen bg-background">
+        <Helmet>
+          <title>Service Not Found | TalentXcel</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
         <Navbar />
         <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <h1 className="text-3xl font-bold mb-4">Service Not Found</h1>
@@ -89,6 +93,32 @@ const ServiceDetail = () => {
           content={`TalentXcel ${service.title} — ${service.description}`}
         />
         <link rel="canonical" href={`https://talentxcel.co.in/services/${slug}`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://talentxcel.co.in"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://talentxcel.co.in/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": service.title,
+                "item": `https://talentxcel.co.in/services/${slug}`
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Navbar />
 

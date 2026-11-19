@@ -14,6 +14,26 @@ const Terms = () => {
           content="TalentXcel Terms of Service: Review the terms and conditions governing the use of our corporate website and integrated technology and talent solutions."
         />
         <link rel="canonical" href="https://talentxcel.co.in/terms" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://talentxcel.co.in"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Terms of Service",
+                "item": "https://talentxcel.co.in/terms"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Navbar />
 

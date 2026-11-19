@@ -17,7 +17,7 @@ const NotFound = () => {
       <Helmet>
         <title>404 — Page Not Found | TalentXcel</title>
         <meta name="description" content="The page you are looking for does not exist on TalentXcel." />
-        <link rel="canonical" href="https://talentxcel.co.in/404" />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-2">404</h1>
