@@ -232,6 +232,40 @@ export const WEAK_FILLERS = [
   "duties included",
 ];
 
+// Comprehensive tech skill vocabulary for parsing custom job descriptions from talentxcel.in
+export const ALL_TECH_VOCABULARY: string[] = Array.from(
+  new Set([
+    "react", "javascript", "typescript", "node.js", "html", "css", "sql", "postgresql",
+    "mongodb", "rest api", "git", "docker", "next.js", "graphql", "tailwind", "microservices",
+    "ci/cd", "aws", "redis", "jest", "playwright", "state management", "redux", "zustand",
+    "python", "pytorch", "tensorflow", "machine learning", "deep learning", "nlp", "llm",
+    "langchain", "rag", "vector database", "prompt engineering", "pandas", "numpy",
+    "llamaindex", "transformers", "huggingface", "vllm", "fine-tuning", "qdrant", "pinecone",
+    "mlflow", "agentic", "gpu optimization", "cuda", "azure", "gcp", "kubernetes", "terraform",
+    "linux", "bash", "jenkins", "github actions", "monitoring", "ansible", "prometheus", "grafana",
+    "helm", "argocd", "cloudformation", "security", "istio", "datadog", "new relic", "java",
+    "spring boot", "golang", "c#", ".net", "mysql", "kafka", "rabbitmq", "grpc", "system design",
+    "high concurrency", "distributed systems", "database optimization", "apache spark",
+    "data warehouse", "snowflake", "airflow", "big data", "dbt", "databricks", "hadoop",
+    "delta lake", "redshift", "bigquery", "data modeling", "schema design", "streaming",
+    "automation testing", "selenium", "cypress", "api testing", "postman", "test cases",
+    "jmeter", "load testing", "bdd", "cucumber", "appium", "performance testing",
+    "framework design", "angular", "vue", "fastapi", "django", "flask", "prisma", "socket.io",
+    "react native", "flutter", "swift", "kotlin"
+  ])
+);
+
+export function extractKeywordsFromJobDescription(jdText: string): string[] {
+  if (!jdText || jdText.trim().length === 0) return [];
+  const lower = jdText.toLowerCase();
+  const matched = ALL_TECH_VOCABULARY.filter((skill) => {
+    const escaped = skill.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
+    const regex = new RegExp(`(^|[^a-zA-Z0-9_])${escaped}([^a-zA-Z0-9_]|$)`, "i");
+    return regex.test(lower);
+  });
+  return matched.length > 0 ? matched : ["react", "typescript", "node.js", "rest api", "sql", "git"];
+}
+
 export interface AtsAnalysisResult {
   overallScore: number; // 0 - 100
   keywordScore: number;
@@ -250,20 +284,31 @@ export interface AtsAnalysisResult {
   actionableFeedback: string[];
 }
 
-export function analyzeResumeText(rawText: string, targetRoleId: string): AtsAnalysisResult {
+export function analyzeResumeText(
+  rawText: string,
+  targetRoleId: string,
+  customKeywords?: string[]
+): AtsAnalysisResult {
   const role = ATS_ROLE_TAXONOMIES.find((r) => r.id === targetRoleId) || ATS_ROLE_TAXONOMIES[0];
   const text = rawText.toLowerCase();
+
+  // Determine active keyword sets (custom vs preset)
+  const isCustomMode = customKeywords && customKeywords.length > 0;
+  const targetEssential = isCustomMode ? customKeywords : role.essentialKeywords;
+  const targetBonus = isCustomMode ? [] : role.bonusKeywords;
 
   // Word count
   const words = rawText.trim().split(/\s+/).filter(Boolean);
   const wordCount = words.length;
 
   // 1. Keyword analysis
-  const foundEssentialKeywords = role.essentialKeywords.filter((kw) => text.includes(kw.toLowerCase()));
-  const missingEssentialKeywords = role.essentialKeywords.filter((kw) => !text.includes(kw.toLowerCase()));
-  const foundBonusKeywords = role.bonusKeywords.filter((kw) => text.includes(kw.toLowerCase()));
+  const foundEssentialKeywords = targetEssential.filter((kw) => text.includes(kw.toLowerCase()));
+  const missingEssentialKeywords = targetEssential.filter((kw) => !text.includes(kw.toLowerCase()));
+  const foundBonusKeywords = targetBonus.filter((kw) => text.includes(kw.toLowerCase()));
 
-  const keywordPercentage = Math.round((foundEssentialKeywords.length / role.essentialKeywords.length) * 100);
+  const keywordPercentage = targetEssential.length > 0
+    ? Math.round((foundEssentialKeywords.length / targetEssential.length) * 100)
+    : 100;
 
   // 2. Action verbs & weak fillers
   const detectedActionVerbs = POWER_ACTION_VERBS.filter((verb) => text.includes(verb));
@@ -302,8 +347,9 @@ export function analyzeResumeText(rawText: string, targetRoleId: string): AtsAna
   const actionableFeedback: string[] = [];
 
   if (missingEssentialKeywords.length > 0) {
+    const roleLabel = isCustomMode ? "your target role" : role.name;
     actionableFeedback.push(
-      `Add critical missing skills for ${role.name}: ${missingEssentialKeywords.slice(0, 5).join(", ")}.`
+      `Add critical missing skills for ${roleLabel}: ${missingEssentialKeywords.slice(0, 5).join(", ")}.`
     );
   }
 
