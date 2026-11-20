@@ -49,9 +49,33 @@
     <priority>0.90</priority>
   </url>
 
-  <!-- Free Public Tool & Lead Generation Engine: 2026 Tech Salary Calculator -->
+  <!-- Free Public Tool & Lead Generation Engine: 2026–2027 Tech Salary Calculator -->
   <url>
     <loc>https://talentxcel.co.in/salary-calculator</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Employer Engine: Pre-Vetted Talent Showcase (72-Hr Deployment) -->
+  <url>
+    <loc>https://talentxcel.co.in/talent-showcase</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Candidate Viral Magnet: Free ATS Resume Score & Keyword Checker -->
+  <url>
+    <loc>https://talentxcel.co.in/resume-checker</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Enterprise B2B Lead Generator: 2-Minute AI Workforce Readiness Diagnostic -->
+  <url>
+    <loc>https://talentxcel.co.in/ai-diagnostic</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>

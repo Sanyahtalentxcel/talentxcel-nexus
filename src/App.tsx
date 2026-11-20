@@ -25,6 +25,9 @@ const CorporateTraining = lazy(() => import("./pages/CorporateTraining"));
 const StaffingSolutions = lazy(() => import("./pages/StaffingSolutions"));
 const UniversityPartnerships = lazy(() => import("./pages/UniversityPartnerships"));
 const SalaryCalculator = lazy(() => import("./pages/SalaryCalculator"));
+const TalentShowcase = lazy(() => import("./pages/TalentShowcase"));
+const ResumeChecker = lazy(() => import("./pages/ResumeChecker"));
+const AiDiagnostic = lazy(() => import("./pages/AiDiagnostic"));
 const RevenuePortal = lazy(() => import("./pages/RevenuePortal"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -84,6 +87,19 @@ const App = () => (
               <Route path="/salary-calculator" element={<SalaryCalculator />} />
               <Route path="/hiring-calculator" element={<SalaryCalculator />} />
               <Route path="/tech-salary-benchmark" element={<SalaryCalculator />} />
+
+              {/* Ecosystem Attraction Engines (Candidates, Employers, Enterprise) */}
+              <Route path="/talent-showcase" element={<TalentShowcase />} />
+              <Route path="/hire-talent" element={<TalentShowcase />} />
+              <Route path="/vetted-talent" element={<TalentShowcase />} />
+
+              <Route path="/resume-checker" element={<ResumeChecker />} />
+              <Route path="/ats-checker" element={<ResumeChecker />} />
+              <Route path="/free-ats-score" element={<ResumeChecker />} />
+
+              <Route path="/ai-diagnostic" element={<AiDiagnostic />} />
+              <Route path="/ai-readiness" element={<AiDiagnostic />} />
+              <Route path="/enterprise-ai-readiness" element={<AiDiagnostic />} />
 
               {/* Internal Revenue Operations Portal: Disabled in public production until server-side OAuth/SSO is deployed */}
               {import.meta.env.DEV && import.meta.env.VITE_ENABLE_INTERNAL_PORTAL === "true" && (

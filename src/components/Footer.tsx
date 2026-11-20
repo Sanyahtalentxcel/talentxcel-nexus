@@ -18,9 +18,12 @@ const Footer = () => {
 
   const serviceLinks = [
     { name: "IT Staffing & Pods", href: "/staffing-solutions" },
+    { name: "Pre-Vetted Talent Showcase", href: "/talent-showcase" },
     { name: "Corporate AI & Training", href: "/corporate-training" },
+    { name: "Enterprise AI Diagnostic", href: "/ai-diagnostic" },
     { name: "University Alliances", href: "/university-partnerships" },
-    { name: "2026–2027 Tech Salary Calculator", href: "/salary-calculator" },
+    { name: "2026–2027 Salary Calculator", href: "/salary-calculator" },
+    { name: "Free ATS Resume Checker", href: "/resume-checker" },
     { name: "All Solutions Overview", href: "/services" },
   ];
 

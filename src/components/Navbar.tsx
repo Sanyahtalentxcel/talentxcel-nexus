@@ -14,6 +14,10 @@ import {
   Handshake,
   Layers,
   Calculator,
+  ShieldCheck,
+  FileText,
+  Brain,
+  Sparkles,
 } from "lucide-react";
 
 const talentxcelLogo = "/talentxcel-assets/5b681ba5-58bf-4aae-8bef-3ba691eef586.png";
@@ -22,18 +26,23 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [ecosystemOpen, setEcosystemOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [toolsOpen, setToolsOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileToolsOpen, setMobileToolsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const solutionsRef = useRef<HTMLDivElement>(null);
+  const toolsRef = useRef<HTMLDivElement>(null);
 
   // Close menus on route change
   useEffect(() => {
     setIsOpen(false);
     setEcosystemOpen(false);
     setSolutionsOpen(false);
+    setToolsOpen(false);
     setMobileSolutionsOpen(false);
+    setMobileToolsOpen(false);
   }, [location.pathname]);
 
   // Handle scroll effect
@@ -53,6 +62,9 @@ const Navbar = () => {
       }
       if (solutionsRef.current && !solutionsRef.current.contains(event.target as Node)) {
         setSolutionsOpen(false);
+      }
+      if (toolsRef.current && !toolsRef.current.contains(event.target as Node)) {
+        setToolsOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -85,15 +97,6 @@ const Navbar = () => {
       bg: "bg-emerald-500/10",
     },
     {
-      title: "2026–2027 Tech Salary Calculator",
-      desc: "Free real-time compensation benchmarks & enterprise hiring budget explorer.",
-      href: "/salary-calculator",
-      icon: Calculator,
-      color: "text-purple-600",
-      bg: "bg-purple-500/10",
-      badge: "Free Tool",
-    },
-    {
       title: "All Solutions Overview",
       desc: "Comprehensive view of all enterprise workforce capabilities.",
       href: "/services",
@@ -103,11 +106,48 @@ const Navbar = () => {
     },
   ];
 
+  const interactiveTools = [
+    {
+      title: "Pre-Vetted Talent Showcase",
+      desc: "Live senior engineer profiles with 72-hour deployment SLA.",
+      href: "/talent-showcase",
+      icon: ShieldCheck,
+      color: "text-blue-600",
+      bg: "bg-blue-500/10",
+      badge: "72h SLA",
+    },
+    {
+      title: "2026–2027 Salary Calculator",
+      desc: "Live compensation benchmarks & hiring budget calculator.",
+      href: "/salary-calculator",
+      icon: Calculator,
+      color: "text-purple-600",
+      bg: "bg-purple-500/10",
+      badge: "Market Data",
+    },
+    {
+      title: "Free ATS Resume Score Checker",
+      desc: "Instant client-side ATS score, keyword gap & bullet fixes.",
+      href: "/resume-checker",
+      icon: FileText,
+      color: "text-emerald-600",
+      bg: "bg-emerald-500/10",
+      badge: "Free Tool",
+    },
+    {
+      title: "Enterprise AI Readiness Diagnostic",
+      desc: "2-minute leadership assessment calculating annual productivity ROI.",
+      href: "/ai-diagnostic",
+      icon: Brain,
+      color: "text-indigo-600",
+      bg: "bg-indigo-500/10",
+      badge: "B2B Audit",
+    },
+  ];
+
   const otherNavItems = [
-    { name: "Salary Calculator", href: "/salary-calculator", badge: "Free" },
     { name: "Leadership", href: "/team" },
     { name: "Case Studies", href: "/case-studies" },
-    { name: "Partnerships", href: "/partnerships" },
     { name: "Careers", href: "/careers" },
   ];
 
@@ -150,6 +190,21 @@ const Navbar = () => {
     "/staffing-solutions",
     "/corporate-training",
     "/university-partnerships",
+  ].includes(location.pathname);
+
+  const isToolsActive = [
+    "/salary-calculator",
+    "/talent-showcase",
+    "/resume-checker",
+    "/ai-diagnostic",
+    "/hiring-calculator",
+    "/tech-salary-benchmark",
+    "/hire-talent",
+    "/vetted-talent",
+    "/ats-checker",
+    "/free-ats-score",
+    "/ai-readiness",
+    "/enterprise-ai-readiness",
   ].includes(location.pathname);
 
   return (
@@ -262,6 +317,90 @@ const Navbar = () => {
                             </div>
                             <p className="text-xs text-brand-muted mt-0.5 line-clamp-1">
                               {s.desc}
+                            </p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Free Intelligence Tools Dropdown */}
+            <div className="relative" ref={toolsRef}>
+              <button
+                type="button"
+                onClick={() => setToolsOpen(!toolsOpen)}
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") setToolsOpen(false);
+                }}
+                className={`flex items-center space-x-1.5 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  isToolsActive
+                    ? "text-primary bg-primary/10 font-semibold shadow-xs"
+                    : "text-brand-muted hover:text-brand-navy hover:bg-slate-100/70"
+                }`}
+                aria-expanded={toolsOpen}
+                aria-haspopup="true"
+              >
+                <span>Free Tools</span>
+                <span className="px-1.5 py-0.2 text-[9px] font-extrabold rounded bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
+                  4
+                </span>
+                <ChevronDown
+                  className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                    toolsOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {/* Tools Dropdown Menu */}
+              {toolsOpen && (
+                <div
+                  className="absolute left-0 mt-2 w-88 bg-white rounded-xl shadow-large border border-border/80 py-2 z-50 animate-in fade-in-50 zoom-in-95 duration-150"
+                  role="menu"
+                >
+                  <div className="px-4 py-2 border-b border-border/50 flex items-center justify-between">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-brand-muted">
+                      Free Growth &amp; Talent Tools
+                    </p>
+                    <span className="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                      Zero Cost
+                    </span>
+                  </div>
+                  <div className="p-2 space-y-1">
+                    {interactiveTools.map((t) => {
+                      const Icon = t.icon;
+                      const active = isActive(t.href);
+                      return (
+                        <Link
+                          key={t.title}
+                          to={t.href}
+                          className={`flex items-start space-x-3 p-2.5 rounded-lg transition-colors group ${
+                            active ? "bg-primary/5" : "hover:bg-slate-50"
+                          }`}
+                          role="menuitem"
+                        >
+                          <div className={`p-2 rounded-lg ${t.bg} ${t.color} mt-0.5`}>
+                            <Icon className="h-4 w-4" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between">
+                              <span
+                                className={`text-sm font-semibold transition-colors ${
+                                  active ? "text-primary" : "text-brand-navy group-hover:text-primary"
+                                }`}
+                              >
+                                {t.title}
+                              </span>
+                              {t.badge && (
+                                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200/80">
+                                  {t.badge}
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs text-brand-muted mt-0.5 line-clamp-1">
+                              {t.desc}
                             </p>
                           </div>
                         </Link>
@@ -478,6 +617,60 @@ const Navbar = () => {
                         >
                           <Icon className={`h-4 w-4 ${s.color}`} />
                           <span>{s.title}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Free Tools Accordion */}
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
+                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${
+                    isToolsActive
+                      ? "text-primary bg-primary/10 font-semibold"
+                      : "text-brand-navy hover:bg-slate-50"
+                  }`}
+                  aria-expanded={mobileToolsOpen}
+                >
+                  <span className="flex items-center gap-2">
+                    <span>Free Tools</span>
+                    <span className="px-1.5 py-0.2 text-[9px] font-extrabold rounded bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
+                      4 Tools
+                    </span>
+                  </span>
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${
+                      mobileToolsOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {mobileToolsOpen && (
+                  <div className="pl-3 pr-1 py-1 space-y-1 mt-1 border-l-2 border-emerald-500/30 ml-3">
+                    {interactiveTools.map((t) => {
+                      const Icon = t.icon;
+                      const active = isActive(t.href);
+                      return (
+                        <Link
+                          key={t.title}
+                          to={t.href}
+                          className={`flex items-center space-x-2.5 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                            active
+                              ? "text-primary bg-primary/10 font-semibold"
+                              : "text-slate-600 hover:text-brand-navy hover:bg-slate-50"
+                          }`}
+                        >
+                          <Icon className={`h-4 w-4 ${t.color}`} />
+                          <span className="flex-1 truncate">{t.title}</span>
+                          {t.badge && (
+                            <span className="text-[9px] font-bold px-1 py-0.5 rounded bg-slate-100 text-slate-500">
+                              {t.badge}
+                            </span>
+                          )}
                         </Link>
                       );
                     })}
