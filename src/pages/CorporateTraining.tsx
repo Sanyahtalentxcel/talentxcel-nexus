@@ -302,7 +302,7 @@ const CorporateTraining = () => {
               <div className="space-y-2">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold">
                   <Calculator className="h-3.5 w-3.5" />
-                  <span>2026 Skill Premium Intelligence</span>
+                  <span>2026–2027 Skill Premium Intelligence</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
                   Generative AI Skills Command a +22% Compensation Premium

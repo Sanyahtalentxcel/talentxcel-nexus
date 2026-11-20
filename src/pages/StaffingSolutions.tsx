@@ -308,7 +308,7 @@ const StaffingSolutions = () => {
                   <span>Free Hiring Intelligence Tool</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
-                  Planning Your Tech Hiring Budget for 2026?
+                  Planning Your Tech Hiring Budget for 2026–2027?
                 </h3>
                 <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
                   Calculate real-time market compensation, notice period buyout costs, and dedicated engineering pod budgets across Delhi NCR, Bengaluru, Hyderabad, and Pune.

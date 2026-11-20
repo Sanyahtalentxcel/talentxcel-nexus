@@ -148,20 +148,20 @@ const SalaryCalculator = () => {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
       <Helmet>
-        <title>2026 Tech Salary Calculator & Hiring Cost Explorer | TalentXcel</title>
+        <title>2026–2027 Tech Salary Calculator & Hiring Budget Explorer | TalentXcel</title>
         <meta
           name="description"
-          content="Free 2026 India tech salary calculator and enterprise hiring budget explorer. Benchmark real-time market compensation for Full-Stack, AI/ML, DevOps, and Data Engineers across Noida, Bengaluru, Hyderabad, and Pune."
+          content="Free 2026–2027 India tech salary calculator and enterprise hiring budget explorer. Benchmark real-time market compensation for Full-Stack, AI/ML, DevOps, and Data Engineers across Noida, Bengaluru, Hyderabad, and Pune."
         />
         <meta
           name="keywords"
-          content="tech salary calculator India 2026, software engineer salary Noida, AI engineer salary Bangalore, developer hiring cost calculator, IT staffing salary benchmarks, TalentXcel compensation explorer"
+          content="tech salary calculator India 2027, 2026 2027 software engineer salary Noida, AI engineer salary Bangalore, developer hiring cost calculator 2027, IT staffing salary benchmarks, TalentXcel compensation explorer"
         />
         <link rel="canonical" href="https://talentxcel.co.in/salary-calculator" />
-        <meta property="og:title" content="2026 Tech Salary Calculator & Hiring Cost Explorer | TalentXcel" />
+        <meta property="og:title" content="2026–2027 Tech Salary Calculator & Hiring Budget Explorer | TalentXcel" />
         <meta
           property="og:description"
-          content="Real-time technology compensation benchmarks, skill premiums, and team hiring calculators for India."
+          content="Real-time 2026–2027 technology compensation benchmarks, skill premiums, and team hiring calculators for India."
         />
         <meta property="og:url" content="https://talentxcel.co.in/salary-calculator" />
         <meta property="og:type" content="website" />
@@ -171,7 +171,7 @@ const SalaryCalculator = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            "name": "TalentXcel 2026 Tech Salary & Hiring Cost Calculator",
+            "name": "TalentXcel 2026–2027 Tech Salary & Hiring Cost Calculator",
             "url": "https://talentxcel.co.in/salary-calculator",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "All",
@@ -211,7 +211,7 @@ const SalaryCalculator = () => {
               {
                 "@type": "ListItem",
                 "position": 3,
-                "name": "2026 Tech Salary Calculator",
+                "name": "2026–2027 Tech Salary Calculator",
                 "item": "https://talentxcel.co.in/salary-calculator",
               },
             ],
@@ -229,11 +229,11 @@ const SalaryCalculator = () => {
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-700 text-xs font-semibold border border-emerald-500/20">
                 <Sparkles className="h-3.5 w-3.5 text-emerald-600" />
-                <span>2026 Indian Tech Market Intelligence • 100% Free Public Tool</span>
+                <span>2026–2027 Indian Tech Market Intelligence • 100% Free Public Tool</span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 Tech Salary Benchmark &amp; <br className="hidden sm:inline" />
-                <span className="text-primary">Enterprise Hiring Budget Explorer</span>
+                <span className="text-primary">2027 Hiring Budget Explorer</span>
               </h1>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                 Benchmark market compensation, high-demand skill multipliers, and dedicated engineering pod costs across Delhi NCR, Bengaluru, Hyderabad, and Pune.

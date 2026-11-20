@@ -85,7 +85,7 @@ const Navbar = () => {
       bg: "bg-emerald-500/10",
     },
     {
-      title: "2026 Tech Salary Calculator",
+      title: "2026–2027 Tech Salary Calculator",
       desc: "Free real-time compensation benchmarks & enterprise hiring budget explorer.",
       href: "/salary-calculator",
       icon: Calculator,
