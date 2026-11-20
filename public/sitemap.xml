@@ -49,6 +49,14 @@
     <priority>0.90</priority>
   </url>
 
+  <!-- Free Public Tool & Lead Generation Engine: 2026 Tech Salary Calculator -->
+  <url>
+    <loc>https://talentxcel.co.in/salary-calculator</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- Service: Staffing & Recruitment (Canonical Hub) -->
   <!-- Handled by /staffing-solutions; legacy redirect removed to prevent sitemap redirect warnings -->
 

@@ -13,6 +13,7 @@ import {
   Users2,
   Handshake,
   Layers,
+  Calculator,
 } from "lucide-react";
 
 const talentxcelLogo = "/talentxcel-assets/5b681ba5-58bf-4aae-8bef-3ba691eef586.png";
@@ -84,6 +85,15 @@ const Navbar = () => {
       bg: "bg-emerald-500/10",
     },
     {
+      title: "2026 Tech Salary Calculator",
+      desc: "Free real-time compensation benchmarks & enterprise hiring budget explorer.",
+      href: "/salary-calculator",
+      icon: Calculator,
+      color: "text-purple-600",
+      bg: "bg-purple-500/10",
+      badge: "Free Tool",
+    },
+    {
       title: "All Solutions Overview",
       desc: "Comprehensive view of all enterprise workforce capabilities.",
       href: "/services",
@@ -94,6 +104,7 @@ const Navbar = () => {
   ];
 
   const otherNavItems = [
+    { name: "Salary Calculator", href: "/salary-calculator", badge: "Free" },
     { name: "Leadership", href: "/team" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Partnerships", href: "/partnerships" },
@@ -264,17 +275,23 @@ const Navbar = () => {
             {/* Other Nav Links */}
             {otherNavItems.map((item) => {
               const active = isActive(item.href);
+              const badge = "badge" in item ? (item as { name: string; href: string; badge?: string }).badge : undefined;
               return (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 inline-flex items-center gap-1.5 ${
                     active
                       ? "text-primary bg-primary/10 font-semibold shadow-xs"
                       : "text-brand-muted hover:text-brand-navy hover:bg-slate-100/70"
                   }`}
                 >
-                  {item.name}
+                  <span>{item.name}</span>
+                  {badge && (
+                    <span className="px-1.5 py-0.5 text-[10px] font-bold rounded bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
+                      {badge}
+                    </span>
+                  )}
                 </Link>
               );
             })}
@@ -470,6 +487,7 @@ const Navbar = () => {
 
               {otherNavItems.map((item) => {
                 const active = isActive(item.href);
+                const badge = "badge" in item ? (item as { name: string; href: string; badge?: string }).badge : undefined;
                 return (
                   <Link
                     key={item.name}
@@ -480,7 +498,14 @@ const Navbar = () => {
                         : "text-brand-navy hover:bg-slate-50"
                     }`}
                   >
-                    {item.name}
+                    <span className="inline-flex items-center justify-between w-full">
+                      <span>{item.name}</span>
+                      {badge && (
+                        <span className="px-1.5 py-0.5 text-[10px] font-bold rounded bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
+                          {badge}
+                        </span>
+                      )}
+                    </span>
                   </Link>
                 );
               })}

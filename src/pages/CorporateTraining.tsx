@@ -22,7 +22,8 @@ import {
   BookOpen,
   Briefcase,
   HelpCircle,
-  FileCheck
+  FileCheck,
+  Calculator,
 } from "lucide-react";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import trainingSession from "@/assets/training-session.jpg";
@@ -289,6 +290,34 @@ const CorporateTraining = () => {
                     </h3>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Salary & Skill Premium Banner */}
+        <section className="py-6 bg-slate-100/70 border-b border-border/80">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-r from-slate-900 to-brand-navy rounded-2xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold">
+                  <Calculator className="h-3.5 w-3.5" />
+                  <span>2026 Skill Premium Intelligence</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  Generative AI Skills Command a +22% Compensation Premium
+                </h3>
+                <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
+                  Explore how AI enablement, prompt engineering, and cloud upskilling increase employee productivity and benchmark market values.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <Button asChild className="bg-primary hover:bg-primary/90 text-white font-bold py-6 px-6 text-sm">
+                  <Link to="/salary-calculator">
+                    Explore Skill Multipliers
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

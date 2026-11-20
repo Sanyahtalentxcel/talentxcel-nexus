@@ -20,6 +20,7 @@ const Footer = () => {
     { name: "IT Staffing & Pods", href: "/staffing-solutions" },
     { name: "Corporate AI & Training", href: "/corporate-training" },
     { name: "University Alliances", href: "/university-partnerships" },
+    { name: "2026 Tech Salary Calculator", href: "/salary-calculator" },
     { name: "All Solutions Overview", href: "/services" },
   ];
 

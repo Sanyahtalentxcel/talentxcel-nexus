@@ -20,7 +20,8 @@ import {
   Award,
   Zap,
   Clock,
-  HelpCircle
+  HelpCircle,
+  Calculator,
 } from "lucide-react";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import modernWorkspace from "@/assets/modern-workspace.jpg";
@@ -292,6 +293,34 @@ const StaffingSolutions = () => {
                     </h3>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Interactive Tool Banner */}
+        <section className="py-6 bg-slate-100/70 border-b border-border/80">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-r from-brand-navy to-slate-900 rounded-2xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold">
+                  <Calculator className="h-3.5 w-3.5" />
+                  <span>Free Hiring Intelligence Tool</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  Planning Your Tech Hiring Budget for 2026?
+                </h3>
+                <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
+                  Calculate real-time market compensation, notice period buyout costs, and dedicated engineering pod budgets across Delhi NCR, Bengaluru, Hyderabad, and Pune.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <Button asChild className="bg-primary hover:bg-primary/90 text-white font-bold py-6 px-6 text-sm">
+                  <Link to="/salary-calculator?mode=employer">
+                    Launch Salary &amp; Budget Calculator
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

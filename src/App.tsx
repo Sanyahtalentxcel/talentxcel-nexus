@@ -24,6 +24,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const CorporateTraining = lazy(() => import("./pages/CorporateTraining"));
 const StaffingSolutions = lazy(() => import("./pages/StaffingSolutions"));
 const UniversityPartnerships = lazy(() => import("./pages/UniversityPartnerships"));
+const SalaryCalculator = lazy(() => import("./pages/SalaryCalculator"));
 const RevenuePortal = lazy(() => import("./pages/RevenuePortal"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -78,6 +79,11 @@ const App = () => (
               <Route path="/university-partnerships" element={<UniversityPartnerships />} />
               <Route path="/campus-employability" element={<UniversityPartnerships />} />
               <Route path="/institutional-training" element={<UniversityPartnerships />} />
+
+              {/* Public Viral Intelligence Tools (Zero-Cost Growth Engine) */}
+              <Route path="/salary-calculator" element={<SalaryCalculator />} />
+              <Route path="/hiring-calculator" element={<SalaryCalculator />} />
+              <Route path="/tech-salary-benchmark" element={<SalaryCalculator />} />
 
               {/* Internal Revenue Operations Portal: Disabled in public production until server-side OAuth/SSO is deployed */}
               {import.meta.env.DEV && import.meta.env.VITE_ENABLE_INTERNAL_PORTAL === "true" && (
